@@ -7,7 +7,7 @@ const Header = () => {
       <header>
         <nav className="bg-teal-500 text-gray-50 flex items-center justify-between p-3 md:p-5">
           <div className="flex items-center">
-            <Link href="/" passHref>
+            <Link href="/">
               <h1 className="text-lg md:text-xl flex items-center cursor-pointer">
                 <GiMuscleUp className="mr-2" />
                 筋トレアプリ
