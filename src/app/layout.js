@@ -12,8 +12,9 @@ export default function RootLayout({ children }) {
     <html lang="ja">
       <body>
         <Header />
-
-        {children}
+        <main className="mt-12 md:mt-16 mb-6">{children}</main>
+        {/* Headerと被らないようにpadding(mt-12とmd:12)を設けた
+        Footerと被らないようにpadding(mb-6)を設けた */}
 
         <Footer />
       </body>

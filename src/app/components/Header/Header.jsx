@@ -4,7 +4,7 @@ import { GiMuscleUp } from "react-icons/gi";
 const Header = () => {
   return (
     <>
-      <header>
+      <header className="fixed top-0 w-full">
         <nav className="bg-teal-500 text-gray-50 flex items-center justify-between p-3 md:p-5">
           <div className="flex items-center">
             <Link href="/">
