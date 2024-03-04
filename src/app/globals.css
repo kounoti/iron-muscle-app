@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-  color: blue;
+header {
+  background-color: skyblue;
+}
+
+footer {
+  background-color: greenyellow;
 }
