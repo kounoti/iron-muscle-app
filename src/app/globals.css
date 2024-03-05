@@ -9,3 +9,7 @@ header {
 footer {
   background-color: greenyellow;
 }
+
+.Link {
+  font: bold;
+}
