@@ -8,3 +8,27 @@ export const getMuscleMemory = async () => {
   // .json()で文字列化する
   return memories;
 };
+
+export const createMuscleMemory = async (
+  id,
+  musclePart,
+  trainingMenu,
+  count,
+  date
+) => {
+  const res = await fetch("http://localhost:3001/posts", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ id, musclePart, trainingMenu, count, date }),
+  }); //SSR cache:no-store  SSG cache:force-cache ISR next:revalidate
+
+  if (!res.ok) {
+    throw new Error("エラーが発生しました");
+  }
+
+  const newMemory = await res.json();
+  // .json()で文字列化する
+  return newMemory;
+};

@@ -9,7 +9,6 @@ export default function Home() {
       <h1>TOPページです</h1>
 
       <TopPage />
-      <TopPage />
       <h1>環境構築中</h1>
 
       <div className="m-3">

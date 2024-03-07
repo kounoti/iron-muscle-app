@@ -7,7 +7,7 @@ import { SelectTrainingMenu } from "../SelectTraining/SelectTrainingMenu";
 const muscleParts = ["胸", "背中", "脚", "肩", "腕"];
 
 export const SelectMuscleParts = () => {
-  const [musclePartsName, setMusclePartsName] = useState("");
+  const [musclePartsName, setMusclePartsName] = useState("胸");
 
   return (
     <div>
