@@ -4,11 +4,21 @@ import { Box } from "@chakra-ui/react";
 import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-// import getMonth from "date-fns/getMonth";
-// import getYear from "date-fns/getYear";
 
-export const SimpleDatePicker = () => {
+export const SimpleDatePicker = ({ onChildDateChange }) => {
   const [startDate, setStartDate] = useState(new Date());
+
+  const updateDate = (newDate) => {
+    const year = newDate.getFullYear();
+    const month = newDate.getMonth() + 1; // getMonthは0から始まるため+1
+    const day = newDate.getDate();
+    const formattedDate = `${year}-${month < 10 ? "0" + month : month}-${
+      day < 10 ? "0" + day : day
+    }`;
+    setStartDate(newDate);
+    onChildDateChange(formattedDate);
+  };
+
   return (
     <>
       <Box my="20px">
@@ -16,7 +26,7 @@ export const SimpleDatePicker = () => {
         <DatePicker
           showIcon
           selected={startDate}
-          onChange={(date) => setStartDate(date)}
+          onChange={(date) => updateDate(date)}
         />
 
         {/* 選択した日付の月を表示
