@@ -3,11 +3,9 @@
 import React, { useState } from "react";
 import { Box, Button, ChakraProvider } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
 import { SelectMuscleParts } from "./SelectMuscleParts/SelectMuscleParts";
 import { TrainingCount } from "./TrainingCount/TrainingCount";
 import { SimpleDatePicker } from "./Calendar/Calendar";
-import { createMuscleMemory } from "@/api/muscleMemoryAPI";
 
 const PageBody = () => {
   // 親コンポーネントのステート（筋トレ部位、筋トレ器具）
@@ -30,8 +28,10 @@ const PageBody = () => {
     setCount(newCount);
   };
 
+  const currentDate = new Date();
+  const formattedDate = new Date().toLocaleDateString("ja-JP");
   // 親コンポーネントのステート（実施日）
-  const [date, setDate] = React.useState("");
+  const [date, setDate] = React.useState({ formattedDate });
   // 子コンポーネントからの値を受け取るコールバック関数（実施日）
   const handleChildDateChange = (newDate) => {
     setDate(newDate);
@@ -73,7 +73,7 @@ const PageBody = () => {
     <>
       <ChakraProvider>
         <Box mx="15%">
-          <div>トレーニングページです</div>
+          {/* <div>トレーニングページです</div> */}
           <SelectMuscleParts
             onChildMuscleChange={handleChildMuscleChange}
             onChildEquipmentChange={handleChildEquipmentChange}
@@ -83,20 +83,20 @@ const PageBody = () => {
         </Box>
       </ChakraProvider>
 
-      <Box className="-screen flex justify-center items-center ">
+      <div className="-screen flex justify-center items-center ">
         {/* 記録する項目をデータベースに追加する処理を下記ボタンのonClickをトリガーに行う */}
-        <Button
+        <button
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
           onClick={addToServerAndPush}
+          size="lg"
         >
           トレーニングを記録する
-        </Button>
-      </Box>
-      <br />
-
-      <Link href="/" className="font-bold text-blue-700">
+        </button>
+      </div>
+      {/* <br />
+      <Link href="/" className="font-bold text-blue-700 text-15 ml-auto">
         TOPへ戻る
-      </Link>
+      </Link> */}
     </>
   );
 };

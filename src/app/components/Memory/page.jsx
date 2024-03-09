@@ -10,12 +10,15 @@ export default async function Page() {
 
   return (
     <>
-      <h1>今までの記録を確認できるページです</h1>
-
+      <h1 className="text-3xl font-bold text-center mt-8 text-gray-800">
+        Muscle Memory
+      </h1>
       <TrainingMemory memories={memories} />
-      <Link href="/" className="font-bold text-blue-700">
-        TOPへ戻る
-      </Link>
+      <div className="flex justify-center">
+        <a href="/" className="font-bold text-blue-700">
+          TOPへ戻る
+        </a>
+      </div>
     </>
   );
 }

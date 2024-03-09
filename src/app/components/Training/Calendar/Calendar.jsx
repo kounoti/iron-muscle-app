@@ -12,9 +12,7 @@ export const SimpleDatePicker = ({ onChildDateChange }) => {
     const year = newDate.getFullYear();
     const month = newDate.getMonth() + 1; // getMonthは0から始まるため+1
     const day = newDate.getDate();
-    const formattedDate = `${year}-${month < 10 ? "0" + month : month}-${
-      day < 10 ? "0" + day : day
-    }`;
+    const formattedDate = `${year}/${month}/${day}`;
     setStartDate(newDate);
     onChildDateChange(formattedDate);
   };

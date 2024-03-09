@@ -3,26 +3,44 @@ import React from "react";
 const TrainingMemory = ({ memories }) => {
   return (
     <div className="p-8">
-      <table className="min-w-full bg-white border border-gray-300 shadow-md rounded-md overflow-hidden">
-        <thead className="bg-teal-500 text-white">
-          <tr>
-            <th className="py-2 px-4">日付</th>
-            <th className="py-2 px-4">鍛えた部位</th>
-            <th className="py-2 px-4">使用器具</th>
-            <th className="py-2 px-4">回数</th>
-          </tr>
-        </thead>
-        <tbody>
-          {memories.map((memory) => (
-            <tr key={memory.id}>
-              <td className="py-2 px-4">{memory.date}</td>
-              <td className="py-2 px-4">{memory.musclePart}</td>
-              <td className="py-2 px-4">{memory.trainingMenu}</td>
-              <td className="py-2 px-4">{memory.count}</td>
+      <div className="overflow-x-auto">
+        <table className="min-w-full bg-white border border-collapse border-gray-300 shadow-md rounded-md">
+          <thead className="bg-teal-400 text-white">
+            <tr>
+              <th className="p-2 sm:px-4 md:px-6 lg:px-8 xl:px-10 text-center border">
+                日付
+              </th>
+              <th className="p-2 sm:px-4 md:px-6 lg:px-8 xl:px-10 text-center border">
+                鍛えた部位
+              </th>
+              <th className="p-2 sm:px-4 md:px-6 lg:px-8 xl:px-10 text-center border">
+                使用器具
+              </th>
+              <th className="p-2 sm:px-4 md:px-6 lg:px-8 xl:px-10 text-center border">
+                回数
+              </th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {memories.map((memory) => (
+              <tr key={memory.id}>
+                <td className="p-2 sm:px-4 md:px-6 lg:px-8 xl:px-10 text-center border">
+                  {memory.date}
+                </td>
+                <td className="p-2 sm:px-4 md:px-6 lg:px-8 xl:px-10 text-center border">
+                  {memory.musclePart}
+                </td>
+                <td className="p-2 sm:px-4 md:px-6 lg:px-8 xl:px-10 text-center border">
+                  {memory.trainingMenu}
+                </td>
+                <td className="p-2 sm:px-4 md:px-6 lg:px-8 xl:px-10 text-center border">
+                  {memory.count}回
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };
