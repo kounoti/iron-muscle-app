@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Box, Select } from "@chakra-ui/react";
-import { Counts, counters } from "./Counts";
+import { counters } from "./counters";
 
 export const TrainingCount = ({ onCountChange }) => {
   const [trainingCount, setTrainingCount] = useState("");
@@ -21,7 +21,7 @@ export const TrainingCount = ({ onCountChange }) => {
           value={trainingCount}
           onChange={(e) => handleChangeCount(e.target.value)}
         >
-          {Counts.map((count) => {
+          {counters.map((count) => {
             return (
               <option key={count} value={count}>
                 {count}

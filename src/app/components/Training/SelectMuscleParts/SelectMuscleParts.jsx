@@ -6,8 +6,21 @@ import { SelectTrainingMenu } from "../SelectTraining/SelectTrainingMenu";
 
 const muscleParts = ["胸", "背中", "脚", "肩", "腕"];
 
-export const SelectMuscleParts = () => {
+export const SelectMuscleParts = ({
+  onChildMuscleChange,
+  onChildEquipmentChange,
+}) => {
   const [musclePartsName, setMusclePartsName] = useState("胸");
+
+  const handleMusclePartChange = (e) => {
+    const newMusclePart = e.target.value;
+    onChildMuscleChange(newMusclePart);
+    setMusclePartsName(newMusclePart);
+  };
+
+  const handleEquipmentChange = (newEquipment) => {
+    onChildEquipmentChange(newEquipment);
+  };
 
   return (
     <div>
@@ -16,7 +29,7 @@ export const SelectMuscleParts = () => {
         <Select
           placeholder=""
           value={musclePartsName}
-          onChange={(e) => setMusclePartsName(e.target.value)}
+          onChange={handleMusclePartChange}
         >
           {muscleParts.map((musclePart) => {
             return (
@@ -29,7 +42,10 @@ export const SelectMuscleParts = () => {
       </Box>
 
       <Box my="20px">
-        <SelectTrainingMenu musclePartsName={musclePartsName} />
+        <SelectTrainingMenu
+          onEquipmentChange={handleEquipmentChange}
+          musclePartsName={musclePartsName}
+        />
       </Box>
     </div>
   );

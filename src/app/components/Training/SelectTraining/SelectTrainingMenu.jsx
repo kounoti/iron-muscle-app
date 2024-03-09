@@ -11,8 +11,18 @@ import {
 } from "./TrainingMenu";
 
 export const SelectTrainingMenu = (props) => {
+  const { onEquipmentChange, musclePartsName } = props;
+
+  // 子コンポーネントのステート（筋トレ器具）
+  const [equipment, setEquipment] = useState("");
+
+  // 子コンポーネントから親コンポーネントに筋トレ器具の情報を渡す
+  const handleEquipmentChange = (newEquipment) => {
+    setEquipment(newEquipment);
+    onEquipmentChange(newEquipment);
+  };
+
   const [trainingMenuState, setTrainingMenuState] = useState("");
-  const { musclePartsName } = props;
 
   //   const [trainingState, setTrainingState] = useState([]);
   let trainingMenuList = [];
@@ -37,7 +47,7 @@ export const SelectTrainingMenu = (props) => {
       <Select
         placeholder=""
         value={trainingMenuState}
-        onChange={(e) => setTrainingMenuState(e.target.value)}
+        onChange={(e) => handleEquipmentChange(e.target.value)}
       >
         {trainingMenuList.map((trainingName) => {
           return (

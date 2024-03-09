@@ -30,171 +30,17 @@
     },
     {
       "id": "test-id",
-      "musclePart": "test-part",
-      "trainingMenu": "test-Menu",
-      "count": "test-count",
-      "date": "test-date"
+      "musclePart": "胸",
+      "trainingMenu": "ベンチプレス",
+      "count": "1",
+      "date": ""
     },
     {
       "id": "test-id",
-      "musclePart": "test-part",
-      "trainingMenu": "test-Menu",
-      "count": "test-count",
-      "date": "test-date"
-    },
-    {
-      "id": "test-id",
-      "musclePart": "test-part",
-      "trainingMenu": "test-Menu",
-      "count": "test-count",
-      "date": "test-date"
-    },
-    {
-      "id": "test-id",
-      "musclePart": "test-part",
-      "trainingMenu": "test-Menu",
-      "count": "test-count",
-      "date": "test-date"
-    },
-    {
-      "id": "test-id",
-      "musclePart": "test-part",
-      "trainingMenu": "test-Menu",
-      "count": "test-count",
-      "date": "test-date"
-    },
-    {
-      "id": "test-id",
-      "musclePart": "test-part",
-      "trainingMenu": "test-Menu",
-      "count": "test-count",
-      "date": "test-date"
-    },
-    {
-      "id": "test-id",
-      "musclePart": "test-part",
-      "trainingMenu": "test-Menu",
-      "count": "test-count",
-      "date": "test-date"
-    },
-    {
-      "id": "test-id",
-      "musclePart": "test-part",
-      "trainingMenu": "test-Menu",
-      "count": "test-count",
-      "date": "test-date"
-    },
-    {
-      "id": "test-id",
-      "musclePart": "test-part",
-      "trainingMenu": "test-Menu",
-      "count": "test-count",
-      "date": "test-date"
-    },
-    {
-      "id": "test-id",
-      "musclePart": "test-part",
-      "trainingMenu": "test-Menu",
-      "count": "test-count",
-      "date": "test-date"
-    },
-    {
-      "id": "test-id",
-      "musclePart": "test-part",
-      "trainingMenu": "test-Menu",
-      "count": "test-count",
-      "date": "test-date"
-    },
-    {
-      "id": "test-id",
-      "musclePart": "test-part",
-      "trainingMenu": "test-Menu",
-      "count": "test-count",
-      "date": "test-date"
-    },
-    {
-      "id": "test-id",
-      "musclePart": "test-part",
-      "trainingMenu": "test-Menu",
-      "count": "test-count",
-      "date": "test-date"
-    },
-    {
-      "id": "test-id",
-      "musclePart": "test-part",
-      "trainingMenu": "test-Menu",
-      "count": "4",
-      "date": "test-date"
-    },
-    {
-      "id": "test-id",
-      "musclePart": "test-part",
-      "trainingMenu": "test-Menu",
-      "count": "9",
-      "date": "test-date"
-    },
-    {
-      "id": "test-id",
-      "musclePart": "test-part",
-      "trainingMenu": "test-Menu",
-      "count": "5",
-      "date": "test-date"
-    },
-    {
-      "id": "test-id",
-      "musclePart": "test-part",
-      "trainingMenu": "test-Menu",
-      "count": "4",
-      "date": "test-date"
-    },
-    {
-      "id": "test-id",
-      "musclePart": "test-part",
-      "trainingMenu": "test-Menu",
-      "count": "5",
-      "date": "test-date"
-    },
-    {
-      "id": "test-id",
-      "musclePart": "test-part",
-      "trainingMenu": "test-Menu",
-      "count": "7",
-      "date": "2024-03-08T16:17:10.901Z"
-    },
-    {
-      "id": "test-id",
-      "musclePart": "test-part",
-      "trainingMenu": "test-Menu",
-      "count": "7",
-      "date": "2024-03-21T16:23:42.000Z"
-    },
-    {
-      "id": "test-id",
-      "musclePart": "test-part",
-      "trainingMenu": "test-Menu",
-      "count": "6",
-      "date": "2024-01-31T16:25:43.000Z"
-    },
-    {
-      "id": "test-id",
-      "musclePart": "test-part",
-      "trainingMenu": "test-Menu",
-      "count": "4",
-      "date": 2024
-    },
-    {
-      "id": "test-id",
-      "musclePart": "test-part",
-      "trainingMenu": "test-Menu",
-      "count": "8",
-      "date": "2024-03-26"
-    },
-    {
-      "id": "test-id",
-      "musclePart": "test-part",
-      "trainingMenu": "test-Menu",
-      "count": "",
-      "date": "2024-03-05"
+      "musclePart": "脚",
+      "trainingMenu": "レッグプレス",
+      "count": "10",
+      "date": "2024-03-10"
     }
   ]
 }
