@@ -1,7 +1,7 @@
-import { getMuscleMemory } from "@/api/muscleMemoryAPI";
+// import { getMuscleMemory } from "@/api/muscleMemoryAPI";
 import Link from "next/link";
 import TrainingMemory from "./trainingMemory";
-import DeleteButton from "./DeleteButton";
+// import DeleteButton from "./DeleteButton";
 
 export default async function Page() {
   const API_URL = process.env.NEXT_PUBLIC_API_URL;

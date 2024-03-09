@@ -11,7 +11,11 @@
   },
   "dependencies": {
     "@chakra-ui/react": "^2.8.2",
+    "@nextui-org/react": "^2.2.10",
+    "@nextui-org/system": "^2.0.15",
+    "@nextui-org/theme": "^2.1.18",
     "@supabase/supabase-js": "^2.39.7",
+    "framer-motion": "^11.0.8",
     "json-server": "^1.0.0-alpha.23",
     "next": "14.1.1",
     "react": "^18",
@@ -22,10 +26,10 @@
   },
   "devDependencies": {
     "@chakra-ui/icons": "^2.1.1",
-    "autoprefixer": "^10.0.1",
+    "autoprefixer": "^10.4.18",
     "eslint": "^8",
     "eslint-config-next": "14.1.1",
-    "postcss": "^8",
-    "tailwindcss": "^3.3.0"
+    "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.1"
   }
 }

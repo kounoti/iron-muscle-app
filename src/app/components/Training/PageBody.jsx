@@ -45,7 +45,7 @@ const PageBody = () => {
   // トレーニング追加のボタンを押下した時にトレーニング情報を一式サーバーに追加する
   const addToServerAndPush = async (e) => {
     e.preventDefault();
-    const newId = `${date}-${trainingMenu}`;
+    const newId = `${date}-${trainingMenu}-${count}`;
 
     const API_URL = process.env.NEXT_PUBLIC_API_URL;
     await fetch(`${API_URL}/api/create`, {
@@ -65,7 +65,7 @@ const PageBody = () => {
     // 下記はjson-serverを使うときに使用するコード
     // await createMuscleMemory(musclePart, trainingMenu, count, date);
 
-    router.push("/");
+    router.push("/components/Memory");
     router.refresh();
   };
 
