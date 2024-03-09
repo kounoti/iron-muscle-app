@@ -37,7 +37,7 @@ const PageBody = () => {
     setDate(newDate);
   };
 
-  let id = 10;
+  // const [id, setId] = useState("");
 
   const router = useRouter();
   // let  = "test-id";
@@ -45,6 +45,7 @@ const PageBody = () => {
   // トレーニング追加のボタンを押下した時にトレーニング情報を一式サーバーに追加する
   const addToServerAndPush = async (e) => {
     e.preventDefault();
+    const newId = `${date}-${trainingMenu}`;
 
     const API_URL = process.env.NEXT_PUBLIC_API_URL;
     await fetch(`${API_URL}/api/create`, {
@@ -52,7 +53,13 @@ const PageBody = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ id, musclePart, trainingMenu, count, date }),
+      body: JSON.stringify({
+        id: newId,
+        musclePart,
+        trainingMenu,
+        count,
+        date,
+      }),
     });
 
     // 下記はjson-serverを使うときに使用するコード

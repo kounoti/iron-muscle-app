@@ -15,6 +15,7 @@ const TrainingMemory = ({ memories }) => {
         <tbody>
           {memories.map((memory) => (
             <tr key={memory.id}>
+              <td>{memory.id}</td>
               <td>{memory.date}</td>
               <td>{memory.musclePart}</td>
               <td>{memory.trainingMenu}</td>

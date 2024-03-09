@@ -22,8 +22,6 @@ export const SelectTrainingMenu = (props) => {
     onEquipmentChange(newEquipment);
   };
 
-  const [trainingMenuState, setTrainingMenuState] = useState("");
-
   //   const [trainingState, setTrainingState] = useState([]);
   let trainingMenuList = [];
 
@@ -46,7 +44,7 @@ export const SelectTrainingMenu = (props) => {
 
       <Select
         placeholder=""
-        value={trainingMenuState}
+        value={equipment}
         onChange={(e) => handleEquipmentChange(e.target.value)}
       >
         {trainingMenuList.map((trainingName) => {
