@@ -5,8 +5,10 @@ import TrainingMemory from "./trainingMemory";
 
 export default async function Page() {
   const API_URL = process.env.NEXT_PUBLIC_API_URL;
-  const res = await fetch(`${API_URL}/api`, { cache: "no-store" });
+  const res = await fetch(`${API_URL}/api/memories`, { cache: "no-store" });
   const memories = await res.json();
+
+  console.log(res);
 
   return (
     <>

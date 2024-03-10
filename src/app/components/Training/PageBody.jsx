@@ -28,19 +28,17 @@ const PageBody = () => {
     setCount(newCount);
   };
 
+  // 今日の日付を取得し、年月日の情報に変更する
   const currentDate = new Date();
-  const formattedDate = new Date().toLocaleDateString("ja-JP");
+  const formattedDate = currentDate.toLocaleDateString();
   // 親コンポーネントのステート（実施日）
-  const [date, setDate] = React.useState({ formattedDate });
+  const [date, setDate] = React.useState(formattedDate);
   // 子コンポーネントからの値を受け取るコールバック関数（実施日）
   const handleChildDateChange = (newDate) => {
     setDate(newDate);
   };
 
-  // const [id, setId] = useState("");
-
   const router = useRouter();
-  // let  = "test-id";
 
   // トレーニング追加のボタンを押下した時にトレーニング情報を一式サーバーに追加する
   const addToServerAndPush = async (e) => {
@@ -48,7 +46,7 @@ const PageBody = () => {
     const newId = `${date}-${trainingMenu}-${count}`;
 
     const API_URL = process.env.NEXT_PUBLIC_API_URL;
-    await fetch(`${API_URL}/api/create`, {
+    await fetch(`${API_URL}/api/memories`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
