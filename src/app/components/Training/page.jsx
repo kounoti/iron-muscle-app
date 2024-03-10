@@ -1,4 +1,4 @@
-import PageBody from "./pageBody";
+import PageBody from "./PageBody";
 
 export default function Page() {
   return (

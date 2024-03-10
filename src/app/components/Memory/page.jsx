@@ -1,6 +1,7 @@
 // import { getMuscleMemory } from "@/api/muscleMemoryAPI";
 import Link from "next/link";
-import TrainingMemory from "./trainingMemory";
+import TrainingMemory from "./TrainingMemory";
+
 // import DeleteButton from "./DeleteButton";
 
 export default async function Page() {
