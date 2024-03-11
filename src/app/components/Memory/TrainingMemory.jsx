@@ -1,6 +1,10 @@
 import React from "react";
 
 const TrainingMemory = ({ memories }) => {
+  if (!Array.isArray(memories)) {
+    memories = [];
+  }
+
   return (
     <div className="p-8">
       <div className="overflow-x-auto">
