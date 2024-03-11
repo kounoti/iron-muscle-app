@@ -45,7 +45,7 @@ const PageBody = () => {
     e.preventDefault();
     const newId = `${date}-${trainingMenu}-${count}`;
 
-    const API_URL = process.env.NEXT_PUBLIC_API_URL;
+    const API_URL = process.env.NEXT_PUBLIC_API_URL || NEXT_PUBLIC_SUPABASE_URL;
     await fetch(`${API_URL}/api/memories`, {
       method: "POST",
       headers: {
