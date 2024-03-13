@@ -58,6 +58,8 @@ const PageBody = () => {
       },
     ]);
 
+    console.log(musclePart);
+    console.log(error);
     // const API_URL = process.env.NEXT_PUBLIC_API_URL || process.env.SUPABASE_URL;
     // await fetch(`${API_URL}/api/memories`, {
     //   method: "POST",

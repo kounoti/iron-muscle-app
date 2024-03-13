@@ -1,3 +1,5 @@
+"use client";
+
 // import { getMuscleMemory } from "@/api/muscleMemoryAPI";
 import Link from "next/link";
 import TrainingMemory from "./TrainingMemory";
@@ -23,8 +25,8 @@ export default async function Page() {
   // const memories = await res.json();
   const memories = data;
   console.log(data);
-  console.log(error);
-  console.log(memories);
+  // console.log(error);
+  // console.log(memories);
 
   return (
     <>
