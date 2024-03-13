@@ -82,7 +82,7 @@ const Header = () => {
             </div>
           </div>
           <div
-            className="fixed top-0 right-0 h-full w-1/3 bg-transparent z-50"
+            className="fixed top-0 left-0 h-full w-1/3 bg-transparent z-50"
             onClick={closeDrawer}
           />
         </div>
