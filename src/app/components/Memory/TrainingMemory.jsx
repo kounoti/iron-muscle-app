@@ -37,8 +37,20 @@ const TrainingMemory = ({ memories }) => {
                 <td className="p-2 sm:px-4 md:px-6 lg:px-8 xl:px-10 text-center border">
                   {memory.trainingMenu}
                 </td>
-                <td className="p-2 sm:px-4 md:px-6 lg:px-8 xl:px-10 text-center border">
+                <td className="p-2 sm:px-4 md:px-6 lg:px-8 xl:px-10 text-center border ">
+                  {" "}
+                  {/* border-none を適用 */}
                   {memory.count}回
+                </td>
+                <td className="hidden sm:table-cell p-2 sm:px-4 md:px-6 lg:px-8 xl:px-10 text-center border">
+                  <button className="text-red-500 hover:text-red-700">
+                    削除
+                  </button>{" "}
+                  {/* 削除ボタン */}
+                  <button className="text-blue-500 hover:text-blue-700 ml-2">
+                    編集
+                  </button>{" "}
+                  {/* 編集ボタン */}
                 </td>
               </tr>
             ))}
