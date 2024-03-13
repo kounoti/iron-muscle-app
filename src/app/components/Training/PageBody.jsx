@@ -48,9 +48,15 @@ const PageBody = () => {
     const newId = `${date}-${trainingMenu}-${count}`;
 
     // const { id, musclePart, trainingMenu, count, date } = await req.json();
-    const { data, error } = await supabase
-      .from("posts")
-      .insert([{ id: newId, musclePart, trainingMenu, count, date }]);
+    const { data, error } = await supabase.from("posts").insert([
+      {
+        id: newId,
+        musclePart: musclePart,
+        trainingMenu: trainingMenu,
+        count: count,
+        date: date,
+      },
+    ]);
 
     // const API_URL = process.env.NEXT_PUBLIC_API_URL || process.env.SUPABASE_URL;
     // await fetch(`${API_URL}/api/memories`, {
