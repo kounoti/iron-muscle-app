@@ -58,8 +58,8 @@ const TrainingMemory = ({ memories }) => {
                   {memory.count}回
                 </td>
                 <td
-                  style={{ width: "65px" }}
-                  className="hidden sm:table-cell  text-center border"
+                  style={{ width: "64px" }}
+                  className="hidden sm:table-cell text-center border"
                 >
                   <button
                     className="text-white bg-red-500 hover:bg-red-500 rounded-md p-1 flex items-center"

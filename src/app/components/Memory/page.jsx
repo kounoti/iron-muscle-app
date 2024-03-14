@@ -1,32 +1,28 @@
 "use client";
-
-// import { getMuscleMemory } from "@/api/muscleMemoryAPI";
-import Link from "next/link";
+import React, { useEffect, useState } from "react";
 import TrainingMemory from "./TrainingMemory";
-
-// import DeleteButton from "./DeleteButton";
-
-import { NextResponse } from "next/server";
 import { supabase } from "src/utils/supabaseClient";
 
-// export async function GET() {
-//   const { data, error } = await supabase.from("posts").select("*");
+export default function Page() {
+  const [memories, setMemories] = useState([]);
 
-//   if (error) {
-//     return NextResponse.json(error);
-//   }
-//   return NextResponse.json(data, { status: 200 });
-// }
-
-export default async function Page() {
-  // const API_URL = process.env.SUPABASE_URL;
-  // const res = await GET(`${API_URL}`, { cache: "no-store" });
-  const { data, error } = await supabase.from("posts").select("*");
-  // const memories = await res.json();
-  const memories = data;
-  console.log(data);
-  // console.log(error);
-  // console.log(memories);
+  //  sueEffect内で非同期処理を行うことでuse clientとasyncの衝突を防ぐ
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const { data, error } = await supabase.from("posts").select("*");
+        // エラー以外の時にmemoriesにdataオブジェクトを格納する。
+        if (error) {
+          console.error("Error fetching memories:", error.message);
+          return;
+        }
+        setMemories(data);
+      } catch (error) {
+        console.error("Error fetching memories:", error.message);
+      }
+    }
+    fetchData();
+  }, []);
 
   return (
     <>
