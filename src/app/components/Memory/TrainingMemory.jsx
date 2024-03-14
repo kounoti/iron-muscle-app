@@ -1,9 +1,24 @@
 import React from "react";
+import { supabase } from "src/utils/supabaseClient";
+import { RiDeleteBin6Fill } from "react-icons/ri";
+import { useRouter } from "next/navigation";
 
 const TrainingMemory = ({ memories }) => {
+  const router = useRouter();
+
   if (!Array.isArray(memories)) {
     memories = [];
   }
+
+  const DeleteMemory = async (id) => {
+    const { data, error } = await supabase.from("posts").delete().eq("id", id);
+    if (error) {
+      console.error("Error deleting memory:", error.message);
+      return;
+    }
+    router.push("/components/Memory");
+    router.refresh();
+  };
 
   return (
     <div className="p-8">
@@ -42,15 +57,23 @@ const TrainingMemory = ({ memories }) => {
                   {/* border-none を適用 */}
                   {memory.count}回
                 </td>
-                <td className="hidden sm:table-cell p-2 sm:px-4 md:px-6 lg:px-8 xl:px-10 text-center border">
-                  <button className="text-red-500 hover:text-red-700">
-                    削除
-                  </button>{" "}
+                <td
+                  style={{ width: "65px" }}
+                  className="hidden sm:table-cell  text-center border"
+                >
+                  <button
+                    className="text-white bg-red-500 hover:bg-red-500 rounded-md p-1 flex items-center"
+                    onClick={() => DeleteMemory(memory.id)}
+                  >
+                    <RiDeleteBin6Fill className="mr-1" /> {/* 削除アイコン */}
+                    <span>削除</span>
+                  </button>
+
                   {/* 削除ボタン */}
-                  <button className="text-blue-500 hover:text-blue-700 ml-2">
+                  {/* <button className="text-blue-500 hover:text-blue-700 ml-2">
                     編集
-                  </button>{" "}
-                  {/* 編集ボタン */}
+                  </button>
+                  編集ボタン */}
                 </td>
               </tr>
             ))}

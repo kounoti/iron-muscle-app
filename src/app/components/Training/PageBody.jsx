@@ -45,12 +45,12 @@ const PageBody = () => {
   // トレーニング追加のボタンを押下した時にトレーニング情報を一式サーバーに追加する
   const addToServerAndPush = async (e) => {
     e.preventDefault();
-    const newId = `${date}-${trainingMenu}-${count}`;
+    // const newId = `${date}-${trainingMenu}-${count}`;
 
     // const { id, musclePart, trainingMenu, count, date } = await req.json();
     const { data, error } = await supabase.from("posts").insert([
       {
-        id: newId,
+        // id: id,
         musclePart: musclePart,
         trainingMenu: trainingMenu,
         count: count,
