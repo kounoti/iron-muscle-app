@@ -36,6 +36,9 @@ const TrainingMemory = ({ memories }) => {
                 使用器具
               </th>
               <th className="p-2 sm:px-4 md:px-6 lg:px-8 xl:px-10 text-center border">
+                重量
+              </th>
+              <th className="p-2 sm:px-4 md:px-6 lg:px-8 xl:px-10 text-center border">
                 回数
               </th>
               <th className="text-center border" style={{ width: "1%" }}>
@@ -54,6 +57,9 @@ const TrainingMemory = ({ memories }) => {
                 </td>
                 <td className="p-2 sm:px-4 md:px-6 lg:px-8 xl:px-10 text-center border">
                   {memory.trainingMenu}
+                </td>
+                <td className="p-2 sm:px-4 md:px-6 lg:px-8 xl:px-10 text-center border">
+                  {memory.weight}kg
                 </td>
                 <td className="p-2 sm:px-4 md:px-6 lg:px-8 xl:px-10 text-center border">
                   {memory.count}回
