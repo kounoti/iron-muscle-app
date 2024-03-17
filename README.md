@@ -39,6 +39,7 @@
 ## 使用技術
 
 - Next.js: 14.1.1
+- tailwindcss: 3.4.1
 - Chakra UI: 2.8.2
 - Supabase JS: 2.39.7
 - Framer Motion: 11.0.8
@@ -46,7 +47,6 @@
 - React Datepicker: 6.2.0
 - React Icons: 5.0.1
 - React Modal: 3.16.1
-- tailwindcss: 3.4.1
 
 ## 参考資料
 

@@ -15,7 +15,7 @@ export const TrainingCount = ({ onCountChange }) => {
   return (
     <>
       <Box my="20px">
-        <h2 style={{ marginBottom: "10px" }}>回数を選択</h2>
+        <h2 style={{ marginBottom: "10px", fontWeight: "bold" }}>回数を選択</h2>
         <Select
           placeholder=""
           value={trainingCount}

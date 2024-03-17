@@ -20,7 +20,7 @@ export const SimpleDatePicker = ({ onChildDateChange }) => {
   return (
     <>
       <Box my="20px">
-        <h2 style={{ marginBottom: "10px" }}>日付を選択</h2>
+        <h2 style={{ marginBottom: "10px", fontWeight: "bold" }}>日付を選択</h2>
         <DatePicker
           showIcon
           selected={startDate}

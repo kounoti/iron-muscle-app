@@ -25,7 +25,9 @@ export const SelectMuscleParts = ({
   return (
     <div>
       <Box my="20px">
-        <h2 style={{ marginBottom: "10px" }}>鍛える部位を選択</h2>
+        <h2 style={{ marginBottom: "10px", fontWeight: "bold" }}>
+          鍛える部位を選択
+        </h2>
         <Select
           placeholder=""
           value={musclePartsName}

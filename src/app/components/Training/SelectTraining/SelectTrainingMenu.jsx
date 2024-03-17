@@ -40,7 +40,9 @@ export const SelectTrainingMenu = (props) => {
   return (
     <div>
       {/* <p>{trainingMenuList}</p> */}
-      <h2 style={{ marginBottom: "10px" }}>使用する器具を選択</h2>
+      <h2 style={{ marginBottom: "10px", fontWeight: "bold" }}>
+        使用する器具を選択
+      </h2>
 
       <Select
         placeholder=""
