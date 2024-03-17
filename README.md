@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 筋トレアプリ
 
-## Getting Started
+## 概要
 
-First, run the development server:
+筋トレアプリは、筋トレの部位と器具を選択し、トレーニング情報を記録する Web アプリケーションです。
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 技術的なポイント
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **フレームワーク**: Next.js
+- **バックエンド**: Supabase
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## デモ画面
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+![デモ画面](demo_screenshot.png)
 
-## Learn More
+## 機能一覧
 
-To learn more about Next.js, take a look at the following resources:
+- 筋トレ部位の選択
+- トレーニングメニューの選択
+- 筋トレ回数の選択
+- 実施日の選択
+- トレーニング情報の記録、表示
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 開発の背景
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+筋トレアプリは、自身のトレーニング記録を効率的に管理するために開発しました。<br/>
+日々のトレーニング内容を記録し、進捗を確認することで、トレーニング効果を最大化することを目指しています。
 
-## Deploy on Vercel
+## 使用法
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. アプリケーションを起動します。
+2. 筋トレ部位を選択します。
+3. トレーニングメニューを選択します。
+4. トレーニング情報を記録します。
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## 今後の展望
+
+- ユーザー認証の追加
+- トレーニング履歴の表示
+
+## 使用技術
+
+Next.js: 14.1.1
+Chakra UI: 2.8.2
+Supabase JS: 2.39.7
+Framer Motion: 11.0.8
+React: 18
+React Datepicker: 6.2.0
+React Icons: 5.0.1
+React Modal: 3.16.1
+tailwindcss: 3.4.1
+
+## 参考資料
+
+- [Next.js 公式ドキュメント](https://nextjs.org/docs)
+- [Supabase ドキュメント](https://supabase.io/docs)
