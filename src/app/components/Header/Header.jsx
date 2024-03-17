@@ -52,7 +52,7 @@ const Header = () => {
               <Link href="/" passHref>
                 <div className="w-full p-2 border-b border-gray-500">
                   <button
-                    className="w-full p-4  bg-teal-100"
+                    className="w-full p-4  bg-teal-100 font-bold"
                     onClick={closeDrawer}
                   >
                     TOP
@@ -62,7 +62,7 @@ const Header = () => {
               <Link href="/components/Users" passHref>
                 <div className="w-full p-2 border-b border-gray-500">
                   <button
-                    className="w-full p-4 bg-teal-100"
+                    className="w-full p-4 bg-teal-100 font-bold"
                     onClick={closeDrawer}
                   >
                     ユーザ情報
@@ -72,7 +72,7 @@ const Header = () => {
               <Link href="/components/Memory" passHref>
                 <div className="w-full p-2 border-b border-gray-500">
                   <button
-                    className="w-full p-4 bg-teal-100"
+                    className="w-full p-4 bg-teal-100 font-bold"
                     onClick={closeDrawer}
                   >
                     今までの記録
