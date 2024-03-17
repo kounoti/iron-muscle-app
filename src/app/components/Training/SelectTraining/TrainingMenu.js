@@ -15,7 +15,7 @@ const shoulderTrainingMenus = [
   "ショルダープレス",
   "フロントレイズ",
 ];
-const armTrainingMenus = ["アームカール"];
+const armTrainingMenus = ["アームカール", "ダンベルカール"];
 
 export {
   chestTrainingMenus,

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Box, Button, ChakraProvider } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
 import { SelectMuscleParts } from "./SelectMuscleParts/SelectMuscleParts";
@@ -82,6 +82,20 @@ const PageBody = () => {
     router.push("/components/Memory");
     router.refresh();
   };
+
+  useEffect(() => {
+    if (musclePart === "胸") {
+      setTrainingMenu("ベンチプレス");
+    } else if (musclePart === "背中") {
+      setTrainingMenu("ラットプルダウン");
+    } else if (musclePart === "脚") {
+      setTrainingMenu("スクワット");
+    } else if (musclePart === "肩") {
+      setTrainingMenu("サイドレイズ");
+    } else if (musclePart === "腕") {
+      setTrainingMenu("アームカール");
+    }
+  }, [musclePart]);
 
   return (
     <>
