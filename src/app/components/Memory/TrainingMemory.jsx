@@ -38,6 +38,9 @@ const TrainingMemory = ({ memories }) => {
               <th className="p-2 sm:px-4 md:px-6 lg:px-8 xl:px-10 text-center border">
                 回数
               </th>
+              <th className="text-center border" style={{ width: "1%" }}>
+                {/* 削除ボタンの列の幅を調整 */}
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -52,25 +55,19 @@ const TrainingMemory = ({ memories }) => {
                 <td className="p-2 sm:px-4 md:px-6 lg:px-8 xl:px-10 text-center border">
                   {memory.trainingMenu}
                 </td>
-                <td className="p-2 sm:px-4 md:px-6 lg:px-8 xl:px-10 text-center border ">
-                  {" "}
-                  {/* border-none を適用 */}
+                <td className="p-2 sm:px-4 md:px-6 lg:px-8 xl:px-10 text-center border">
                   {memory.count}回
                 </td>
-                <td style={{ width: "64px" }} className=" text-center border">
+                <td className="text-center border">
+                  {/* 削除ボタン */}
                   <button
                     className="text-white bg-red-500 hover:bg-red-500 rounded-md p-1 flex items-center"
                     onClick={() => DeleteMemory(memory.id)}
+                    style={{ width: "fit-content" }}
                   >
-                    <RiDeleteBin6Fill className="mr-1" /> {/* 削除アイコン */}
-                    <span>削除</span>
+                    <RiDeleteBin6Fill className="mr-1 hidden sm:table-cell" />
+                    <span style={{ whiteSpace: "nowrap" }}>削除</span>
                   </button>
-
-                  {/* 削除ボタン */}
-                  {/* <button className="text-blue-500 hover:text-blue-700 ml-2">
-                    編集
-                  </button>
-                  編集ボタン */}
                 </td>
               </tr>
             ))}
