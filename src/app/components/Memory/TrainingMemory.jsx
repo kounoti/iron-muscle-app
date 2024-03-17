@@ -29,7 +29,7 @@ const TrainingMemory = ({ memories }) => {
               <th className="p-2 sm:px-4 md:px-6 lg:px-8 xl:px-10 text-center border">
                 日付
               </th>
-              <th className="p-2 sm:px-4 md:px-6 lg:px-8 xl:px-10 text-center border">
+              <th className="p-2 sm:px-4 md:px-6 lg:px-8 xl:px-10 text-center border hidden sm:table-cell">
                 鍛えた部位
               </th>
               <th className="p-2 sm:px-4 md:px-6 lg:px-8 xl:px-10 text-center border">
@@ -46,7 +46,7 @@ const TrainingMemory = ({ memories }) => {
                 <td className="p-2 sm:px-4 md:px-6 lg:px-8 xl:px-10 text-center border">
                   {memory.date}
                 </td>
-                <td className="p-2 sm:px-4 md:px-6 lg:px-8 xl:px-10 text-center border">
+                <td className="p-2 sm:px-4 md:px-6 lg:px-8 xl:px-10 text-center border hidden sm:table-cell">
                   {memory.musclePart}
                 </td>
                 <td className="p-2 sm:px-4 md:px-6 lg:px-8 xl:px-10 text-center border">
@@ -57,10 +57,7 @@ const TrainingMemory = ({ memories }) => {
                   {/* border-none を適用 */}
                   {memory.count}回
                 </td>
-                <td
-                  style={{ width: "64px" }}
-                  className="hidden sm:table-cell text-center border"
-                >
+                <td style={{ width: "64px" }} className=" text-center border">
                   <button
                     className="text-white bg-red-500 hover:bg-red-500 rounded-md p-1 flex items-center"
                     onClick={() => DeleteMemory(memory.id)}
