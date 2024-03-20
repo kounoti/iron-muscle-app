@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import TrainingMemory from "./TrainingMemory";
 import { supabase } from "src/utils/supabaseClient";
+import MemoryGraph from "./MemoryGraph";
 
 export default function Page() {
   const [memories, setMemories] = useState([]);
@@ -30,6 +31,9 @@ export default function Page() {
         Muscle Memory
       </h1>
       <TrainingMemory memories={memories} />
+
+      {/* <MemoryGraph memories={memories} /> */}
+
       <div className="flex justify-center">
         <a href="/" className="font-bold text-blue-700">
           TOPへ戻る

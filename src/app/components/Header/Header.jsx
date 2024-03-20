@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { HiMenu } from "react-icons/hi";
 import { GiMuscleUp } from "react-icons/gi";
