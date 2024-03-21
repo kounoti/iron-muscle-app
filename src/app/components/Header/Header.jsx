@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { HiMenu } from "react-icons/hi";
 import { GiMuscleUp } from "react-icons/gi";
+import { supabase_google } from "../Authentication/page";
 
 const Header = () => {
   const [isDrawerOpen, setDrawerOpen] = useState(false);
@@ -15,6 +16,40 @@ const Header = () => {
   const closeDrawer = () => {
     setDrawerOpen(false);
   };
+
+  const [currentUser, setCurrentUser] = useState(null);
+
+  // 現在ログインしているユーザーを取得する処理
+  const getCurrentUser = async () => {
+    // ログインのセッションを取得する処理
+    const { data } = await supabase_google.auth.getSession();
+    // セッションがあるときだけ現在ログインしているユーザーを取得する
+    if (data.session !== null) {
+      // supabaseに用意されている現在ログインしているユーザーを取得する関数
+      const {
+        data: { user },
+      } = await supabase_google.auth.getUser();
+      // currentUserにユーザーのメールアドレスを格納
+      setCurrentUser(user.email);
+    }
+  };
+
+  const handleSignOut = async () => {
+    try {
+      const { error: logoutError } = await supabase_google.auth.signOut();
+      if (logoutError) {
+        throw logoutError;
+      }
+      setCurrentUser(null); // サインアウト時にcurrentUserをnullに設定
+    } catch {
+      alert("エラーが発生しました");
+    }
+  };
+
+  // HeaderコンポーネントがレンダリングされたときにgetCurrentUser関数が実行される
+  useEffect(() => {
+    getCurrentUser();
+  }, []);
 
   return (
     <>
@@ -35,6 +70,12 @@ const Header = () => {
           <Link href="/components/Memory" className="hover:underline">
             今までの記録
           </Link>
+          {currentUser ? (
+            <button onClick={handleSignOut}>サインアウト</button>
+          ) : (
+            <Link href="/components/Authentication">サインイン</Link>
+          )}
+          <div>{currentUser}</div>
         </div>
 
         <button
