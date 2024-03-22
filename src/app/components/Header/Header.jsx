@@ -5,6 +5,7 @@ import Link from "next/link";
 import { HiMenu } from "react-icons/hi";
 import { GiMuscleUp } from "react-icons/gi";
 import { supabase_google } from "../Authentication/page";
+import { useRouter } from "next/navigation";
 
 const Header = () => {
   const [isDrawerOpen, setDrawerOpen] = useState(false);
@@ -18,6 +19,8 @@ const Header = () => {
   };
 
   const [currentUser, setCurrentUser] = useState(null);
+
+  const router = useRouter();
 
   // 現在ログインしているユーザーを取得する処理
   const getCurrentUser = async () => {
@@ -41,6 +44,7 @@ const Header = () => {
         throw logoutError;
       }
       setCurrentUser(null); // サインアウト時にcurrentUserをnullに設定
+      router.push("/components/Authentication");
     } catch {
       alert("エラーが発生しました");
     }
@@ -62,21 +66,20 @@ const Header = () => {
             </h1>
           </Link>
         </div>
-
-        <div className="hidden md:flex items-center space-x-4">
-          <Link href="/components/Users" className="hover:underline">
-            ユーザー情報
-          </Link>
-          <Link href="/components/Memory" className="hover:underline">
-            今までの記録
-          </Link>
-          {currentUser ? (
-            <button onClick={handleSignOut}>サインアウト</button>
-          ) : (
-            <Link href="/components/Authentication">サインイン</Link>
-          )}
-          <div>{currentUser}</div>
-        </div>
+        {currentUser && (
+          <div className="hidden md:flex items-center space-x-4">
+            <Link href="/components/Users" className="hover:underline">
+              ユーザー情報
+            </Link>
+            <Link href="/components/Memory" className="hover:underline">
+              今までの記録
+            </Link>
+            <button onClick={handleSignOut} className="hover:underline">
+              サインアウト
+            </button>
+            <div>{currentUser}</div>
+          </div>
+        )}
 
         <button
           className="md:hidden text-gray-50 focus:outline-none"
