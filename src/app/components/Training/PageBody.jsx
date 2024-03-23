@@ -9,6 +9,7 @@ import { SimpleDatePicker } from "./Calendar/Calendar";
 
 import { supabase } from "src/utils/supabaseClient";
 import { TrainingWeight } from "./WeightSelection/WeightSelection";
+import { supabase_google } from "../Authentication/page";
 
 const PageBody = () => {
   // 親コンポーネントのステート（筋トレ部位、筋トレ器具）
@@ -50,6 +51,29 @@ const PageBody = () => {
 
   const router = useRouter();
 
+  const [account, setAccount] = useState("");
+
+  //ログインしたユーザーのメールアドレスをuserAccountに格納する
+  const getUserAccount = async () => {
+    // ログインのセッションを取得する処理
+    const { data } = await supabase_google.auth.getSession();
+    // セッションがあるときだけ現在ログインしているユーザーを取得する
+    if (data.session !== null) {
+      // supabaseに用意されている現在ログインしているユーザーを取得する関数
+      const {
+        data: { user },
+      } = await supabase_google.auth.getUser();
+      // currentUserにユーザーのメールアドレスを格納
+      setAccount(user.email);
+    }
+    console.log("getUserAccount内");
+  };
+
+  //ページリダイレクト時にユーザーのメールアドレスをuserAccountに格納する
+  useEffect(() => {
+    getUserAccount();
+  }, []);
+
   // トレーニング追加のボタンを押下した時にトレーニング情報を一式サーバーに追加する
   const addToServerAndPush = async (e) => {
     e.preventDefault();
@@ -64,11 +88,10 @@ const PageBody = () => {
         weight: weight,
         count: count,
         date: date,
+        account: account,
       },
     ]);
 
-    console.log(musclePart);
-    console.log(error);
     // const API_URL = process.env.NEXT_PUBLIC_API_URL || process.env.SUPABASE_URL;
     // await fetch(`${API_URL}/api/memories`, {
     //   method: "POST",

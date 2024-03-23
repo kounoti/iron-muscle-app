@@ -19,9 +19,6 @@ const supabase_google = createClient(
 export { supabase_google };
 
 export default function Authentication() {
-  const [currentUser, setCurrentUser] = useState(null);
-  const router = useRouter();
-
   // // 現在ログインしているユーザーを取得する処理
   // const getUserInfo = async () => {
   //   // ログインのセッションを取得する処理
@@ -49,6 +46,9 @@ export default function Authentication() {
 
   //   getSession();
   // }, [currentUser]);
+
+  const [currentUser, setCurrentUser] = useState(null);
+  const router = useRouter();
 
   // 現在ログインしているユーザーを取得する処理
   const getCurrentUser = async () => {

@@ -1,5 +1,5 @@
 import React from "react";
-import UserInformation from "./UserInfomation";
+import UserInformation from "./UserInformation";
 
 const user = {
   name: "サンプル ユーザー",
