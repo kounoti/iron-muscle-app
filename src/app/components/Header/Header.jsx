@@ -44,6 +44,7 @@ const Header = () => {
         throw logoutError;
       }
       setCurrentUser(null); // サインアウト時にcurrentUserをnullに設定
+      closeDrawer();
       router.push("/components/Authentication");
     } catch {
       alert("エラーが発生しました");
@@ -59,12 +60,10 @@ const Header = () => {
     <>
       <header className="bg-teal-500 text-gray-50 flex items-center justify-between p-3 md:p-5">
         <div className="flex items-center">
-          <Link href="/">
-            <h1 className="text-lg md:text-xl flex items-center cursor-pointer">
-              <GiMuscleUp className="mr-2" />
-              筋トレアプリ
-            </h1>
-          </Link>
+          <h1 className="text-lg md:text-xl flex items-center cursor-pointer">
+            <GiMuscleUp className="mr-2" />
+            筋トレアプリ
+          </h1>
         </div>
         {currentUser && (
           <div className="hidden md:flex items-center space-x-4">
@@ -77,23 +76,24 @@ const Header = () => {
             <button onClick={handleSignOut} className="hover:underline">
               サインアウト
             </button>
-            <div>{currentUser}</div>
+            {/* <div>{currentUser}</div> */}
           </div>
         )}
-
-        <button
-          className="md:hidden text-gray-50 focus:outline-none"
-          onClick={toggleDrawer}
-        >
-          <HiMenu />
-        </button>
+        {currentUser && (
+          <button
+            className="md:hidden text-gray-50 focus:outline-none"
+            onClick={toggleDrawer}
+          >
+            <HiMenu />
+          </button>
+        )}
       </header>
 
       {isDrawerOpen && (
         <div className="fixed top-0 right-0 h-full w-full bg-gray-100 bg-opacity-70 z-50">
           <div className="fixed top-0 right-0 h-full w-2/3 bg-white overflow-y-auto">
             <div className="p-4">
-              <Link href="/" passHref>
+              <Link href="/components/TopPage" passHref>
                 <div className="w-full p-2 border-b border-gray-500">
                   <button
                     className="w-full p-4  bg-teal-100 font-bold"
@@ -123,6 +123,14 @@ const Header = () => {
                   </button>
                 </div>
               </Link>
+              <div className="w-full p-2 border-b border-gray-500">
+                <button
+                  className="w-full p-4 bg-teal-100 font-bold"
+                  onClick={handleSignOut}
+                >
+                  サインアウト
+                </button>
+              </div>
             </div>
           </div>
           <div
