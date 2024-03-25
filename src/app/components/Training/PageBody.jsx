@@ -10,6 +10,7 @@ import { SimpleDatePicker } from "./Calendar/Calendar";
 import { supabase } from "src/utils/supabaseClient";
 import { TrainingWeight } from "./WeightSelection/WeightSelection";
 import { supabase_google } from "../Authentication/page";
+import { BodyWeight } from "./BodyWeight/BodyWeight";
 
 const PageBody = () => {
   // 親コンポーネントのステート（筋トレ部位、筋トレ器具）
@@ -47,6 +48,13 @@ const PageBody = () => {
   // 子コンポーネントからの値を受け取るコールバック関数（実施日）
   const handleChildDateChange = (newDate) => {
     setDate(newDate);
+  };
+
+  // 親コンポーネントのステート（体重）
+  const [bodyWeight, setBodyWeight] = useState("");
+  // 子コンポーネントからの値を受け取るコールバック関数（体重）
+  const handleChildBodyWeightChange = (newBodyWeight) => {
+    setBodyWeight(newBodyWeight);
   };
 
   const router = useRouter();
@@ -89,6 +97,7 @@ const PageBody = () => {
         count: count,
         date: date,
         account: account,
+        bodyWeight: bodyWeight,
       },
     ]);
 
@@ -141,6 +150,7 @@ const PageBody = () => {
           <TrainingWeight onWeightChange={handleChildWeightChange} />
           <TrainingCount onCountChange={handleChildCountChange} />
           <SimpleDatePicker onChildDateChange={handleChildDateChange} />
+          <BodyWeight onChildBodyWeightChange={handleChildBodyWeightChange} />
         </Box>
       </ChakraProvider>
 

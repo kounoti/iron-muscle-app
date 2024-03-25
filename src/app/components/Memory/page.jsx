@@ -4,6 +4,7 @@ import TrainingMemory from "./TrainingMemory";
 import { supabase } from "src/utils/supabaseClient";
 import MemoryGraph from "./MemoryGraph";
 import { supabase_google } from "../Authentication/page";
+import BodyWeightChart from "./BodyWeightChart";
 
 export default function Page() {
   const [account, setAccount] = useState("");
@@ -38,7 +39,8 @@ export default function Page() {
         const { data, error } = await supabase
           .from("posts")
           .select("*")
-          .eq("account", account);
+          .eq("account", account)
+          .order("date", { ascending: true });
         // エラー以外の時にmemoriesにdataオブジェクトを格納する。
         if (error) {
           console.error("Error fetching memories:", error.message);
@@ -59,13 +61,12 @@ export default function Page() {
       </h1>
       <TrainingMemory memories={memories} />
 
-      {/* <MemoryGraph memories={memories} /> */}
-
       <div className="flex justify-center">
         <a href="/" className="font-bold text-blue-700">
           TOPへ戻る
         </a>
       </div>
+      <BodyWeightChart account={account} />
     </>
   );
 }
