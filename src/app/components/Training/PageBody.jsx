@@ -150,7 +150,7 @@ const PageBody = () => {
           <TrainingWeight onWeightChange={handleChildWeightChange} />
           <TrainingCount onCountChange={handleChildCountChange} />
           <SimpleDatePicker onChildDateChange={handleChildDateChange} />
-          <BodyWeight onChildBodyWeightChange={handleChildBodyWeightChange} />
+          {/* <BodyWeight onChildBodyWeightChange={handleChildBodyWeightChange} /> */}
         </Box>
       </ChakraProvider>
 

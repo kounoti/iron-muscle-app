@@ -66,7 +66,7 @@ export default function Page() {
           TOPへ戻る
         </a>
       </div>
-      <BodyWeightChart account={account} />
+      {/* <BodyWeightChart account={account} /> */}
     </>
   );
 }
