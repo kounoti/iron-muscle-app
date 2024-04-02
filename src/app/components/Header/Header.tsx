@@ -8,7 +8,7 @@ import { supabase_google } from "../Authentication/page";
 import { useRouter } from "next/navigation";
 
 const Header = () => {
-  const [isDrawerOpen, setDrawerOpen] = useState(false);
+  const [isDrawerOpen, setDrawerOpen] = useState<boolean>(false);
 
   const toggleDrawer = () => {
     setDrawerOpen(!isDrawerOpen);

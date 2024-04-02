@@ -106,6 +106,13 @@
       }
     ]
   },
-  "include": ["next-env.d.ts", ".next/types/**/*.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    ".next/types/**/*.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/app/components/Training/BodyWeight/BodyWeight.jsx",
+    "src/app/components/Training/PageBody.jsx"
+  ],
   "exclude": ["node_modules"]
 }
