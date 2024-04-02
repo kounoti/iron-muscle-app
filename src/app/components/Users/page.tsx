@@ -1,7 +1,15 @@
 import React from "react";
 import UserInformation from "./UserInformation";
 
-const user = {
+export interface userType {
+  name: string;
+  age: number;
+  avatar: string;
+  height: number;
+  weight: number;
+}
+
+const user: userType = {
   name: "サンプル ユーザー",
   age: 25,
   avatar: "/avatar.jpg", // 画像のパスを実際のデータに置き換えてください

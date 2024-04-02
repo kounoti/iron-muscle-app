@@ -1,7 +1,12 @@
 import Image from "next/image";
 import React from "react";
+import { userType } from "./page";
 
-const UserInformation = ({ user }) => {
+interface userInformationProps {
+  user: userType;
+}
+
+const UserInformation: React.FC<userInformationProps> = ({ user }) => {
   return (
     <div className="flex justify-center items-center mt-8">
       <div className="max-w-md w-full bg-white shadow-md rounded-md p-6">

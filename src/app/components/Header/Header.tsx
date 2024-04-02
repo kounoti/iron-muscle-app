@@ -18,7 +18,7 @@ const Header = () => {
     setDrawerOpen(false);
   };
 
-  const [currentUser, setCurrentUser] = useState(null);
+  const [currentUser, setCurrentUser] = useState<string | null>("");
 
   const router = useRouter();
 
@@ -33,7 +33,7 @@ const Header = () => {
         data: { user },
       } = await supabase_google.auth.getUser();
       // currentUserにユーザーのメールアドレスを格納
-      setCurrentUser(user.email);
+      setCurrentUser(user?.email ?? "");
     }
   };
 
