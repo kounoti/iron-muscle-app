@@ -4,10 +4,15 @@ import { useState } from "react";
 import { Box, Select } from "@chakra-ui/react";
 import { weights } from "./Weights";
 
-export const TrainingWeight = ({ onWeightChange }) => {
-  const [trainingWeight, setTrainingWeight] = useState("");
+// SimpleDatePickerのPropsの型定義
+type TrainingWeightProps = {
+  onWeightChange: (newWeight: string) => void;
+};
 
-  const handleChangeWeight = (newWeight) => {
+export const TrainingWeight = ({ onWeightChange }: TrainingWeightProps) => {
+  const [trainingWeight, setTrainingWeight] = useState<string>("");
+
+  const handleChangeWeight = (newWeight: string): void => {
     setTrainingWeight(newWeight);
     onWeightChange(newWeight);
   };
