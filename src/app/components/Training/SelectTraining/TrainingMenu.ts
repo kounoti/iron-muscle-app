@@ -1,21 +1,25 @@
-const chestTrainingMenus = ["ベンチプレス", "チェストプレス", "ダンベルフライ"];
+const chestTrainingMenus: string[] = [
+  "ベンチプレス",
+  "チェストプレス",
+  "ダンベルフライ",
+];
 
-const backTrainingMenus = [
+const backTrainingMenus: string[] = [
   "ラットプルダウン",
   "デッドリフト",
   "チンニング(懸垂)",
 ];
-const legTrainingMenus = [
+const legTrainingMenus: string[] = [
   "スクワット",
   "レッグプレス",
   "レッグエクステンション",
 ];
-const shoulderTrainingMenus = [
+const shoulderTrainingMenus: string[] = [
   "サイドレイズ",
   "ショルダープレス",
   "フロントレイズ",
 ];
-const armTrainingMenus = ["アームカール", "ダンベルカール"];
+const armTrainingMenus: string[] = ["アームカール", "ダンベルカール"];
 
 export {
   chestTrainingMenus,

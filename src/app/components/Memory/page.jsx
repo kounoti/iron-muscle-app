@@ -1,7 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import TrainingMemory from "./TrainingMemory";
-import { supabase } from "src/utils/supabaseClient";
+
+import { supabase } from "../../../utils/supabaseClient";
 import MemoryGraph from "./MemoryGraph";
 import { supabase_google } from "../Authentication/page";
 import BodyWeightChart from "./BodyWeightChart";

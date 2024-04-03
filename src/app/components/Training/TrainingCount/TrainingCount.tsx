@@ -10,7 +10,7 @@ type TrainingCountProps = {
 };
 
 export const TrainingCount = ({ onCountChange }: TrainingCountProps) => {
-  const [trainingCount, setTrainingCount] = useState("");
+  const [trainingCount, setTrainingCount] = useState("-");
 
   const handleChangeCount = (newCount: string) => {
     setTrainingCount(newCount);

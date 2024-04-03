@@ -1,5 +1,5 @@
 import React from "react";
-import { supabase } from "src/utils/supabaseClient";
+
 import { RiDeleteBin6Fill } from "react-icons/ri";
 import { useRouter } from "next/navigation";
 
