@@ -112,7 +112,7 @@
     "**/*.ts",
     "**/*.tsx",
     "src/app/components/Training/BodyWeight/BodyWeight.jsx",
-    "src/app/components/Training/PageBody.jsx"
+    "src/app/components/Training/PageBody.tsx"
   ],
   "exclude": ["node_modules"]
 }

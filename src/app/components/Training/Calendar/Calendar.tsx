@@ -5,10 +5,17 @@ import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-export const SimpleDatePicker = ({ onChildDateChange }) => {
-  const [startDate, setStartDate] = useState(new Date());
+// SimpleDatePickerのPropsの型定義
+type SimpleDatePickerProps = {
+  onChildDateChange: (newDate: string) => void;
+};
 
-  const updateDate = (newDate) => {
+export const SimpleDatePicker = ({
+  onChildDateChange,
+}: SimpleDatePickerProps) => {
+  const [startDate, setStartDate] = useState<Date>(new Date());
+
+  const updateDate = (newDate: Date): void => {
     const year = newDate.getFullYear();
     const month = newDate.getMonth() + 1; // getMonthは0から始まるため+1
     const day = newDate.getDate();
@@ -24,7 +31,7 @@ export const SimpleDatePicker = ({ onChildDateChange }) => {
         <DatePicker
           showIcon
           selected={startDate}
-          onChange={(date) => updateDate(date)}
+          onChange={(date: Date) => updateDate(date)}
         />
 
         {/* 選択した日付の月を表示
