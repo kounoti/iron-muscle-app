@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Box, Select } from "@chakra-ui/react";
 import { weights } from "./Weights";
 
-// SimpleDatePickerのPropsの型定義
+// TrainingWeightPropsの型定義
 type TrainingWeightProps = {
   onWeightChange: (newWeight: string) => void;
 };

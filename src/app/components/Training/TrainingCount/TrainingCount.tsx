@@ -4,10 +4,15 @@ import { useState } from "react";
 import { Box, Select } from "@chakra-ui/react";
 import { counters } from "./counters";
 
-export const TrainingCount = ({ onCountChange }) => {
+// TrainingCountのProps型定義
+type TrainingCountProps = {
+  onCountChange: (newCount: string) => void;
+};
+
+export const TrainingCount = ({ onCountChange }: TrainingCountProps) => {
   const [trainingCount, setTrainingCount] = useState("");
 
-  const handleChangeCount = (newCount) => {
+  const handleChangeCount = (newCount: string) => {
     setTrainingCount(newCount);
     onCountChange(newCount);
   };
