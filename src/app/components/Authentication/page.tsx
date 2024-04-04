@@ -1,7 +1,7 @@
 "use client";
 
 import Head from "next/head";
-import { createClient } from "@supabase/supabase-js";
+import { SupabaseClient, createClient } from "@supabase/supabase-js";
 import { Auth } from "@supabase/auth-ui-react";
 import {
   // Import predefined theme
@@ -10,7 +10,7 @@ import {
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
-const supabase_google = createClient(
+const supabase_google: SupabaseClient = createClient(
   "https://vjwvrqtjtwowuxxxznoq.supabase.co",
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZqd3ZycXRqdHdvd3V4eHh6bm9xIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDk5NjgzMjksImV4cCI6MjAyNTU0NDMyOX0.bNNhGE_PIb2NqQh9Id-KxjzfClSw_rANLTX7cOz3iHM"
 );
@@ -19,34 +19,6 @@ const supabase_google = createClient(
 export { supabase_google };
 
 export default function Authentication() {
-  // // 現在ログインしているユーザーを取得する処理
-  // const getUserInfo = async () => {
-  //   // ログインのセッションを取得する処理
-  //   const { data } = await supabase_google.auth.getSession();
-  //   // セッションがあるときだけ現在ログインしているユーザーを取得する
-  //   if (data.session !== null) {
-  //     // supabaseに用意されている現在ログインしているユーザーを取得する関数
-  //     const {
-  //       data: { user },
-  //     } = await supabase_google.auth.getUser();
-  //     // currentUserにユーザーのメールアドレスを格納
-  //     setCurrentUser(user.email);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   const getSession = async () => {
-  //     console.log("getSession内");
-  //     const { dat: session } = await supabase_google.auth.getSession();
-  //     if (session) {
-  //       setCurrentUser(data.user.email);
-  //     }
-  //     console.log(currentUser);
-  //   };
-
-  //   getSession();
-  // }, [currentUser]);
-
   const [currentUser, setCurrentUser] = useState<string>("");
   const router = useRouter();
 
