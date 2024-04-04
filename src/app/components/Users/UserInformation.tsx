@@ -2,9 +2,9 @@ import Image from "next/image";
 import React from "react";
 import { userType } from "./page";
 
-interface userInformationProps {
+type userInformationProps = {
   user: userType;
-}
+};
 
 const UserInformation: React.FC<userInformationProps> = ({ user }) => {
   return (

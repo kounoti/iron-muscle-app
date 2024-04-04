@@ -3,12 +3,24 @@ import React, { useEffect, useState } from "react";
 import TrainingMemory from "./TrainingMemory";
 
 import { supabase } from "../../../utils/supabaseClient";
-import MemoryGraph from "./MemoryGraph";
+// import MemoryGraph from "./MemoryGraph";
 import { supabase_google } from "../Authentication/page";
-import BodyWeightChart from "./BodyWeightChart";
+import { UUID } from "crypto";
+// import BodyWeightChart from "./BodyWeightChart";
+
+export type MemoryType = {
+  // メモリの型定義
+  id: UUID;
+  musclePart: string;
+  trainingMenu: string;
+  weight: string;
+  count: string;
+  date: Date;
+  account: string;
+};
 
 export default function Page() {
-  const [account, setAccount] = useState("");
+  const [account, setAccount] = useState<string>("");
 
   //ログインしたユーザーのメールアドレスをuserAccountに格納する
   const getUserAccount = async () => {
@@ -21,7 +33,7 @@ export default function Page() {
         data: { user },
       } = await supabase_google.auth.getUser();
       // currentUserにユーザーのメールアドレスを格納
-      setAccount(user.email);
+      setAccount(user?.email ?? "");
     }
     console.log("getUserAccount内");
   };
@@ -31,11 +43,11 @@ export default function Page() {
     getUserAccount();
   }, []);
 
-  const [memories, setMemories] = useState([]);
+  const [memories, setMemories] = useState<MemoryType[]>([]);
 
   //  sueEffect内で非同期処理を行うことでuse clientとasyncの衝突を防ぐ
   useEffect(() => {
-    async function fetchData() {
+    async function fetchData(): Promise<void> {
       try {
         const { data, error } = await supabase
           .from("posts")
@@ -48,7 +60,7 @@ export default function Page() {
           return;
         }
         setMemories(data);
-      } catch (error) {
+      } catch (error: any) {
         console.error("Error fetching memories:", error.message);
       }
     }

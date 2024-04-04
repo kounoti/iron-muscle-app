@@ -1,13 +1,13 @@
 import React from "react";
 import UserInformation from "./UserInformation";
 
-export interface userType {
+export type userType = {
   name: string;
   age: number;
   avatar: string;
   height: number;
   weight: number;
-}
+};
 
 const user: userType = {
   name: "サンプル ユーザー",
@@ -17,7 +17,7 @@ const user: userType = {
   weight: 50,
 };
 
-const Page = () => {
+const Page: React.FC<void> = () => {
   return (
     <>
       <div>

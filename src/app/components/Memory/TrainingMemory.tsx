@@ -2,8 +2,9 @@ import React from "react";
 
 import { RiDeleteBin6Fill } from "react-icons/ri";
 import { useRouter } from "next/navigation";
+import { MemoryType } from "./page";
 
-const TrainingMemory = ({ memories }) => {
+const TrainingMemory = ({ memories }: MemoryType[]) => {
   const router = useRouter();
 
   if (!Array.isArray(memories)) {

@@ -21,6 +21,7 @@
     "@supabase/auth-ui-shared": "^0.1.8",
     "@supabase/supabase-js": "^2.39.8",
     "@types/react-datepicker": "^6.2.0",
+    "@types/uuid": "^9.0.8",
     "chart.js": "^4.4.2",
     "chartjs-adapter-date-fns": "^3.0.0",
     "chartjs-adapter-moment": "^1.0.1",
