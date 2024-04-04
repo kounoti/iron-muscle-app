@@ -47,7 +47,7 @@ export default function Authentication() {
   //   getSession();
   // }, [currentUser]);
 
-  const [currentUser, setCurrentUser] = useState(null);
+  const [currentUser, setCurrentUser] = useState<string>("");
   const router = useRouter();
 
   // 現在ログインしているユーザーを取得する処理
@@ -61,7 +61,7 @@ export default function Authentication() {
         data: { user },
       } = await supabase_google.auth.getUser();
       // currentUserにユーザーのメールアドレスを格納
-      setCurrentUser(user.email);
+      setCurrentUser(user?.email ?? "");
     }
   };
 
