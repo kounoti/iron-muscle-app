@@ -2,16 +2,33 @@ import React from "react";
 
 import { RiDeleteBin6Fill } from "react-icons/ri";
 import { useRouter } from "next/navigation";
-import { MemoryType } from "./page";
+import { supabase } from "../../../utils/supabaseClient";
+import { UUID } from "crypto";
 
-const TrainingMemory = ({ memories }: MemoryType[]) => {
+export type MemoryType = {
+  // メモリの型定義
+  id: UUID;
+  musclePart: string;
+  trainingMenu: string;
+  weight: string;
+  count: string;
+  date: string;
+  account?: string;
+};
+
+// SimpleDatePickerのPropsの型定義
+type TrainingMemoryType = {
+  memories: MemoryType[];
+};
+
+const TrainingMemory = ({ memories }: TrainingMemoryType) => {
   const router = useRouter();
 
   if (!Array.isArray(memories)) {
     memories = [];
   }
 
-  const DeleteMemory = async (id) => {
+  const DeleteMemory = async (id: UUID) => {
     const { data, error } = await supabase.from("posts").delete().eq("id", id);
     if (error) {
       console.error("Error deleting memory:", error.message);
@@ -48,7 +65,7 @@ const TrainingMemory = ({ memories }: MemoryType[]) => {
             </tr>
           </thead>
           <tbody>
-            {memories.map((memory) => (
+            {memories.map((memory: MemoryType) => (
               <tr key={memory.id}>
                 <td className="p-2 sm:px-4 md:px-6 lg:px-8 xl:px-10 text-center border">
                   {memory.date}

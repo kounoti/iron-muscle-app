@@ -1,23 +1,12 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import TrainingMemory from "./TrainingMemory";
+import TrainingMemory, { MemoryType } from "./TrainingMemory";
 
 import { supabase } from "../../../utils/supabaseClient";
 // import MemoryGraph from "./MemoryGraph";
 import { supabase_google } from "../Authentication/page";
-import { UUID } from "crypto";
-// import BodyWeightChart from "./BodyWeightChart";
 
-export type MemoryType = {
-  // メモリの型定義
-  id: UUID;
-  musclePart: string;
-  trainingMenu: string;
-  weight: string;
-  count: string;
-  date: Date;
-  account: string;
-};
+// import BodyWeightChart from "./BodyWeightChart";
 
 export default function Page() {
   const [account, setAccount] = useState<string>("");
