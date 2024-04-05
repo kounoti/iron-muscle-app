@@ -6,7 +6,7 @@ import { HiMenu } from "react-icons/hi";
 import { GiMuscleUp } from "react-icons/gi";
 
 import { useRouter } from "next/navigation";
-import { supabase_google } from "../../../utils/supabaseClient";
+import { supabase_google } from "../Authentication/page";
 
 const Header = () => {
   const [isDrawerOpen, setDrawerOpen] = useState<boolean>(false);
