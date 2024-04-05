@@ -19,7 +19,7 @@ const Header = () => {
     setDrawerOpen(false);
   };
 
-  const [currentUser, setCurrentUser] = useState<string | null>("");
+  const [currentUser, setCurrentUser] = useState<string | null>(null);
 
   const router = useRouter();
 
@@ -44,7 +44,7 @@ const Header = () => {
       if (logoutError) {
         throw logoutError;
       }
-      setCurrentUser(""); // サインアウト時にcurrentUserをnullに設定
+      setCurrentUser(null); // サインアウト時にcurrentUserをnullに設定
       closeDrawer();
       router.push("/components/Authentication");
     } catch {

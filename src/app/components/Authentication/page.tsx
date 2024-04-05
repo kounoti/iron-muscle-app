@@ -12,7 +12,7 @@ import { useRouter } from "next/navigation";
 import { supabase_google } from "./SupabaseGoogle";
 
 export default function Page() {
-  const [currentUser, setCurrentUser] = useState<string>("");
+  const [currentUser, setCurrentUser] = useState<string | null>(null);
   const router = useRouter();
 
   // 現在ログインしているユーザーを取得する処理
@@ -35,7 +35,7 @@ export default function Page() {
 
   // ログインが完了している場合はTopPageにリダイレクトする
   useEffect(() => {
-    if (currentUser !== "") {
+    if (currentUser !== null) {
       console.log("ルート前");
       router.push("/components/TopPage");
     }

@@ -10,7 +10,7 @@ import { supabase_google } from "../Authentication/SupabaseGoogle";
 // import BodyWeightChart from "./BodyWeightChart";
 
 export default function Page() {
-  const [account, setAccount] = useState<string>("");
+  const [account, setAccount] = useState<string | null>(null);
 
   //ログインしたユーザーのメールアドレスをuserAccountに格納する
   const getUserAccount = async () => {
