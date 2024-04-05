@@ -8,9 +8,9 @@ import { TrainingCount } from "./TrainingCount/TrainingCount";
 import { SimpleDatePicker } from "./Calendar/Calendar";
 
 import { TrainingWeight } from "./WeightSelection/WeightSelection";
-import { supabase_google } from "../Authentication/page";
+
 import { BodyWeight } from "./BodyWeight/BodyWeight";
-import { supabase } from "../../../utils/supabaseClient";
+import { supabase, supabase_google } from "../../../utils/supabaseClient";
 
 const PageBody = () => {
   // 親コンポーネントのステート（筋トレ部位、筋トレ器具）

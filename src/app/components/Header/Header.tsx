@@ -4,8 +4,9 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { HiMenu } from "react-icons/hi";
 import { GiMuscleUp } from "react-icons/gi";
-import { supabase_google } from "../Authentication/page";
+
 import { useRouter } from "next/navigation";
+import { supabase_google } from "../../../utils/supabaseClient";
 
 const Header = () => {
   const [isDrawerOpen, setDrawerOpen] = useState<boolean>(false);

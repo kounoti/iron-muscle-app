@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import Authentication from "../Authentication/page";
 
 export default function Page() {
   return (

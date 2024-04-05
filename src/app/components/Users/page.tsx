@@ -17,7 +17,7 @@ const user: userType = {
   weight: 50,
 };
 
-const Page: React.FC<void> = () => {
+const Page: React.FC = () => {
   return (
     <>
       <div>
