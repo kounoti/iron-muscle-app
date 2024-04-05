@@ -46,7 +46,7 @@ const Header = () => {
       }
       setCurrentUser(null); // サインアウト時にcurrentUserをnullに設定
       closeDrawer();
-      router.push("/components/Authentication");
+      router.push("/components/Authentication/page");
     } catch {
       alert("エラーが発生しました");
     }
