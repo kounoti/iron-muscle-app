@@ -26,7 +26,7 @@ export default function Page() {
         data: { user },
       } = await supabase_google.auth.getUser();
       // currentUserにユーザーのメールアドレスを格納
-      setCurrentUser(user?.email ?? "");
+      setCurrentUser(user?.email ?? null);
     }
   };
   useEffect(() => {

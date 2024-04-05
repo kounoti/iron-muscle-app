@@ -34,7 +34,7 @@ const Header = () => {
         data: { user },
       } = await supabase_google.auth.getUser();
       // currentUserにユーザーのメールアドレスを格納
-      setCurrentUser(user?.email ?? "");
+      setCurrentUser(user?.email ?? null);
     }
   };
 
@@ -46,7 +46,7 @@ const Header = () => {
       }
       setCurrentUser(null); // サインアウト時にcurrentUserをnullに設定
       closeDrawer();
-      router.push("/components/Authentication/page");
+      router.push("/components/Authentication");
     } catch {
       alert("エラーが発生しました");
     }
