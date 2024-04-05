@@ -11,7 +11,7 @@ import { TrainingWeight } from "./WeightSelection/WeightSelection";
 
 import { BodyWeight } from "./BodyWeight/BodyWeight";
 import { supabase } from "../../../utils/supabaseClient";
-import { supabase_google } from "../Authentication/page";
+import { supabase_google } from "../Authentication/SupabaseGoogle";
 
 const PageBody = () => {
   // 親コンポーネントのステート（筋トレ部位、筋トレ器具）
