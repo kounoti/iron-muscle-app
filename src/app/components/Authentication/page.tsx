@@ -34,12 +34,12 @@ export default function Page() {
   }, []);
 
   // ログインが完了している場合はTopPageにリダイレクトする
-  useEffect(() => {
-    if (currentUser !== null) {
-      console.log("ルート前");
-      router.push("/components/TopPage");
-    }
-  }, [currentUser, router]);
+  // useEffect(() => {
+  //   if (currentUser !== null) {
+  //     console.log("ルート前");
+  //     router.push("/components/TopPage");
+  //   }
+  // }, [currentUser, router]);
 
   return (
     <>
