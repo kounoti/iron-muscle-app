@@ -2,7 +2,8 @@
 import React, { useEffect, useState } from "react";
 import TrainingMemory, { MemoryType } from "./TrainingMemory";
 
-import { supabase, supabase_google } from "../../../utils/supabaseClient";
+import { supabase } from "../../../utils/supabaseClient";
+import { supabase_google } from "../Authentication/page";
 
 // import MemoryGraph from "./MemoryGraph";
 

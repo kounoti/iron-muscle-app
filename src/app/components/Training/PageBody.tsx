@@ -10,7 +10,8 @@ import { SimpleDatePicker } from "./Calendar/Calendar";
 import { TrainingWeight } from "./WeightSelection/WeightSelection";
 
 import { BodyWeight } from "./BodyWeight/BodyWeight";
-import { supabase, supabase_google } from "../../../utils/supabaseClient";
+import { supabase } from "../../../utils/supabaseClient";
+import { supabase_google } from "../Authentication/page";
 
 const PageBody = () => {
   // 親コンポーネントのステート（筋トレ部位、筋トレ器具）
