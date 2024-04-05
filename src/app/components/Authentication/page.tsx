@@ -1,7 +1,7 @@
 "use client";
 
 import Head from "next/head";
-import { SupabaseClient, createClient } from "@supabase/supabase-js";
+import { createClient } from "@supabase/supabase-js";
 import { Auth } from "@supabase/auth-ui-react";
 import {
   // Import predefined theme
@@ -18,7 +18,7 @@ const supabase_google = createClient(
 // supabase_googleをexportする
 export { supabase_google };
 
-export default function Authentication() {
+export default function Page() {
   const [currentUser, setCurrentUser] = useState<string>("");
   const router = useRouter();
 
