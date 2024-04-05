@@ -35,7 +35,7 @@ export default function Authentication() {
 
   // ログインが完了している場合はTopPageにリダイレクトする
   useEffect(() => {
-    if (currentUser !== null) {
+    if (currentUser !== "") {
       console.log("ルート前");
       router.push("/components/TopPage");
     }
