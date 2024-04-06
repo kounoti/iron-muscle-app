@@ -26,7 +26,7 @@ const Page: React.FC = () => {
       </div>
 
       <div className="flex justify-center">
-        <a href="/" className="font-bold text-blue-700 mt-5">
+        <a href="/components/TopPage" className="font-bold text-blue-700 mt-5">
           TOPへ戻る
         </a>
       </div>

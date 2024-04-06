@@ -65,7 +65,7 @@ export default function Page() {
       <TrainingMemory memories={memories} />
 
       <div className="flex justify-center">
-        <a href="/" className="font-bold text-blue-700">
+        <a href="/components/TopPage" className="font-bold text-blue-700">
           TOPへ戻る
         </a>
       </div>
