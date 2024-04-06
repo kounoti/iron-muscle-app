@@ -4,6 +4,7 @@ import TrainingMemory, { MemoryType } from "./TrainingMemory";
 
 import { supabase } from "../../../utils/supabaseClient";
 import { supabase_google } from "../Authentication/SupabaseGoogle";
+import Link from "next/link";
 
 // import MemoryGraph from "./MemoryGraph";
 
@@ -65,9 +66,9 @@ export default function Page() {
       <TrainingMemory memories={memories} />
 
       <div className="flex justify-center">
-        <a href="/components/TopPage" className="font-bold text-blue-700">
+        <Link href="/components/TopPage" className="font-bold text-blue-700">
           TOPへ戻る
-        </a>
+        </Link>
       </div>
       {/* <BodyWeightChart account={account} /> */}
     </>

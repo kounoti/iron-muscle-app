@@ -12,7 +12,7 @@ export type userType = {
 const user: userType = {
   name: "サンプル ユーザー",
   age: 25,
-  avatar: "/avatar.jpg", // 画像のパスを実際のデータに置き換えてください
+  avatar: "/avatar.jpg",
   height: 160,
   weight: 50,
 };
