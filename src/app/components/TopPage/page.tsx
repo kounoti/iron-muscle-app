@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState } from "react";
 import TopPage from "./TopPage";
 import { supabase_google } from "../Authentication/SupabaseGoogle";
