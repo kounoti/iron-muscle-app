@@ -2,13 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-header {
+/* header {
   background-color: skyblue;
 }
 
 footer {
   background-color: greenyellow;
-}
+} */
 
 .Link {
   font: bold;

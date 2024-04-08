@@ -1,12 +1,16 @@
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { userType } from "./page";
+import UserModal from "./UserModal"; // UserModalを追加
 
 type userInformationProps = {
   user: userType;
 };
 
 const UserInformation: React.FC<userInformationProps> = ({ user }) => {
+  // 編集モーダルの表示状態を管理するstateを追加
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <div className="flex justify-center items-center mt-8">
       <div className="max-w-md w-full bg-white shadow-md rounded-md p-6">
@@ -27,6 +31,21 @@ const UserInformation: React.FC<userInformationProps> = ({ user }) => {
           <p className="text-gray-600">
             身長: {user.height} cm, 体重: {user.weight} kg
           </p>
+        </div>
+        <div className="flex justify-center items-center mt-8">
+          {/* 編集ボタンを追加 */}
+          <button
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
+            onClick={() => setIsModalOpen(true)}
+          >
+            プロフィールを編集
+          </button>
+          {/* 編集モーダルを追加 */}
+          <UserModal
+            isOpen={isModalOpen}
+            onClose={() => setIsModalOpen(false)}
+            user={user}
+          />
         </div>
       </div>
     </div>

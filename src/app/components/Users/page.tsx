@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import UserInformation from "./UserInformation";
 
 export type userType = {
