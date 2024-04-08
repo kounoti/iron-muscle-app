@@ -11,7 +11,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { supabase_google } from "./SupabaseGoogle";
 
-export default function Page() {
+export default function Authentication() {
   const [currentUser, setCurrentUser] = useState<string | null>(null);
   const router = useRouter();
 
