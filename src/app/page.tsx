@@ -34,8 +34,7 @@ export default function Home() {
     <>
       {/* {currentUser === null ? <Authentication /> : <TopPage />} */}
 
-      {/* <Authentication /> */}
-      <TopPage />
+      <Authentication />
       {/* <div className="flex justify-center items-center m-10">
         <Link
           href="/components/Training"
