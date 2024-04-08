@@ -5,6 +5,7 @@
 import Authentication from "./components/Authentication/page";
 import "./globals.css";
 import { supabase_google } from "./components/Authentication/SupabaseGoogle";
+import TopPage from "./components/TopPage/TopPage";
 
 // import TopPage from "./components/TopPage/TopPage";
 
@@ -33,7 +34,8 @@ export default function Home() {
     <>
       {/* {currentUser === null ? <Authentication /> : <TopPage />} */}
 
-      <Authentication />
+      {/* <Authentication /> */}
+      <TopPage />
       {/* <div className="flex justify-center items-center m-10">
         <Link
           href="/components/Training"
