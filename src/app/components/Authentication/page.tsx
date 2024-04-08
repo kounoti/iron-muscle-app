@@ -33,13 +33,13 @@ export default function Page() {
     getCurrentUser();
   }, []);
 
-  // ログインが完了している場合はTopPageにリダイレクトする
-  // useEffect(() => {
-  //   if (currentUser !== null) {
-  //     console.log("ルート前");
-  //     router.push("/components/TopPage");
-  //   }
-  // }, [currentUser, router]);
+  // ログインが完了している場合はTopPageにリダイレクトする;
+  useEffect(() => {
+    if (currentUser !== null) {
+      console.log("ルート前");
+      router.push("/components/TopPage");
+    }
+  }, [currentUser, router]);
 
   return (
     <>

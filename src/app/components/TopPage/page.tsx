@@ -1,9 +1,4 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import TopPageIn from "./TopPageIn";
-import { supabase_google } from "../Authentication/SupabaseGoogle";
-import Authentication from "../Authentication/page";
 
 export default function TopPage() {
   // const [currentUser, setCurrentUser] = useState<string | null>(null);
