@@ -1,11 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import TopPage from "./TopPage";
+import TopPageIn from "./TopPageIn";
 import { supabase_google } from "../Authentication/SupabaseGoogle";
 import Authentication from "../Authentication/page";
 
-export default function Page() {
+export default function TopPage() {
   const [currentUser, setCurrentUser] = useState<string | null>(null);
 
   // 現在ログインしているユーザーを取得する処理
@@ -26,5 +26,5 @@ export default function Page() {
     getCurrentUser();
   }, []);
 
-  return <>{currentUser === null ? <Authentication /> : <TopPage />}</>;
+  return <>{currentUser === null ? <Authentication /> : <TopPageIn />}</>;
 }

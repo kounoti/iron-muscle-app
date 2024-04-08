@@ -5,7 +5,7 @@
 import Authentication from "./components/Authentication/page";
 import "./globals.css";
 import { supabase_google } from "./components/Authentication/SupabaseGoogle";
-import TopPage from "./components/TopPage/TopPage";
+import TopPage from "./components/TopPage/TopPageIn";
 
 // import TopPage from "./components/TopPage/TopPage";
 

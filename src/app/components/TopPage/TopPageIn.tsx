@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function TopPage() {
+export default function TopPageIn() {
   return (
     <>
       <div className="flex justify-center items-center m-10">
