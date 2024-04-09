@@ -62,7 +62,7 @@ export default function Authentication() {
     };
     if (currentUser !== null) {
       console.log("ルート前");
-      router.push("/components/TopPage");
+      // router.push("/components/TopPage");
     }
   }, [currentUser, router]);
 
