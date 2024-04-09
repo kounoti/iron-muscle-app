@@ -1,5 +1,8 @@
+"use client";
+
 import React, { useState } from "react";
 import { userType } from "./page";
+import { supabase } from "../../../utils/supabaseClient";
 
 type UserModalProps = {
   isOpen: boolean;
@@ -12,10 +15,20 @@ const UserModal: React.FC<UserModalProps> = ({ isOpen, onClose, user }) => {
   const [height, setHeight] = useState<number>(user.height);
   const [weight, setWeight] = useState<number>(user.weight);
 
-  const handleSave = () => {
-    console.log("Name:", name);
-    console.log("Height:", height);
-    console.log("Weight:", weight);
+  // 保存ボタンを押下した時にユーザー情報を一式サーバーに追加する
+  const addToUserInformation = async (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    e.preventDefault();
+
+    const { data, error } = await supabase.from("userInformation").insert([
+      {
+        user_height: height,
+        user_weight: weight,
+        user_name: name,
+      },
+    ]);
+
     onClose();
   };
 
@@ -88,7 +101,7 @@ const UserModal: React.FC<UserModalProps> = ({ isOpen, onClose, user }) => {
             キャンセル
           </button>
           <button
-            onClick={handleSave}
+            onClick={addToUserInformation}
             className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
           >
             保存
