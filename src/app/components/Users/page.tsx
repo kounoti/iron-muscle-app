@@ -14,11 +14,11 @@ export type userType = {
 
 const Page: React.FC = () => {
   const [user, setUser] = useState<userType>({
-    name: "",
-    age: 0,
+    name: "高身長",
+    age: 30,
     avatar: "",
-    height: 0,
-    weight: 0,
+    height: 180,
+    weight: 80,
   });
 
   //  sueEffect内で非同期処理を行うことでuse clientとasyncの衝突を防ぐ
