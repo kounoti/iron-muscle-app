@@ -10,6 +10,7 @@ import {
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { supabase_google } from "./SupabaseGoogle";
+import { supabase } from "../../../utils/supabaseClient";
 
 export default function Authentication() {
   const [currentUser, setCurrentUser] = useState<string | null>(null);
@@ -32,6 +33,20 @@ export default function Authentication() {
   useEffect(() => {
     getCurrentUser();
   }, []);
+
+  useEffect(() => {
+    // ユーザ情報をサーバーに追加する
+    const addToUserInfo = async () => {
+      const { data, error } = await supabase.from("userInformation").insert([
+        {
+          user_account: currentUser,
+          user_height: 160,
+          user_weight: 50,
+          user_name: "ゲスト",
+        },
+      ]);
+    };
+  }, [currentUser]);
 
   // ログインが完了している場合はTopPageにリダイレクトする;
   useEffect(() => {
