@@ -1,8 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { userType } from "./page";
 import { supabase } from "../../../utils/supabaseClient";
+import { supabase_google } from "../Authentication/SupabaseGoogle";
 
 type UserModalProps = {
   isOpen: boolean;
@@ -14,6 +15,29 @@ const UserModal: React.FC<UserModalProps> = ({ isOpen, onClose, user }) => {
   const [name, setName] = useState<string>(user.name);
   const [height, setHeight] = useState<number>(user.height);
   const [weight, setWeight] = useState<number>(user.weight);
+
+  const [account, setAccount] = useState("");
+
+  //ログインしたユーザーのメールアドレスをuserAccountに格納する
+  const getUserAccount = async () => {
+    // ログインのセッションを取得する処理
+    const { data } = await supabase_google.auth.getSession();
+    // セッションがあるときだけ現在ログインしているユーザーを取得する
+    if (data.session !== null) {
+      // supabaseに用意されている現在ログインしているユーザーを取得する関数
+      const {
+        data: { user },
+      } = await supabase_google.auth.getUser();
+      // currentUserにユーザーのメールアドレスを格納
+      setAccount(user?.email ?? "");
+    }
+    console.log("getUserAccount内");
+  };
+
+  //ページリダイレクト時にユーザーのメールアドレスをuserAccountに格納する
+  useEffect(() => {
+    getUserAccount();
+  }, []);
 
   // 保存ボタンを押下した時にユーザー情報を一式サーバーに追加する
   const addToUserInformation = async (

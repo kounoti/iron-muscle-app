@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import UserInformation from "./UserInformation";
+import { supabase } from "../../../utils/supabaseClient";
 
 export type userType = {
   name: string;
@@ -11,15 +12,44 @@ export type userType = {
   weight: number;
 };
 
-const user: userType = {
-  name: "サンプル ユーザー",
-  age: 25,
-  avatar: "/avatar.jpg",
-  height: 160,
-  weight: 50,
-};
-
 const Page: React.FC = () => {
+  const [user, setUser] = useState<userType>({
+    name: "",
+    age: 0,
+    avatar: "",
+    height: 0,
+    weight: 0,
+  });
+
+  //  sueEffect内で非同期処理を行うことでuse clientとasyncの衝突を防ぐ
+  useEffect(() => {
+    async function fetchData(): Promise<void> {
+      try {
+        const { data, error } = await supabase
+          .from("userInformation")
+          .select("*");
+        // エラー以外の時にuserにデータを格納する。
+        if (error) {
+          console.error("Error fetching user information:", error.message);
+          return;
+        }
+        if (data && data.length > 0) {
+          const userInfo = data[0];
+          setUser({
+            name: userInfo.user_name,
+            age: userInfo.user_age,
+            avatar: userInfo.user_avatar,
+            height: userInfo.user_height,
+            weight: userInfo.user_weight,
+          });
+        }
+      } catch (error: any) {
+        console.error("Error fetching user information:", error.message);
+      }
+    }
+    fetchData();
+  }, []);
+
   return (
     <>
       <div>
