@@ -30,13 +30,13 @@ export default function Authentication() {
       // Supabaseへのデータの追加
       // ユーザー情報をUserInformationテーブルに追加する
       const { error } = await supabase
-        .from("userInformation") // UserInformationテーブルを指定
+        .from("userInformation") // userInformationテーブルを指定
         .insert([
           {
             // 追加するデータを指定
-            user_height: null, // 例として、一部の情報はnullとしています。必要に応じて適切な値に置き換えてください。
-            user_weight: null,
-            user_name: null,
+            user_height: 200,
+            user_weight: 100,
+            user_name: "Authのゲスト",
             account: user?.email ?? "", // accountはログインしているユーザーのメールアドレスとして設定
           },
         ]);
