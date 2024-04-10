@@ -1,7 +1,5 @@
 "use client";
 
-import Head from "next/head";
-import { createClient } from "@supabase/supabase-js";
 import { Auth } from "@supabase/auth-ui-react";
 import {
   // Import predefined theme
@@ -28,8 +26,28 @@ export default function Authentication() {
       } = await supabase_google.auth.getUser();
       // currentUserにユーザーのメールアドレスを格納
       setCurrentUser(user?.email ?? null);
+
+      // Supabaseへのデータの追加
+      // ユーザー情報をUserInformationテーブルに追加する
+      const { error } = await supabase
+        .from("UserInformation") // UserInformationテーブルを指定
+        .insert([
+          {
+            // 追加するデータを指定
+            user_height: null, // 例として、一部の情報はnullとしています。必要に応じて適切な値に置き換えてください。
+            user_weight: null,
+            user_name: null,
+            account: user?.email ?? "", // accountはログインしているユーザーのメールアドレスとして設定
+          },
+        ]);
+      if (error) {
+        console.error("Error adding user information:", error.message);
+      } else {
+        console.log("User information added successfully");
+      }
     }
   };
+
   useEffect(() => {
     getCurrentUser();
   }, []);
