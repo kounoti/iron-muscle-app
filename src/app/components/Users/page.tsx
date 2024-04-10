@@ -9,7 +9,7 @@ import Error from "next/error";
 const Page: React.FC = () => {
   const [user, setUser] = useState<any>(null);
 
-  const [account, setAccount] = useState("");
+  const [account, setAccount] = useState<string>("");
 
   //ログインしたユーザーのメールアドレスをuserAccountに格納する
   const getUserAccount = async () => {
