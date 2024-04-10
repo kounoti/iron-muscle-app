@@ -7,8 +7,6 @@ import { supabase_google } from "../Authentication/SupabaseGoogle";
 import Error from "next/error";
 
 const Page: React.FC = () => {
-  const [user, setUser] = useState<any>({});
-
   const [account, setAccount] = useState<string>("");
 
   //ログインしたユーザーのメールアドレスをuserAccountに格納する
@@ -32,30 +30,9 @@ const Page: React.FC = () => {
     getUserAccount();
   }, []);
 
-  useEffect(() => {
-    const fetchUserData = async () => {
-      try {
-        const { data, error } = await supabase
-          .from("userInformation")
-          .select("*")
-          .eq("user_account", account);
-
-        if (error) {
-          throw error;
-        }
-
-        setUser(data);
-      } catch (error: any) {
-        console.error("Error fetching user data:", error.message);
-      }
-    };
-
-    fetchUserData();
-  }, [account]);
-
   return (
     <>
-      <UserPage user={user} />
+      <UserPage account={account} />
     </>
   );
 };

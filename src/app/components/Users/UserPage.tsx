@@ -14,10 +14,10 @@ export type userType = {
 };
 
 type UserPageProps = {
-  user: userType;
+  account: string;
 };
 
-const UserPage: React.FC<UserPageProps> = ({ user }) => {
+const UserPage: React.FC<UserPageProps> = ({ account }) => {
   //  sueEffect内で非同期処理を行うことでuse clientとasyncの衝突を防ぐ
   //   useEffect(() => {
   //     async function fetchData(): Promise<void> {
@@ -46,6 +46,29 @@ const UserPage: React.FC<UserPageProps> = ({ user }) => {
   //     }
   //     fetchData();
   //   }, []);
+
+  const [user, setUser] = useState<any>({});
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        const { data, error } = await supabase
+          .from("userInformation")
+          .select("*")
+          .eq("user_account", account);
+
+        if (error) {
+          throw error;
+        }
+
+        setUser(data);
+      } catch (error: any) {
+        console.error("Error fetching user data:", error.message);
+      }
+    };
+
+    fetchUserData();
+  }, [account]);
 
   return (
     <>
