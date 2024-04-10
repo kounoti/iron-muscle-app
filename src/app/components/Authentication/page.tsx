@@ -30,7 +30,7 @@ export default function Authentication() {
       // Supabaseへのデータの追加
       // ユーザー情報をUserInformationテーブルに追加する
       const { error } = await supabase
-        .from("UserInformation") // UserInformationテーブルを指定
+        .from("userInformation") // UserInformationテーブルを指定
         .insert([
           {
             // 追加するデータを指定
@@ -40,6 +40,7 @@ export default function Authentication() {
             account: user?.email ?? "", // accountはログインしているユーザーのメールアドレスとして設定
           },
         ]);
+
       if (error) {
         console.error("Error adding user information:", error.message);
       } else {
