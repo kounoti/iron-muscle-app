@@ -68,7 +68,7 @@ const UserPage: React.FC<UserPageProps> = ({ account }) => {
     };
 
     fetchUserData();
-  }, [account]);
+  }, []);
 
   return (
     <>
