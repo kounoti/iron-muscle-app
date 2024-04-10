@@ -1,67 +1,76 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import UserInformation from "./UserInformation";
+import UserPage from "./UserPage";
+import { supabase_google } from "../Authentication/SupabaseGoogle";
 import { supabase } from "../../../utils/supabaseClient";
 
-export type userType = {
-  name: string;
-  age: number;
-  avatar: string;
-  height: number;
-  weight: number;
-};
-
 const Page: React.FC = () => {
-  const [user, setUser] = useState<userType>({
-    name: "高身長",
-    age: 30,
-    avatar: "",
-    height: 180,
-    weight: 80,
-  });
+  const [account, setAccount] = useState("");
 
-  //  sueEffect内で非同期処理を行うことでuse clientとasyncの衝突を防ぐ
-  useEffect(() => {
-    async function fetchData(): Promise<void> {
-      try {
-        const { data, error } = await supabase
-          .from("userInformation")
-          .select("*");
-        // エラー以外の時にuserにデータを格納する。
-        if (error) {
-          console.error("Error fetching user information:", error.message);
-          return;
-        }
-        if (data && data.length > 0) {
-          const userInfo = data[0];
-          setUser({
-            name: userInfo.user_name,
-            age: userInfo.user_age,
-            avatar: userInfo.user_avatar,
-            height: userInfo.user_height,
-            weight: userInfo.user_weight,
-          });
-        }
-      } catch (error: any) {
-        console.error("Error fetching user information:", error.message);
+  //ログインしたユーザーのメールアドレスをuserAccountに格納する
+  const getUserAccount = async () => {
+    // ログインのセッションを取得する処理
+    const { data } = await supabase_google.auth.getSession();
+    // セッションがあるときだけ現在ログインしているユーザーを取得する
+    if (data.session !== null) {
+      // supabaseに用意されている現在ログインしているユーザーを取得する関数
+      const {
+        data: { user },
+      } = await supabase_google.auth.getUser();
+      // currentUserにユーザーのメールアドレスを格納
+      setAccount(user?.email ?? "");
+
+      // 既に同じアカウントがUserInformationテーブルに存在するかチェック
+      const { data: existingUserData, error } = await supabase
+        .from("UserInformation")
+        .select("account")
+        .eq("account", user?.email);
+
+      if (error) {
+        console.error(
+          "Error checking existing user information:",
+          error.message
+        );
+        return;
+      }
+
+      // 同じアカウントが見つかった場合は追加しない
+      if (existingUserData && existingUserData.length > 0) {
+        console.log("User information already exists in UserInformation table");
+        return;
+      }
+
+      // Supabaseへのデータの追加
+      // ユーザー情報をUserInformationテーブルに追加する
+      const { error: insertError } = await supabase_google
+        .from("UserInformation") // UserInformationテーブルを指定
+        .insert([
+          {
+            // 追加するデータを指定
+            user_height: 200,
+            user_weight: 100,
+            user_name: "UserPageのゲスト",
+            account: user?.email ?? "", // accountはログインしているユーザーのメールアドレスとして設定
+          },
+        ]);
+      if (insertError) {
+        console.error("Error adding user information:", insertError.message);
+      } else {
+        console.log("User information added successfully");
       }
     }
-    fetchData();
+    console.log("getUserAccount内");
+  };
+
+  //ページリダイレクト時にユーザーのメールアドレスをuserAccountに格納する
+  useEffect(() => {
+    getUserAccount();
   }, []);
 
   return (
     <>
-      <div>
-        <h1 className="text-3xl font-bold text-center mt-8">ユーザー情報</h1>
-        <UserInformation user={user} />
-      </div>
-
-      <div className="flex justify-center">
-        <a href="/components/TopPage" className="font-bold text-blue-700 mt-5">
-          TOPへ戻る
-        </a>
-      </div>
+      <UserPage />
     </>
   );
 };

@@ -1,9 +1,10 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { userType } from "./page";
+
 import { supabase } from "../../../utils/supabaseClient";
 import { supabase_google } from "../Authentication/SupabaseGoogle";
+import { userType } from "./UserPage";
 
 type UserModalProps = {
   isOpen: boolean;

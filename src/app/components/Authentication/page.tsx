@@ -34,35 +34,11 @@ export default function Authentication() {
     getCurrentUser();
   }, []);
 
-  // useEffect(() => {
-  //   // ユーザ情報をサーバーに追加する
-  //   const addToUserInfo = async () => {
-  //     const { data, error } = await supabase.from("userInformation").insert([
-  //       {
-  //         user_account: currentUser,
-  //         user_height: 160,
-  //         user_weight: 50,
-  //         user_name: "ゲスト",
-  //       },
-  //     ]);
-  //   };
-  // }, [currentUser]);
-
   // ログインが完了している場合はTopPageにリダイレクトする;
   useEffect(() => {
-    const addToUserInfo = async () => {
-      const { data, error } = await supabase.from("userInformation").insert([
-        {
-          user_account: currentUser,
-          user_height: 160,
-          user_weight: 50,
-          user_name: "ゲスト",
-        },
-      ]);
-    };
     if (currentUser !== null) {
       console.log("ルート前");
-      // router.push("/components/TopPage");
+      router.push("/components/TopPage");
     }
   }, [currentUser, router]);
 

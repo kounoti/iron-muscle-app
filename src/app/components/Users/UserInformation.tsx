@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
-import { userType } from "./page";
 import UserModal from "./UserModal"; // UserModalを追加
+import { userType } from "./UserPage";
 
 type userInformationProps = {
   user: userType;
