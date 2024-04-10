@@ -37,9 +37,7 @@ const Page: React.FC = () => {
       try {
         const { data, error } = await supabase
           .from("userInformation")
-          .select(
-            "user_age, user_avatar, user_height, user_weight, user_name, user_account"
-          )
+          .select("*")
           .eq("user_account", account);
 
         if (error) {
