@@ -5,11 +5,12 @@ import UserInformation from "./UserInformation";
 import { supabase } from "../../../utils/supabaseClient";
 
 export type userType = {
-  name: string;
-  age: number;
-  avatar: string;
-  height: number;
-  weight: number;
+  user_name: string;
+  user_age: number;
+  user_avatar: string;
+  user_height: number;
+  user_weight: number;
+  user_account: string;
 };
 
 const UserPage: React.FC = () => {

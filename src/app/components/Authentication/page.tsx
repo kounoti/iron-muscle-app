@@ -34,10 +34,12 @@ export default function Authentication() {
         .insert([
           {
             // 追加するデータを指定
+            user_age: 25,
+            user_avatar: "/avatar.jpg",
             user_height: 200,
             user_weight: 100,
             user_name: "Authのゲスト",
-            account: user?.email ?? "", // accountはログインしているユーザーのメールアドレスとして設定
+            user_account: user?.email ?? "", // accountはログインしているユーザーのメールアドレスとして設定
           },
         ]);
 
