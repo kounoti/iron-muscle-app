@@ -18,8 +18,7 @@ const UserInformation: React.FC<userInformationProps> = ({ user }) => {
           <Image
             width="500"
             height="500"
-            src="#"
-            // src={user.user_avatar}
+            src={user.user_avatar}
             alt="User Avatar"
             className="w-16 h-16 rounded-full mr-4"
           />

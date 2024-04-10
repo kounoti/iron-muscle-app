@@ -40,8 +40,7 @@ const Page: React.FC = () => {
           .select(
             "user_age, user_avatar, user_height, user_weight, user_name, user_account"
           )
-          .eq("user_account", account)
-          .single();
+          .eq("user_account", account);
 
         if (error) {
           throw error;

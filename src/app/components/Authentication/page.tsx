@@ -35,7 +35,7 @@ export default function Authentication() {
           {
             // 追加するデータを指定
             user_age: 25,
-            user_avatar: "avatar",
+            user_avatar: "/avatar.jpg",
             user_height: 200,
             user_weight: 100,
             user_name: "Authのゲスト",
