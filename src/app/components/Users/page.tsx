@@ -61,6 +61,7 @@ const Page: React.FC = () => {
       }
     }
     console.log("getUserAccount内");
+    console.log(account);
   };
 
   //ページリダイレクト時にユーザーのメールアドレスをuserAccountに格納する
