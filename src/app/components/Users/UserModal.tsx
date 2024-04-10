@@ -13,9 +13,9 @@ type UserModalProps = {
 };
 
 const UserModal: React.FC<UserModalProps> = ({ isOpen, onClose, user }) => {
-  const [name, setName] = useState<string>(user.name);
-  const [height, setHeight] = useState<number>(user.height);
-  const [weight, setWeight] = useState<number>(user.weight);
+  const [name, setName] = useState<string>(user.user_name);
+  const [height, setHeight] = useState<number>(user.user_height);
+  const [weight, setWeight] = useState<number>(user.user_weight);
 
   const [account, setAccount] = useState("");
 

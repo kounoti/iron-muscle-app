@@ -18,18 +18,18 @@ const UserInformation: React.FC<userInformationProps> = ({ user }) => {
           <Image
             width="500"
             height="500"
-            src={user.avatar}
+            src={user.user_avatar}
             alt="User Avatar"
             className="w-16 h-16 rounded-full mr-4"
           />
           <div>
-            <h2 className="text-2xl font-bold">{user.name}</h2>
-            <p className="text-gray-500">{user.age}歳</p>
+            <h2 className="text-2xl font-bold">{user.user_name}</h2>
+            <p className="text-gray-500">{user.user_age}歳</p>
           </div>
         </div>
         <div className="mt-4">
           <p className="text-gray-600">
-            身長: {user.height} cm, 体重: {user.weight} kg
+            身長: {user.user_height} cm, 体重: {user.user_weight} kg
           </p>
         </div>
         <div className="flex justify-center items-center mt-8">

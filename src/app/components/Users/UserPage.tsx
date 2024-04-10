@@ -13,43 +13,39 @@ export type userType = {
   user_account: string;
 };
 
-const UserPage: React.FC = () => {
-  const [user, setUser] = useState<userType>({
-    name: "高身長",
-    age: 30,
-    avatar: "",
-    height: 180,
-    weight: 80,
-  });
+type UserPageProps = {
+  user: userType;
+};
 
+const UserPage: React.FC<UserPageProps> = ({ user }) => {
   //  sueEffect内で非同期処理を行うことでuse clientとasyncの衝突を防ぐ
-  useEffect(() => {
-    async function fetchData(): Promise<void> {
-      try {
-        const { data, error } = await supabase
-          .from("userInformation")
-          .select("*");
-        // エラー以外の時にuserにデータを格納する。
-        if (error) {
-          console.error("Error fetching user information:", error.message);
-          return;
-        }
-        if (data && data.length > 0) {
-          const userInfo = data[0];
-          setUser({
-            name: userInfo.user_name,
-            age: userInfo.user_age,
-            avatar: userInfo.user_avatar,
-            height: userInfo.user_height,
-            weight: userInfo.user_weight,
-          });
-        }
-      } catch (error: any) {
-        console.error("Error fetching user information:", error.message);
-      }
-    }
-    fetchData();
-  }, []);
+  //   useEffect(() => {
+  //     async function fetchData(): Promise<void> {
+  //       try {
+  //         const { data, error } = await supabase
+  //           .from("userInformation")
+  //           .select("*");
+  //         // エラー以外の時にuserにデータを格納する。
+  //         if (error) {
+  //           console.error("Error fetching user information:", error.message);
+  //           return;
+  //         }
+  //         if (data && data.length > 0) {
+  //           const userInfo = data[0];
+  //           setUser({
+  //             name: userInfo.user_name,
+  //             age: userInfo.user_age,
+  //             avatar: userInfo.user_avatar,
+  //             height: userInfo.user_height,
+  //             weight: userInfo.user_weight,
+  //           });
+  //         }
+  //       } catch (error: any) {
+  //         console.error("Error fetching user information:", error.message);
+  //       }
+  //     }
+  //     fetchData();
+  //   }, []);
 
   return (
     <>
