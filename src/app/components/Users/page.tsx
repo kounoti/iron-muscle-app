@@ -43,7 +43,7 @@ const Page: React.FC = () => {
 
       // Supabaseへのデータの追加
       // ユーザー情報をUserInformationテーブルに追加する
-      const { error: insertError } = await supabase_google
+      const { error: insertError } = await supabase
         .from("UserInformation") // UserInformationテーブルを指定
         .insert([
           {
