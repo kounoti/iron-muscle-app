@@ -7,7 +7,7 @@ import { supabase_google } from "../Authentication/SupabaseGoogle";
 import Error from "next/error";
 
 const Page: React.FC = () => {
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState<any>({});
 
   const [account, setAccount] = useState<string>("");
 
