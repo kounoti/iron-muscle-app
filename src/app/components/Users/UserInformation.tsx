@@ -12,6 +12,12 @@ type userInformationProps = {
 const UserInformation: React.FC<userInformationProps> = ({ account }) => {
   // 編集モーダルの表示状態を管理するstateを追加
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [store, setStore] = useState<string>("");
+
+  useEffect(() => {
+    setStore("");
+  }, []);
+
   console.log("UserInformation内");
 
   const [user, setUser] = useState<any>(null);

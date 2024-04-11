@@ -24,8 +24,6 @@ const UserModal: React.FC<UserModalProps> = ({
   const [height, setHeight] = useState<number>(user.user_height);
   const [weight, setWeight] = useState<number>(user.user_weight);
 
-  const [store, setStore] = useState<string>("");
-
   const router = useRouter();
 
   // 保存ボタンを押下した時にユーザー情報を一式サーバーに追加する
@@ -44,7 +42,6 @@ const UserModal: React.FC<UserModalProps> = ({
         },
       ])
       .eq("user_account", account);
-    setStore(name);
 
     onClose();
   };
