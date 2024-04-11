@@ -51,7 +51,7 @@ const UserInformation: React.FC<userInformationProps> = ({ account }) => {
             className="w-16 h-16 rounded-full mr-4"
           />
           <div>
-            <h2 className="text-2xl font-bold">{user[0].user_name}</h2>
+            <h2 className="text-2xl font-bold">{user.user_name}</h2>
             <p className="text-gray-500">{user.user_age}歳</p>
           </div>
         </div>
