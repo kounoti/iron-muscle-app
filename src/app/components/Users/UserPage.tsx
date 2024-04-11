@@ -66,9 +66,10 @@ const UserPage: React.FC<UserPageProps> = ({ account }) => {
         console.error("Error fetching user data:", error.message);
       }
     };
+    console.log("UserPage内にのfetchUserDataに入れています");
 
     fetchUserData();
-  }, []);
+  }, [account]);
 
   return (
     <>
