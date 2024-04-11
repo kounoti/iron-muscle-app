@@ -34,6 +34,12 @@ const Page: React.FC = () => {
     setRender(false);
   }, []);
 
+  useEffect(() => {
+    if (!render) {
+      setRender(true);
+    }
+  }, [render]);
+
   return (
     <>
       <UserPage account={account} />
