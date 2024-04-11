@@ -12,7 +12,6 @@ type UserModalProps = {
   onClose: () => void;
   user: userType;
   account: string;
-  onSaved: () => void;
 };
 
 const UserModal: React.FC<UserModalProps> = ({
@@ -20,7 +19,6 @@ const UserModal: React.FC<UserModalProps> = ({
   onClose,
   user,
   account,
-  onSaved,
 }) => {
   const [name, setName] = useState<string>(user.user_name);
   const [height, setHeight] = useState<number>(user.user_height);
@@ -46,9 +44,8 @@ const UserModal: React.FC<UserModalProps> = ({
       .eq("user_account", account);
 
     onClose();
-    if (!error) {
-      onSaved(); // 保存後に親コンポーネントで再レンダリングをトリガー
-    }
+    router.push("/components/UserThrough");
+    router.refresh();
   };
 
   return (

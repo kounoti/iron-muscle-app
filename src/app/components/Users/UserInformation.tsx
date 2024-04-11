@@ -13,8 +13,6 @@ const UserInformation: React.FC<userInformationProps> = ({ account }) => {
   // 編集モーダルの表示状態を管理するstateを追加
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const [render, setRender] = useState("");
-
   console.log("UserInformation内");
 
   const [user, setUser] = useState<any>(null);
@@ -46,13 +44,6 @@ const UserInformation: React.FC<userInformationProps> = ({ account }) => {
   if (!user) {
     return <div>Loading...</div>;
   }
-
-  // 保存後に再レンダリングをトリガーする関数
-  const handleSaved = () => {
-    // ここで再レンダリングをトリガーする状態を更新する
-    // 例: setAccountでaccountの値を変更することで再レンダリングをトリガーする
-    setRender((prevAccount) => prevAccount + " "); // 何かダミーの変更を加えています
-  };
 
   return (
     <div className="flex justify-center items-center mt-8">
@@ -89,7 +80,6 @@ const UserInformation: React.FC<userInformationProps> = ({ account }) => {
             onClose={() => setIsModalOpen(false)}
             user={user}
             account={account}
-            onSaved={handleSaved}
           />
         </div>
       </div>
