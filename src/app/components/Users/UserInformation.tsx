@@ -27,13 +27,14 @@ const UserInformation: React.FC<userInformationProps> = ({ account }) => {
         if (error) {
           throw error;
         }
+        console.log("UserPage内にのfetchUserDataに入れています");
 
         setUser(data);
       } catch (error: any) {
         console.error("Error fetching user data:", error.message);
       }
     };
-    console.log("UserPage内にのfetchUserDataに入れています");
+
     console.log(user.user_avatar);
 
     fetchUserData();
