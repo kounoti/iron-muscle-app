@@ -78,6 +78,7 @@ const UserInformation: React.FC<userInformationProps> = ({ account }) => {
             isOpen={isModalOpen}
             onClose={() => setIsModalOpen(false)}
             user={user}
+            account={account}
           />
         </div>
       </div>

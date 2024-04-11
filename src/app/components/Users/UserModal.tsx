@@ -10,35 +10,18 @@ type UserModalProps = {
   isOpen: boolean;
   onClose: () => void;
   user: userType;
+  account: string;
 };
 
-const UserModal: React.FC<UserModalProps> = ({ isOpen, onClose, user }) => {
+const UserModal: React.FC<UserModalProps> = ({
+  isOpen,
+  onClose,
+  user,
+  account,
+}) => {
   const [name, setName] = useState<string>(user.user_name);
   const [height, setHeight] = useState<number>(user.user_height);
   const [weight, setWeight] = useState<number>(user.user_weight);
-
-  const [account, setAccount] = useState("");
-
-  //ログインしたユーザーのメールアドレスをuserAccountに格納する
-  const getUserAccount = async () => {
-    // ログインのセッションを取得する処理
-    const { data } = await supabase_google.auth.getSession();
-    // セッションがあるときだけ現在ログインしているユーザーを取得する
-    if (data.session !== null) {
-      // supabaseに用意されている現在ログインしているユーザーを取得する関数
-      const {
-        data: { user },
-      } = await supabase_google.auth.getUser();
-      // currentUserにユーザーのメールアドレスを格納
-      setAccount(user?.email ?? "");
-    }
-    console.log("getUserAccount内");
-  };
-
-  //ページリダイレクト時にユーザーのメールアドレスをuserAccountに格納する
-  useEffect(() => {
-    getUserAccount();
-  }, []);
 
   // 保存ボタンを押下した時にユーザー情報を一式サーバーに追加する
   const addToUserInformation = async (
@@ -46,13 +29,16 @@ const UserModal: React.FC<UserModalProps> = ({ isOpen, onClose, user }) => {
   ) => {
     e.preventDefault();
 
-    const { data, error } = await supabase.from("userInformation").insert([
-      {
-        user_height: height,
-        user_weight: weight,
-        user_name: name,
-      },
-    ]);
+    const { data, error } = await supabase
+      .from("userInformation")
+      .update([
+        {
+          user_height: height,
+          user_weight: weight,
+          user_name: name,
+        },
+      ])
+      .eq("user_account", account);
 
     onClose();
   };
