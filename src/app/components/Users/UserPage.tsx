@@ -67,6 +67,7 @@ const UserPage: React.FC<UserPageProps> = ({ account }) => {
       }
     };
     console.log("UserPage内にのfetchUserDataに入れています");
+    console.log(account);
 
     fetchUserData();
   }, [account]);
