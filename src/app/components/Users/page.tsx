@@ -7,8 +7,6 @@ import { supabase_google } from "../Authentication/SupabaseGoogle";
 const Page: React.FC = () => {
   const [account, setAccount] = useState<string>("");
 
-  const [render, setRender] = useState<boolean>(true);
-
   //ログインしたユーザーのメールアドレスをuserAccountに格納する
   const getUserAccount = async () => {
     // ログインのセッションを取得する処理
@@ -29,16 +27,6 @@ const Page: React.FC = () => {
   useEffect(() => {
     getUserAccount();
   }, []);
-
-  useEffect(() => {
-    setRender(false);
-  }, []);
-
-  useEffect(() => {
-    if (!render) {
-      setRender(true);
-    }
-  }, [render]);
 
   return (
     <>
