@@ -14,7 +14,7 @@ const UserInformation: React.FC<userInformationProps> = ({ account }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   console.log("UserInformation内");
 
-  const [user, setUser] = useState<any>({});
+  const [user, setUser] = useState<any>(null);
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -37,7 +37,12 @@ const UserInformation: React.FC<userInformationProps> = ({ account }) => {
     };
 
     fetchUserData();
-  }, [account, user.user_avatar]);
+  }, [account]);
+
+  // userがnullの場合、データの取得がまだ行われていないことを示す
+  if (!user) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className="flex justify-center items-center mt-8">
