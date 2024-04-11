@@ -10,6 +10,7 @@ type userInformationProps = {
 const UserInformation: React.FC<userInformationProps> = ({ user }) => {
   // 編集モーダルの表示状態を管理するstateを追加
   const [isModalOpen, setIsModalOpen] = useState(false);
+  console.log(user.user_name);
 
   return (
     <div className="flex justify-center items-center mt-8">

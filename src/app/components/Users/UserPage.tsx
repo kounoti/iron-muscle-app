@@ -48,7 +48,7 @@ const UserPage: React.FC<UserPageProps> = ({ account }) => {
   //   }, []);
 
   const [user, setUser] = useState<any>({});
-  console.log("UserPageの外側でconsole見れるか確認");
+
   useEffect(() => {
     const fetchUserData = async () => {
       try {
