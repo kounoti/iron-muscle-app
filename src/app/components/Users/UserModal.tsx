@@ -48,8 +48,8 @@ const UserModal: React.FC<UserModalProps> = ({
     onClose();
     setStore(name);
 
-    // router.push("/components/Users");
-    // router.refresh();
+    router.push("/components/Users");
+    router.refresh();
   };
 
   return (
