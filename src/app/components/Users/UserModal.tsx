@@ -23,6 +23,7 @@ const UserModal: React.FC<UserModalProps> = ({
   const [name, setName] = useState<string>(user.user_name);
   const [height, setHeight] = useState<number>(user.user_height);
   const [weight, setWeight] = useState<number>(user.user_weight);
+  const [render, setRender] = useState<boolean>(true);
 
   const router = useRouter();
 
@@ -44,8 +45,7 @@ const UserModal: React.FC<UserModalProps> = ({
       .eq("user_account", account);
 
     onClose();
-    router.push("/components/Users");
-    router.refresh();
+    setRender(!render);
   };
 
   return (
