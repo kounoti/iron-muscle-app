@@ -2,9 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import UserPage from "./UserPage";
-import { supabase } from "../../../utils/supabaseClient";
 import { supabase_google } from "../Authentication/SupabaseGoogle";
-import Error from "next/error";
 
 const Page: React.FC = () => {
   const [account, setAccount] = useState<string>("");

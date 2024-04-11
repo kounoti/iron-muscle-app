@@ -1,16 +1,41 @@
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import UserModal from "./UserModal"; // UserModalを追加
-import { userType } from "./UserPage";
+import { supabase } from "../../../utils/supabaseClient";
 
 type userInformationProps = {
-  user: userType;
+  account: string;
 };
 
-const UserInformation: React.FC<userInformationProps> = ({ user }) => {
+const UserInformation: React.FC<userInformationProps> = ({ account }) => {
   // 編集モーダルの表示状態を管理するstateを追加
   const [isModalOpen, setIsModalOpen] = useState(false);
-  console.log(`UserInformation内の${user.user_name}`);
+  console.log("UserInformation内");
+
+  const [user, setUser] = useState<any>({});
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        const { data, error } = await supabase
+          .from("userInformation")
+          .select("*")
+          .eq("user_account", account);
+
+        if (error) {
+          throw error;
+        }
+
+        setUser(data);
+      } catch (error: any) {
+        console.error("Error fetching user data:", error.message);
+      }
+    };
+    console.log("UserPage内にのfetchUserDataに入れています");
+    console.log(account);
+
+    fetchUserData();
+  }, [account]);
 
   return (
     <div className="flex justify-center items-center mt-8">
