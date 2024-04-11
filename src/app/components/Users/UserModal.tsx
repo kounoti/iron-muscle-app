@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import { supabase } from "../../../utils/supabaseClient";
 import { supabase_google } from "../Authentication/SupabaseGoogle";
 import { userType } from "./UserPage";
+import { useRouter } from "next/navigation";
 
 type UserModalProps = {
   isOpen: boolean;
@@ -22,6 +23,8 @@ const UserModal: React.FC<UserModalProps> = ({
   const [name, setName] = useState<string>(user.user_name);
   const [height, setHeight] = useState<number>(user.user_height);
   const [weight, setWeight] = useState<number>(user.user_weight);
+
+  const router = useRouter();
 
   // 保存ボタンを押下した時にユーザー情報を一式サーバーに追加する
   const addToUserInformation = async (
@@ -41,6 +44,8 @@ const UserModal: React.FC<UserModalProps> = ({
       .eq("user_account", account);
 
     onClose();
+    router.push("/components/UserInformation");
+    router.refresh();
   };
 
   return (
