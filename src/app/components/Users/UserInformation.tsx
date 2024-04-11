@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import UserModal from "./UserModal"; // UserModalを追加
@@ -32,10 +34,10 @@ const UserInformation: React.FC<userInformationProps> = ({ account }) => {
       }
     };
     console.log("UserPage内にのfetchUserDataに入れています");
-    console.log(account);
+    console.log(user.user_avatar);
 
     fetchUserData();
-  }, [account]);
+  }, [account, user.user_avatar]);
 
   return (
     <div className="flex justify-center items-center mt-8">

@@ -1,8 +1,5 @@
-"use client";
-
 import React, { useEffect, useState } from "react";
 import UserInformation from "./UserInformation";
-import { supabase } from "../../../utils/supabaseClient";
 
 export type userType = {
   user_name: string;
