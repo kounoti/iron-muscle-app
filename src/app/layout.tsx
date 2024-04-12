@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import "./globals.css";
@@ -16,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <head>
-        <Link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.ico" />
       </head>
       <body>
         <Header />
