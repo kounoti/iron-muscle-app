@@ -6,6 +6,7 @@ import Authentication from "./components/Authentication/page";
 import "./globals.css";
 import { supabase_google } from "./components/Authentication/SupabaseGoogle";
 import TopPage from "./components/TopPage/TopPageIn";
+import Head from "next/head";
 
 // import TopPage from "./components/TopPage/TopPage";
 
@@ -32,6 +33,10 @@ export default function Home() {
 
   return (
     <>
+      <Head>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
       {/* {currentUser === null ? <Authentication /> : <TopPage />} */}
 
       <Authentication />
