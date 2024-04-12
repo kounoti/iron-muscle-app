@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import "./globals.css";
@@ -14,9 +15,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <head>
+      <Head>
         <link rel="icon" href="/favicon.ico" />
-      </head>
+      </Head>
       <body>
         <Header />
         <main className="mb-6">{children}</main>
