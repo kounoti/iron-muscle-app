@@ -13,6 +13,9 @@
   "dependencies": {
     "@chakra-ui/modal": "^2.3.1",
     "@chakra-ui/react": "^2.8.2",
+    "@fullcalendar/core": "^6.1.11",
+    "@fullcalendar/daygrid": "^6.1.11",
+    "@fullcalendar/react": "^6.1.11",
     "@nextui-org/modal": "^2.0.29",
     "@nextui-org/react": "^2.2.10",
     "@nextui-org/system": "^2.0.15",
