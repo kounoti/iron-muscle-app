@@ -115,7 +115,7 @@
     "src/app/components/Training/PageBody.tsx",
     "src/app/components/Authentication/page.jsx",
     "src/app/components/Users/UserModal.tsx",
-    "src/app/components/MuscleCalendar/page.jsx"
+    "src/app/components/MuscleCalendar/page.tsx"
   ],
   "exclude": ["node_modules"]
 }
