@@ -50,11 +50,11 @@
 //   return <FullCalendar plugins={[dayGridPlugin]} initialView="dayGridMonth" />;
 // }
 
-import FullCalendar from "@fullcalendar/react";
-import dayGridPlugin from "@fullcalendar/daygrid"; // プラグインの読み込みは後
+// import FullCalendar from "@fullcalendar/react";
+// import dayGridPlugin from "@fullcalendar/daygrid"; // プラグインの読み込みは後
 
-function MuscleCalendar() {
-  return <FullCalendar plugins={[dayGridPlugin]} initialView="dayGridMonth" />;
-}
+// function MuscleCalendar() {
+//   return <FullCalendar plugins={[dayGridPlugin]} initialView="dayGridMonth" />;
+// }
 
-export default MuscleCalendar;
+// export default MuscleCalendar;
