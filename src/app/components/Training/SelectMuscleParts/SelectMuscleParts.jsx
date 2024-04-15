@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Box, Select } from "@chakra-ui/react";
 import { SelectTrainingMenu } from "../SelectTraining/SelectTrainingMenu";
 
-const muscleParts = ["胸", "背中", "脚", "肩", "腕"];
+const muscleParts = ["胸", "腹筋", "背中", "脚", "肩", "腕"];
 
 export const SelectMuscleParts = ({
   onChildMuscleChange,
