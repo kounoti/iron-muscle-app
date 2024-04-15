@@ -8,6 +8,7 @@ import {
   legTrainingMenus,
   shoulderTrainingMenus,
   armTrainingMenus,
+  stomachTrainingMenus,
 } from "./TrainingMenu";
 
 export const SelectTrainingMenu = (props) => {
@@ -35,6 +36,8 @@ export const SelectTrainingMenu = (props) => {
     trainingMenuList = shoulderTrainingMenus.slice();
   } else if (musclePartsName === "腕") {
     trainingMenuList = armTrainingMenus.slice();
+  } else if (musclePartsName === "腹筋") {
+    trainingMenuList = stomachTrainingMenus.slice();
   }
 
   return (
