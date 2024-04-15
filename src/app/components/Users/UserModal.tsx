@@ -21,6 +21,7 @@ const UserModal: React.FC<UserModalProps> = ({
   account,
 }) => {
   const [name, setName] = useState<string>(user.user_name);
+  const [age, setAge] = useState<number>(user.user_age);
   const [height, setHeight] = useState<number>(user.user_height);
   const [weight, setWeight] = useState<number>(user.user_weight);
 
@@ -39,6 +40,7 @@ const UserModal: React.FC<UserModalProps> = ({
           user_height: height,
           user_weight: weight,
           user_name: name,
+          user_age: age,
         },
       ])
       .eq("user_account", account);
@@ -75,6 +77,21 @@ const UserModal: React.FC<UserModalProps> = ({
               id="name"
               value={name}
               onChange={(e) => setName(e.target.value)}
+              className="w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            />
+          </div>
+          <div className="mb-4">
+            <label
+              htmlFor="name"
+              className="block text-gray-700 font-semibold mb-2"
+            >
+              年齢
+            </label>
+            <input
+              type="number"
+              id="name"
+              value={name}
+              onChange={(e) => setAge(Number(e.target.value))}
               className="w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
             />
           </div>
