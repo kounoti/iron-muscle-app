@@ -10,7 +10,7 @@ type TrainingWeightProps = {
 };
 
 export const TrainingWeight = ({ onWeightChange }: TrainingWeightProps) => {
-  const [trainingWeight, setTrainingWeight] = useState<string>("");
+  const [trainingWeight, setTrainingWeight] = useState<string>("-");
 
   const handleChangeWeight = (newWeight: string): void => {
     setTrainingWeight(newWeight);
