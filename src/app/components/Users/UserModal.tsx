@@ -88,7 +88,7 @@ const UserModal: React.FC<UserModalProps> = ({
               年齢
             </label>
             <input
-              type="number"
+              type="text"
               id="name"
               value={name}
               onChange={(e) => setAge(Number(e.target.value))}
