@@ -38,4 +38,5 @@ export {
   legTrainingMenus,
   shoulderTrainingMenus,
   armTrainingMenus,
+  stomachTrainingMenus,
 };
