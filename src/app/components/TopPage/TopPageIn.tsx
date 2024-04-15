@@ -10,14 +10,14 @@ export default function TopPageIn() {
         >
           トレーニング開始
         </Link>
-        <div className="flex justify-center">
+        {/* <div className="flex justify-center">
           <Link
             href="/components/MuscleCalendar"
             className="font-bold text-blue-700"
           >
             MuscleCalendarへ移行
           </Link>
-        </div>
+        </div> */}
       </div>
     </>
   );
