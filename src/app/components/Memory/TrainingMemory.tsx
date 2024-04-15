@@ -51,7 +51,7 @@ const TrainingMemory = ({ memories }: TrainingMemoryType) => {
                 鍛えた部位
               </th>
               <th className="p-2 sm:px-4 md:px-6 lg:px-8 xl:px-10 text-center border">
-                使用器具
+                トレーニングメニュー
               </th>
               <th className="p-2 sm:px-4 md:px-6 lg:px-8 xl:px-10 text-center border">
                 重量
