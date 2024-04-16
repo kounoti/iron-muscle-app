@@ -24,6 +24,7 @@ const UserModal: React.FC<UserModalProps> = ({
   const [age, setAge] = useState<number>(user.user_age);
   const [height, setHeight] = useState<number>(user.user_height);
   const [weight, setWeight] = useState<number>(user.user_weight);
+  const [render, setRender] = useState<boolean>(false);
 
   const router = useRouter();
 
@@ -46,9 +47,14 @@ const UserModal: React.FC<UserModalProps> = ({
       .eq("user_account", account);
 
     onClose();
+    await Render();
     router.push("/components/Users");
     // router.push("/components/UserThrough");
     router.refresh();
+  };
+
+  const Render = async () => {
+    setRender(!render);
   };
 
   return (
