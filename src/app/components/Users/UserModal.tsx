@@ -48,7 +48,7 @@ const UserModal: React.FC<UserModalProps> = ({
 
     onClose();
     await Render();
-    router.push("/components/Users");
+    router.push("/components/UserInformation");
     // router.push("/components/UserThrough");
     router.refresh();
   };
