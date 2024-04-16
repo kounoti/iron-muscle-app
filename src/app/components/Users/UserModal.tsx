@@ -46,7 +46,8 @@ const UserModal: React.FC<UserModalProps> = ({
       .eq("user_account", account);
 
     onClose();
-    router.push("/components/UserThrough");
+    router.push("/Users");
+    // router.push("/components/UserThrough");
     router.refresh();
   };
 
