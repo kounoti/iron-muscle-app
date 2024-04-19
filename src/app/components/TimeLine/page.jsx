@@ -61,11 +61,11 @@ export default function Page() {
               </p>
             </div>
           </div>
-          <div className="ml-auto md:flex md:flex-col md:ml-8 mt-4 md:mt-0">
-            <p>
+          <div className="ml-auto md:flex md:ml-8 mt-4 md:mt-0">
+            <p className="mr-4">
               <span className="font-semibold">Equipment:</span> {log.equipment}
             </p>
-            <p>
+            <p className="mr-4">
               <span className="font-semibold">Repetitions:</span>{" "}
               {log.repetitions}
             </p>
