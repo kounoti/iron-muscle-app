@@ -40,7 +40,7 @@ const TrainingMemory = ({ memories }: TrainingMemoryType) => {
 
   return (
     <div>
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         <table className="w-full sm:w-250 bg-white border border-collapse border-gray-300 shadow-md rounded-md">
           <thead className="bg-teal-400 text-white">
             <tr>
