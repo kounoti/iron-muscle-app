@@ -61,7 +61,7 @@ export default function Page() {
               </p>
             </div>
           </div>
-          <div className="ml-auto md:flex md:ml-8 mt-4 md:mt-0">
+          <div className="ml-auto md:flex md:ml-8 mt-4 md:mt-0 item-center">
             <p className="mr-4">
               <span className="font-semibold">Equipment:</span> {log.equipment}
             </p>
