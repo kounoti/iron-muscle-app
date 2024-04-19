@@ -13,6 +13,7 @@ export default function Page() {
       user_avatar: "avatar1.jpg",
       content: "Squats",
       date: new Date("2024-04-18T10:30:00"),
+      training_date: new Date("2024-04-18T11:45:00"),
       equipment: "Barbell",
       repetitions: 10,
       weight: "100kg",
@@ -23,6 +24,7 @@ export default function Page() {
       user_avatar: "avatar2.jpg",
       content: "Push-ups",
       date: new Date("2024-04-18T11:45:00"),
+      training_date: new Date("2024-04-18T11:45:00"),
       equipment: "Bodyweight",
       repetitions: 20,
       weight: "-",
@@ -33,6 +35,7 @@ export default function Page() {
       user_avatar: "avatar3.jpg",
       content: "Deadlifts",
       date: new Date("2024-04-18T13:15:00"),
+      training_date: new Date("2024-04-18T11:45:00"),
       equipment: "Barbell",
       repetitions: 8,
       weight: "120kg",
@@ -65,15 +68,18 @@ export default function Page() {
             <div className="ml-auto md:ml-8 mt-4 md:mt-0 md:flex md:items-center justify-center">
               <div>
                 <p className="mr-4">
-                  <span className="font-semibold">Equipment:</span>{" "}
-                  {log.equipment}
+                  <span className="font-semibold">日付:</span>{" "}
+                  {log.training_date}
                 </p>
                 <p className="mr-4">
-                  <span className="font-semibold">Repetitions:</span>{" "}
-                  {log.repetitions}
+                  <span className="font-semibold">トレーニングメニュー:</span>{" "}
+                  {log.equipment}
                 </p>
                 <p>
-                  <span className="font-semibold">Weight:</span> {log.weight}
+                  <span className="font-semibold">重量:</span> {log.weight}
+                </p>
+                <p className="mr-4">
+                  <span className="font-semibold">回数:</span> {log.repetitions}
                 </p>
               </div>
             </div>
