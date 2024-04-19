@@ -68,21 +68,21 @@ export default function Page() {
             <table className="table-auto">
               <tbody>
                 <tr>
-                  <td className="font-semibold text-right">日付</td>
+                  <td className="font-semibold text-center">日付</td>
                   <td>:{log.training_date}</td>
                 </tr>
                 <tr>
-                  <td className="font-semibold text-right">
+                  <td className="font-semibold text-center">
                     トレーニングメニュー
                   </td>
                   <td>:{log.equipment}</td>
                 </tr>
                 <tr>
-                  <td className="font-semibold text-right">重量</td>
+                  <td className="font-semibold text-center">重量</td>
                   <td>:{log.weight}</td>
                 </tr>
                 <tr>
-                  <td className="font-semibold text-right">回数</td>
+                  <td className="font-semibold text-center">回数</td>
                   <td>:{log.repetitions}</td>
                 </tr>
               </tbody>
