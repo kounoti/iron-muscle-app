@@ -5,7 +5,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 
 export default function Page() {
-  // 仮のトレーニング履歴データ
+  // 仮のデータ
   const trainingLogs = [
     {
       user_id: "user1",
@@ -46,18 +46,23 @@ export default function Page() {
       {trainingLogs.map((log, index) => (
         <div
           key={index}
-          className="border border-gray-300 p-4 rounded-md mb-4 flex items-start"
+          className="border border-gray-300 p-4 rounded-md mb-4 flex flex-col md:flex-row items-start"
         >
-          <image
-            src={log.user_avatar}
-            alt="Avatar"
-            className="rounded-full w-10 h-10"
-          />
-          <div className="ml-4">
-            <p className="font-semibold">{log.user_name}</p>
-            <p className="text-sm text-gray-500">{log.date.toLocaleString()}</p>
+          <div className="flex items-start md:items-center">
+            <image
+              src="/avatar.jpg"
+              // src={log.user_avatar}
+              alt="Avatar"
+              className="rounded-full w-10 h-10"
+            />
+            <div className="ml-4">
+              <p className="font-semibold">{log.user_name}</p>
+              <p className="text-sm text-gray-500">
+                {log.date.toLocaleString()}
+              </p>
+            </div>
           </div>
-          <div className="ml-auto">
+          <div className="ml-auto md:ml-8 mt-4 md:mt-0">
             <p>
               <span className="font-semibold">Equipment:</span> {log.equipment}
             </p>
