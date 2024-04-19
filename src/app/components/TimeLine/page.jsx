@@ -42,7 +42,7 @@ export default function Page() {
 
   return (
     <div className="max-w-3xl mx-auto mt-8">
-      <h1 className="text-3xl font-bold mb-4">Muscle History</h1>
+      <h1 className="text-3xl font-bold mb-4 text-center">Muscle History</h1>
       {trainingLogs.map((log, index) => (
         <div
           key={index}
