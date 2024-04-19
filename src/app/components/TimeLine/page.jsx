@@ -62,7 +62,7 @@ export default function Page() {
             </div>
           </div>
           <div className="ml-auto md:ml-8 mt-4 md:mt-0 md:flex md:items-center justify-center">
-            <div className="text-center">
+            <div className="text-center md:text-left">
               <p className="mr-4">
                 <span className="font-semibold">Equipment:</span>{" "}
                 {log.equipment}
