@@ -50,7 +50,7 @@ export default function Page() {
         >
           <div className="flex items-start md:items-center">
             <image
-              src={log.user_avatar}
+              src="/avatar.jpg"
               alt="Avatar"
               className="rounded-full w-10 h-10"
             />
@@ -61,7 +61,7 @@ export default function Page() {
               </p>
             </div>
           </div>
-          <div className="ml-auto md:flex md:ml-8 mt-4 md:mt-0 item-center">
+          <div className="ml-auto md:flex md:ml-8 mt-4 md:mt-0 flex item-center">
             <p className="mr-4">
               <span className="font-semibold">Equipment:</span> {log.equipment}
             </p>
