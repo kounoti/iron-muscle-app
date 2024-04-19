@@ -53,7 +53,7 @@ export default function Page() {
         >
           <div className="flex items-start md:items-center">
             <image
-              src={user_avatar}
+              src={log.user_avatar}
               alt="Avatar"
               className="rounded-full w-10 h-10"
             />
