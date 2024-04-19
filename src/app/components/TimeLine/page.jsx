@@ -69,19 +69,19 @@ export default function Page() {
               <tbody>
                 <tr>
                   <td className="font-semibold">日付</td>
-                  <td>`:${log.training_date}`</td>
+                  <td>:{log.training_date}</td>
                 </tr>
                 <tr>
-                  <td className="font-semibold">トレーニングメニュー:</td>
-                  <td>{log.equipment}</td>
+                  <td className="font-semibold">トレーニングメニュー</td>
+                  <td>:{log.equipment}</td>
                 </tr>
                 <tr>
-                  <td className="font-semibold">重量:</td>
-                  <td>{log.weight}</td>
+                  <td className="font-semibold">重量</td>
+                  <td>:{log.weight}</td>
                 </tr>
                 <tr>
-                  <td className="font-semibold">回数:</td>
-                  <td>{log.repetitions}</td>
+                  <td className="font-semibold">回数</td>
+                  <td>:{log.repetitions}</td>
                 </tr>
               </tbody>
             </table>
