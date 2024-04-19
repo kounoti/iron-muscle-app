@@ -62,18 +62,20 @@ export default function Page() {
             </div>
           </div>
           <div className="ml-auto md:ml-8 mt-4 md:mt-0 md:flex md:items-center justify-center">
-            <div className="text-center md:text-left">
-              <p className="mr-4">
-                <span className="font-semibold">Equipment:</span>{" "}
-                {log.equipment}
-              </p>
-              <p className="mr-4">
-                <span className="font-semibold">Repetitions:</span>{" "}
-                {log.repetitions}
-              </p>
-              <p>
-                <span className="font-semibold">Weight:</span> {log.weight}
-              </p>
+            <div className="items-center justify-center">
+              <div className="text-center md:text-left">
+                <p className="mr-4">
+                  <span className="font-semibold">Equipment:</span>{" "}
+                  {log.equipment}
+                </p>
+                <p className="mr-4">
+                  <span className="font-semibold">Repetitions:</span>{" "}
+                  {log.repetitions}
+                </p>
+                <p>
+                  <span className="font-semibold">Weight:</span> {log.weight}
+                </p>
+              </div>
             </div>
           </div>
         </div>
