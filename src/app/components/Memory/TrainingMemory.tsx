@@ -40,7 +40,7 @@ const TrainingMemory = ({ memories }: TrainingMemoryType) => {
 
   return (
     <div className="p-8">
-      <div className="overflow-x-auto">
+      <div>
         <table className="sm:w-1000 bg-white border border-collapse border-gray-300 shadow-md rounded-md">
           <thead className="bg-teal-400 text-white">
             <tr>
