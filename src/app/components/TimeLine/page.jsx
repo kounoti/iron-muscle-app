@@ -10,7 +10,7 @@ export default function Page() {
     {
       user_id: "user1",
       user_name: "John",
-      user_avatar: "avatar1.jpg",
+      user_avatar: "/avatar.jpg",
       content: "Squats",
       date: new Date("2024-04-18T10:30:00"),
       training_date: "2024-04-18",
@@ -21,7 +21,7 @@ export default function Page() {
     {
       user_id: "user2",
       user_name: "Alice",
-      user_avatar: "avatar2.jpg",
+      user_avatar: "/avatar.jpg",
       content: "Push-ups",
       date: new Date("2024-04-18T11:45:00"),
       training_date: "2024-04-18",
@@ -32,7 +32,7 @@ export default function Page() {
     {
       user_id: "user3",
       user_name: "Bob",
-      user_avatar: "avatar3.jpg",
+      user_avatar: "/avatar.jpg",
       content: "Deadlifts",
       date: new Date("2024-04-18T13:15:00"),
       training_date: "2024-04-18",
@@ -53,7 +53,7 @@ export default function Page() {
         >
           <div className="flex items-start md:items-center">
             <image
-              src="/avatar.jpg"
+              src={user_avatar}
               alt="Avatar"
               className="rounded-full w-10 h-10"
             />
@@ -65,24 +65,22 @@ export default function Page() {
             </div>
           </div>
           <div className="mx-auto items-center justify-center">
-            <div className="ml-auto md:ml-8 mt-4 md:mt-0 md:flex md:items-center justify-center">
-              <div>
-                <p className="mr-4">
-                  <span className="font-semibold">日付:</span>{" "}
-                  {log.training_date}
-                </p>
-                <p className="mr-4">
-                  <span className="font-semibold">トレーニングメニュー:</span>{" "}
-                  {log.equipment}
-                </p>
-                <p>
-                  <span className="font-semibold">重量:</span> {log.weight}
-                </p>
-                <p className="mr-4">
-                  <span className="font-semibold">回数:</span> {log.repetitions}
-                </p>
-              </div>
-            </div>
+            <table className="table-auto">
+              <tbody>
+                <tr>
+                  <td className="font-semibold">日付:</td>
+                  <td>{log.training_date}</td>
+                  <td className="font-semibold">トレーニングメニュー:</td>
+                  <td>{log.equipment}</td>
+                </tr>
+                <tr>
+                  <td className="font-semibold">重量:</td>
+                  <td>{log.weight}</td>
+                  <td className="font-semibold">回数:</td>
+                  <td>{log.repetitions}</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       ))}
