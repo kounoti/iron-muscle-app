@@ -42,7 +42,7 @@ export default function Page() {
 
   return (
     <div className="max-w-3xl mx-auto mt-8">
-      <h1 className="text-3xl font-bold mb-4">Training History</h1>
+      <h1 className="text-3xl font-bold mb-4">Muscle History</h1>
       {trainingLogs.map((log, index) => (
         <div
           key={index}
@@ -50,8 +50,7 @@ export default function Page() {
         >
           <div className="flex items-start md:items-center">
             <image
-              src="/avatar.jpg"
-              // src={log.user_avatar}
+              src={log.user_avatar}
               alt="Avatar"
               className="rounded-full w-10 h-10"
             />
@@ -62,7 +61,7 @@ export default function Page() {
               </p>
             </div>
           </div>
-          <div className="ml-auto md:ml-8 mt-4 md:mt-0">
+          <div className="ml-auto md:flex md:flex-col md:ml-8 mt-4 md:mt-0">
             <p>
               <span className="font-semibold">Equipment:</span> {log.equipment}
             </p>
