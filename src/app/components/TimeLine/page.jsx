@@ -68,8 +68,8 @@ export default function Page() {
             <table className="table-auto">
               <tbody>
                 <tr>
-                  <td className="font-semibold">日付:</td>
-                  <td>{log.training_date}</td>
+                  <td className="font-semibold">日付</td>
+                  <td>`:${log.training_date}`</td>
                 </tr>
                 <tr>
                   <td className="font-semibold">トレーニングメニュー:</td>
