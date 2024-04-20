@@ -108,9 +108,8 @@ const PageBody = () => {
     ]);
     setIsModalOpen(true);
 
-    router.push("/components/Memory");
     // router.push("/components/Memory");
-    router.refresh();
+    // router.refresh();
   };
 
   useEffect(() => {
