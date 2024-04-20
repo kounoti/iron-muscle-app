@@ -99,6 +99,7 @@ const PageBody = () => {
         date: date,
         account: account,
         bodyWeight: bodyWeight,
+        timelineflag: false,
       },
     ]);
 
