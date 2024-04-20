@@ -12,12 +12,12 @@ type UserModalProps = {
 const TimeLineModal: React.FC<UserModalProps> = ({ isOpen, onClose }) => {
   const router = useRouter();
 
-  const moveTimeLinePage = (
+  const moveMuscleMemory = (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     e.preventDefault();
     onClose();
-    router.push("/components/TimeLine");
+    router.push("/components/Memory");
     router.refresh();
   };
 
@@ -71,7 +71,7 @@ const TimeLineModal: React.FC<UserModalProps> = ({ isOpen, onClose }) => {
             投稿
           </button>
           <button
-            onClick={moveTimeLinePage}
+            onClick={moveMuscleMemory}
             className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-500"
           >
             投稿しない
