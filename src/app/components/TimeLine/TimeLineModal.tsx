@@ -12,6 +12,15 @@ type UserModalProps = {
 const TimeLineModal: React.FC<UserModalProps> = ({ isOpen, onClose }) => {
   const router = useRouter();
 
+  const moveTimeLinePage = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    e.preventDefault();
+    onClose();
+    router.push("/components/TimeLine");
+    router.refresh();
+  };
+
   // 保存ボタンを押下した時にユーザー情報を一式サーバーに追加する
   const addToUserInformation = async (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
@@ -62,7 +71,7 @@ const TimeLineModal: React.FC<UserModalProps> = ({ isOpen, onClose }) => {
             投稿
           </button>
           <button
-            onClick={onClose}
+            onClick={moveTimeLinePage}
             className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-500"
           >
             投稿しない
