@@ -151,10 +151,12 @@ const PageBody = () => {
         >
           トレーニングを記録する
         </button>
-        <TimeLineModal
-          isOpen={isModalOpen}
-          onClose={() => setIsModalOpen(false)}
-        />
+        {isModalOpen && (
+          <TimeLineModal
+            isOpen={isModalOpen}
+            onClose={() => setIsModalOpen(false)}
+          />
+        )}
       </div>
       {/* <br />
       <Link href="/" className="font-bold text-blue-700 text-15 ml-auto">
