@@ -12,8 +12,12 @@ import { TrainingWeight } from "./WeightSelection/WeightSelection";
 import { BodyWeight } from "./BodyWeight/BodyWeight";
 import { supabase } from "../../../utils/supabaseClient";
 import { supabase_google } from "../Authentication/SupabaseGoogle";
+import TimeLineModal from "../TimeLine/TimeLineModal";
 
 const PageBody = () => {
+  // TimeLineModalのステート
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   // 親コンポーネントのステート（筋トレ部位、筋トレ器具）
   const [musclePart, setMusclePart] = useState("胸");
   const [trainingMenu, setTrainingMenu] = useState("ベンチプレス");
@@ -102,27 +106,10 @@ const PageBody = () => {
         timelineflag: false,
       },
     ]);
-
-    // const API_URL = process.env.NEXT_PUBLIC_API_URL || process.env.SUPABASE_URL;
-    // await fetch(`${API_URL}/api/memories`, {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify({
-    //     id: newId,
-    //     musclePart,
-    //     trainingMenu,
-    //     count,
-    //     date,
-    //   }),
-    // }
-    // );
-
-    // 下記はjson-serverを使うときに使用するコード
-    // await createMuscleMemory(musclePart, trainingMenu, count, date);
+    setIsModalOpen(true);
 
     router.push("/components/Memory");
+    // router.push("/components/Memory");
     router.refresh();
   };
 
@@ -165,6 +152,10 @@ const PageBody = () => {
         >
           トレーニングを記録する
         </button>
+        <TimeLineModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+        />
       </div>
       {/* <br />
       <Link href="/" className="font-bold text-blue-700 text-15 ml-auto">
