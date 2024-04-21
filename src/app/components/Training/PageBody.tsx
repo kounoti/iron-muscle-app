@@ -107,15 +107,15 @@ const PageBody = () => {
       },
     ]);
     // Supabaseへのデータ追加後にモーダルを開く
-    // if (!error) {
-    //   setIsModalOpen(true);
-    // } else {
-    //   // エラーハンドリングを行う場合の処理を追加
-    //   console.error("データの追加中にエラーが発生しました:", error.message);
-    // }
+    if (!error) {
+      setIsModalOpen(true);
+    } else {
+      // エラーハンドリングを行う場合の処理を追加
+      console.error("データの追加中にエラーが発生しました:", error.message);
+    }
 
-    router.push("/components/Memory");
-    router.refresh();
+    // router.push("/components/Memory");
+    // router.refresh();
   };
 
   useEffect(() => {
@@ -157,12 +157,12 @@ const PageBody = () => {
         >
           トレーニングを記録する
         </button>
-        {/* {isModalOpen && (
+        {isModalOpen && (
           <TimeLineModal
             isOpen={isModalOpen}
             onClose={() => setIsModalOpen(false)}
           />
-        )} */}
+        )}
       </div>
       {/* <br />
       <Link href="/" className="font-bold text-blue-700 text-15 ml-auto">
