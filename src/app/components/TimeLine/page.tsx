@@ -18,7 +18,7 @@ export default function Page() {
           .from("posts")
           .select("*")
           .eq("timelineflag", true)
-          .order("created_at", { ascending: true });
+          .order("created_at", { ascending: false });
         // エラー以外の時にmemoriesにdataオブジェクトを格納する。
         if (error) {
           console.error("Error fetching memories:", error.message);

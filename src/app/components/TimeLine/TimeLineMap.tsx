@@ -1,12 +1,37 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import { TimeLineMemoryType, TimeLineType } from "./TimeLine";
 import Image from "next/image";
+import { supabase } from "../../../utils/supabaseClient";
 
 const TimeLineMap = ({
   timeLineMemory,
 }: {
   timeLineMemory: TimeLineMemoryType;
 }) => {
+  const [userName, setUserName] = useState<any>(null);
+
+  useEffect(() => {
+    async function fetchData(): Promise<void> {
+      try {
+        const { data, error } = await supabase
+          .from("userInformation")
+          .select("user_name")
+          .eq("user_account", timeLineMemory.account);
+        // エラー以外の時にmemoriesにdataオブジェクトを格納する。
+        if (error) {
+          console.error("Error fetching memories:", error.message);
+          return;
+        }
+        setUserName(data[0]);
+      } catch (error: any) {
+        console.error("Error fetching memories:", error.message);
+      }
+    }
+    fetchData();
+  }, [timeLineMemory.account]);
+
   return (
     <div>
       <div className="flex items-start md:items-center">
@@ -16,7 +41,7 @@ const TimeLineMap = ({
           className="rounded-full w-10 h-10"
         />
         <div className="ml-4">
-          <p className="font-semibold">{timeLineMemory.account}</p>
+          <p className="font-semibold">{userName}</p>
           <p className="text-sm text-gray-500">
             {timeLineMemory.created_at.toLocaleString()}
           </p>
