@@ -3,16 +3,18 @@ import Link from "next/link";
 export default function TopPageIn() {
   return (
     <>
-      <div className="flex flex-col justify-center items-center h-screen bg-teal-400">
-        <div className="text-center text-white mb-8">
-          <h1 className="text-5xl font-bold mb-4">Welcome to MyFitnessApp!</h1>
-          <p className="text-lg">Your personal fitness companion</p>
+      <div className="bg-white min-h-screen">
+        <div className="flex flex-col justify-center items-center h-full">
+          <h1 className="text-4xl font-bold mb-8">
+            Welcome to My Fitness App!
+          </h1>
+          {/* ここにベンチプレスを上げ下げしている棒人間のSVG画像を挿入 */}
+          <Link href="/components/Training">
+            <a className="bg-teal-500 hover:bg-teal-600 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 ease-in-out">
+              トレーニングを始める
+            </a>
+          </Link>
         </div>
-        <Link href="/components/Training">
-          <a className="bg-white text-teal-500 hover:bg-teal-600 hover:text-white font-bold py-4 px-8 rounded-full text-xl transition duration-300 ease-in-out">
-            Start Training
-          </a>
-        </Link>
       </div>
 
       {/* <div className="flex justify-center items-center m-10">
