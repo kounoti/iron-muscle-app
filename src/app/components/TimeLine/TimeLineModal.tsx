@@ -32,6 +32,7 @@ const TimeLineModal: React.FC<UserModalProps> = ({
 }) => {
   const router = useRouter();
 
+  //投稿しないボタンを押下した時の処理
   const moveMuscleMemory = async (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
@@ -59,27 +60,31 @@ const TimeLineModal: React.FC<UserModalProps> = ({
     }
   };
 
-  // 保存ボタンを押下した時にユーザー情報を一式サーバーに追加する
-  const addToUserInformation = async (
+  const addToTimeline = async (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     e.preventDefault();
 
-    // const { data, error } = await supabase
-    //   .from("userInformation")
-    //   .update([
-    //     {
-    //       user_height: height,
-    //       user_weight: weight,
-    //       user_name: name,
-    //       user_age: age,
-    //     },
-    //   ])
-    //   .eq("user_account", account);
-
-    // onClose();
-    // router.push("/components/UserThrough");
-    // router.refresh();
+    const { data, error } = await supabase.from("posts").insert([
+      {
+        musclePart: musclePart,
+        trainingMenu: trainingMenu,
+        weight: weight,
+        count: count,
+        date: date,
+        account: account,
+        bodyWeight: bodyWeight,
+        timelineflag: true,
+      },
+    ]);
+    if (!error) {
+      onClose();
+      router.push("/components/TimeLine");
+      router.refresh();
+    } else {
+      // エラー発生時にエラーがわかるようにコンソール表示
+      console.error("データの追加中にエラーが発生しました:", error.message);
+    }
   };
 
   return (
@@ -103,7 +108,7 @@ const TimeLineModal: React.FC<UserModalProps> = ({
         </div>
         <div className="bg-gray-200 p-4 flex justify-end">
           <button
-            onClick={addToUserInformation}
+            onClick={addToTimeline}
             className="mr-4 px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
           >
             投稿
