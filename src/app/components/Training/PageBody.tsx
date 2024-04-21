@@ -64,7 +64,9 @@ const PageBody = () => {
 
   const router = useRouter();
 
-  const [account, setAccount] = useState("");
+  const [account, setAccount] = useState<string>("");
+
+  const [timelineflag, setTimelineflag] = useState<boolean>(false);
 
   //ログインしたユーザーのメールアドレスをuserAccountに格納する
   const getUserAccount = async () => {
@@ -93,26 +95,28 @@ const PageBody = () => {
   ) => {
     e.preventDefault();
 
-    const { data, error } = await supabase.from("posts").insert([
-      {
-        // id: id,
-        musclePart: musclePart,
-        trainingMenu: trainingMenu,
-        weight: weight,
-        count: count,
-        date: date,
-        account: account,
-        bodyWeight: bodyWeight,
-        timelineflag: false,
-      },
-    ]);
-    // Supabaseへのデータ追加後にモーダルを開く
-    if (!error) {
-      setIsModalOpen(true);
-    } else {
-      // エラーハンドリングを行う場合の処理を追加
-      console.error("データの追加中にエラーが発生しました:", error.message);
-    }
+    setIsModalOpen(true);
+
+    // const { data, error } = await supabase.from("posts").insert([
+    //   {
+    //     // id: id,
+    //     musclePart: musclePart,
+    //     trainingMenu: trainingMenu,
+    //     weight: weight,
+    //     count: count,
+    //     date: date,
+    //     account: account,
+    //     bodyWeight: bodyWeight,
+    //     timelineflag: false,
+    //   },
+    // ]);
+    // // Supabaseへのデータ追加後にモーダルを開く
+    // if (!error) {
+    //   setIsModalOpen(true);
+    // } else {
+    //   // エラー発生時にエラーがわかるようにコンソール表示
+    //   console.error("データの追加中にエラーが発生しました:", error.message);
+    // }
 
     // router.push("/components/Memory");
     // router.refresh();
@@ -161,6 +165,14 @@ const PageBody = () => {
           <TimeLineModal
             isOpen={isModalOpen}
             onClose={() => setIsModalOpen(false)}
+            musclePart={musclePart}
+            trainingMenu={trainingMenu}
+            weight={weight}
+            count={count}
+            date={date}
+            account={account}
+            bodyWeight={bodyWeight}
+            timelineflag={timelineflag}
           />
         )}
       </div>

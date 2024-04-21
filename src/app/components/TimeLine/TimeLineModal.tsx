@@ -3,22 +3,60 @@
 import React, { useEffect, useState } from "react";
 
 import { useRouter } from "next/navigation";
+import { supabase } from "../../../utils/supabaseClient";
 
 type UserModalProps = {
   isOpen: boolean;
   onClose: () => void;
+  musclePart: string;
+  trainingMenu: string;
+  weight: string;
+  count: string;
+  date: string;
+  account: string;
+  bodyWeight: string;
+  timelineflag: boolean;
 };
 
-const TimeLineModal: React.FC<UserModalProps> = ({ isOpen, onClose }) => {
+const TimeLineModal: React.FC<UserModalProps> = ({
+  isOpen,
+  onClose,
+  musclePart,
+  trainingMenu,
+  weight,
+  count,
+  date,
+  account,
+  bodyWeight,
+  timelineflag,
+}) => {
   const router = useRouter();
 
-  const moveMuscleMemory = (
+  const moveMuscleMemory = async (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     e.preventDefault();
-    onClose();
-    router.push("/components/Memory");
-    router.refresh();
+
+    const { data, error } = await supabase.from("posts").insert([
+      {
+        musclePart: musclePart,
+        trainingMenu: trainingMenu,
+        weight: weight,
+        count: count,
+        date: date,
+        account: account,
+        bodyWeight: bodyWeight,
+        timelineflag: false,
+      },
+    ]);
+    if (!error) {
+      onClose();
+      router.push("/components/Memory");
+      router.refresh();
+    } else {
+      // エラー発生時にエラーがわかるようにコンソール表示
+      console.error("データの追加中にエラーが発生しました:", error.message);
+    }
   };
 
   // 保存ボタンを押下した時にユーザー情報を一式サーバーに追加する
