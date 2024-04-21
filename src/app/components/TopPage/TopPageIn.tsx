@@ -3,13 +3,13 @@ import Link from "next/link";
 export default function TopPageIn() {
   return (
     <>
-      <div className="flex flex-col justify-center items-center h-screen bg-gradient-to-r from-blue-400 to-purple-500">
+      <div className="flex flex-col justify-center items-center h-screen bg-teal-500">
         <div className="text-center text-white mb-8">
           <h1 className="text-5xl font-bold mb-4">Welcome to MyFitnessApp!</h1>
           <p className="text-lg">Your personal fitness companion</p>
         </div>
         <Link href="/components/Training">
-          <a className="bg-white text-blue-500 hover:bg-blue-600 hover:text-white font-bold py-4 px-8 rounded-full text-xl transition duration-300 ease-in-out">
+          <a className="bg-white text-teal-500 hover:bg-teal-600 hover:text-white font-bold py-4 px-8 rounded-full text-xl transition duration-300 ease-in-out">
             Start Training
           </a>
         </Link>
