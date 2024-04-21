@@ -5,8 +5,10 @@ export default function TopPageIn() {
     <>
       <div className="flex flex-col justify-center items-center h-screen">
         <div className="text-center text-black mb-8">
-          <h1 className="text-5xl font-bold mb-4">Welcome to MyFitnessApp!</h1>
-          <p className="text-lg">Your personal fitness companion</p>
+          <h1 className="text-5xl font-bold mb-4">
+            Welcome to Iron muscle App!
+          </h1>
+          <p className="text-lg">Let's work out together!</p>
         </div>
         <Link href="/components/Training">
           <a className="bg-teal-500 hover:bg-teal-600 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 ease-in-out">
