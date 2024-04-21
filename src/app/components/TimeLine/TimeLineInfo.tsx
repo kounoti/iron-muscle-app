@@ -1,11 +1,16 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import TimeLine, { TimeLineType } from "./TimeLine";
+import TimeLine, {
+  TimeLineMemoriesType,
+  TimeLineMemoryType,
+  TimeLineType,
+  UserInfoType,
+} from "./TimeLine";
 import { supabase } from "../../../utils/supabaseClient";
 
-const TimeLineInfo = ({ timeLineMemories }: TimeLineType) => {
-  const [userInfo, setUserInfo] = useState<any>(null);
+const TimeLineInfo = ({ timeLineMemories }: TimeLineMemoriesType) => {
+  const [userInfo, setUserInfo] = useState<UserInfoType[]>([]);
 
   useEffect(() => {
     async function fetchUserData(): Promise<void> {

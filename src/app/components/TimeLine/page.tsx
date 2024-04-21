@@ -34,7 +34,5 @@ export default function Page() {
     fetchData();
   }, []);
 
-  return (
-    <TimeLineInfo timeLineMemories={timeLineMemories} userInfo={userInfo} />
-  );
+  return <TimeLineInfo timeLineMemories={timeLineMemories} />;
 }
