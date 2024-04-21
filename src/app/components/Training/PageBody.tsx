@@ -138,48 +138,50 @@ const PageBody = () => {
 
   return (
     <>
-      <ChakraProvider>
-        <Box mx="15%">
-          {/* <div>トレーニングページです</div> */}
-          <SelectMuscleParts
-            onChildMuscleChange={handleChildMuscleChange}
-            onChildEquipmentChange={handleChildEquipmentChange}
-          />
-          <TrainingWeight onWeightChange={handleChildWeightChange} />
-          <TrainingCount onCountChange={handleChildCountChange} />
-          <SimpleDatePicker onChildDateChange={handleChildDateChange} />
-          {/* <BodyWeight onChildBodyWeightChange={handleChildBodyWeightChange} /> */}
-        </Box>
-      </ChakraProvider>
+      <div className="max-w-5xl mx-auto">
+        <ChakraProvider>
+          <Box mx="15%">
+            {/* <div>トレーニングページです</div> */}
+            <SelectMuscleParts
+              onChildMuscleChange={handleChildMuscleChange}
+              onChildEquipmentChange={handleChildEquipmentChange}
+            />
+            <TrainingWeight onWeightChange={handleChildWeightChange} />
+            <TrainingCount onCountChange={handleChildCountChange} />
+            <SimpleDatePicker onChildDateChange={handleChildDateChange} />
+            {/* <BodyWeight onChildBodyWeightChange={handleChildBodyWeightChange} /> */}
+          </Box>
+        </ChakraProvider>
 
-      <div className="-screen flex justify-center items-center ">
-        {/* 記録する項目をデータベースに追加する処理を下記ボタンのonClickをトリガーに行う */}
-        <button
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-          onClick={addToServerAndPush}
-          // size="lg"
-        >
-          トレーニングを記録する
-        </button>
-        {isModalOpen && (
-          <TimeLineModal
-            isOpen={isModalOpen}
-            onClose={() => setIsModalOpen(false)}
-            musclePart={musclePart}
-            trainingMenu={trainingMenu}
-            weight={weight}
-            count={count}
-            date={date}
-            account={account}
-            bodyWeight={bodyWeight}
-            timelineflag={timelineflag}
-          />
-        )}
-      </div>
-      {/* <br />
+        <div className="-screen flex justify-center items-center ">
+          {/* 記録する項目をデータベースに追加する処理を下記ボタンのonClickをトリガーに行う */}
+          <button
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            onClick={addToServerAndPush}
+            // size="lg"
+          >
+            トレーニングを記録する
+          </button>
+          {isModalOpen && (
+            <TimeLineModal
+              isOpen={isModalOpen}
+              onClose={() => setIsModalOpen(false)}
+              musclePart={musclePart}
+              trainingMenu={trainingMenu}
+              weight={weight}
+              count={count}
+              date={date}
+              account={account}
+              bodyWeight={bodyWeight}
+              timelineflag={timelineflag}
+            />
+          )}
+        </div>
+        {/* <br />
       <Link href="/" className="font-bold text-blue-700 text-15 ml-auto">
         TOPへ戻る
       </Link> */}
+      </div>
     </>
   );
 };
