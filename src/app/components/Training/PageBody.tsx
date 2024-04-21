@@ -138,7 +138,7 @@ const PageBody = () => {
 
   return (
     <>
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         <ChakraProvider>
           <Box mx="15%">
             {/* <div>トレーニングページです</div> */}
