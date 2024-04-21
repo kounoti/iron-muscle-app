@@ -75,11 +75,10 @@ const TimeLine = ({ timeLineMemories }: TimeLineType) => {
     <div className="max-w-3xl mx-auto mt-8">
       <h1 className="text-3xl font-bold mb-4 text-center">Muscle History</h1>
       {timeLineMemories.map((timeLineMemory: TimeLineMemoryType) => (
-        <div
-          key={timeLineMemory.id}
-          className="border border-gray-300 p-4 rounded-md mb-4 flex flex-col md:flex-row items-start"
-        >
-          <TimeLineMap timeLineMemory={timeLineMemory} />
+        <div key={timeLineMemory.id}>
+          <div className="border border-gray-300 p-4 rounded-md mb-4 flex flex-col md:flex-row items-start">
+            <TimeLineMap timeLineMemory={timeLineMemory} />
+          </div>
         </div>
       ))}
     </div>
