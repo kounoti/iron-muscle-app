@@ -68,11 +68,14 @@ const Header = () => {
         </div>
         {currentUser && (
           <div className="hidden md:flex items-center space-x-4">
-            <Link href="/components/Users" className="hover:underline">
-              ユーザー情報
+            <Link href="/components/TimeLine" className="hover:underline">
+              タイムライン
             </Link>
             <Link href="/components/Memory" className="hover:underline">
               今までの記録
+            </Link>
+            <Link href="/components/Users" className="hover:underline">
+              ユーザー情報
             </Link>
             <button onClick={handleSignOut} className="hover:underline">
               サインアウト
@@ -104,13 +107,13 @@ const Header = () => {
                   </button>
                 </div>
               </Link>
-              <Link href="/components/Users" passHref>
+              <Link href="/components/TimeLine" passHref>
                 <div className="w-full p-2 border-b border-gray-500">
                   <button
                     className="w-full p-4 bg-teal-100 font-bold"
                     onClick={closeDrawer}
                   >
-                    ユーザ情報
+                    タイムライン
                   </button>
                 </div>
               </Link>
@@ -121,6 +124,16 @@ const Header = () => {
                     onClick={closeDrawer}
                   >
                     今までの記録
+                  </button>
+                </div>
+              </Link>
+              <Link href="/components/Users" passHref>
+                <div className="w-full p-2 border-b border-gray-500">
+                  <button
+                    className="w-full p-4 bg-teal-100 font-bold"
+                    onClick={closeDrawer}
+                  >
+                    ユーザ情報
                   </button>
                 </div>
               </Link>
