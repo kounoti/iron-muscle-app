@@ -16,6 +16,7 @@ type UserModalProps = {
   account: string;
   bodyWeight: string;
   timelineflag: boolean;
+  comment: string;
 };
 
 const TimeLineModal: React.FC<UserModalProps> = ({
@@ -29,6 +30,7 @@ const TimeLineModal: React.FC<UserModalProps> = ({
   account,
   bodyWeight,
   timelineflag,
+  comment,
 }) => {
   const router = useRouter();
 
@@ -75,6 +77,7 @@ const TimeLineModal: React.FC<UserModalProps> = ({
         account: account,
         bodyWeight: bodyWeight,
         timelineflag: true,
+        comment: comment,
       },
     ]);
     if (!error) {
@@ -98,7 +101,7 @@ const TimeLineModal: React.FC<UserModalProps> = ({
         aria-hidden="true"
       ></div>
       <div className="bg-white rounded-lg overflow-hidden shadow-xl transform transition-all sm:max-w-lg sm:w-full">
-        <div className="bg-teal-300 p-4">
+        <div className="bg-teal-200 p-4">
           <h2 className="text-lg font-semibold">
             タイムラインへ投稿しますか？
           </h2>
@@ -113,12 +116,13 @@ const TimeLineModal: React.FC<UserModalProps> = ({
           <textarea
             id="comment"
             name="comment"
+            value={comment}
             rows={3}
             className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
             placeholder="コメントを入力してください"
           ></textarea>
         </div>
-        <div className="bg-teal-300 p-4 flex justify-end">
+        <div className="bg-teal-200 p-4 flex justify-end">
           <button
             onClick={addToTimeline}
             className="mr-4 px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
