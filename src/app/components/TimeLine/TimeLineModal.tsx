@@ -94,7 +94,7 @@ const TimeLineModal: React.FC<UserModalProps> = ({
       }`}
     >
       <div
-        className="fixed inset-0 bg-teal-500 bg-opacity-75 transition-opacity"
+        className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
         aria-hidden="true"
       ></div>
       <div className="bg-white rounded-lg overflow-hidden shadow-xl transform transition-all sm:max-w-lg sm:w-full">
