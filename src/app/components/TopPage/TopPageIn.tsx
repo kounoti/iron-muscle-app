@@ -3,22 +3,16 @@ import Link from "next/link";
 export default function TopPageIn() {
   return (
     <>
-      <div className="flex flex-col justify-center items-center h-screen bg-gray-100">
-        {/* 背景画像 */}
-        <div
-          className="absolute top-0 left-0 w-full h-full bg-cover bg-center"
-          style={{ backgroundImage: "url('/toppage-muscle-training.jpg')" }}
-        ></div>
-        <div className="relative z-10">
-          <h1 className="text-5xl font-bold text-white mb-8">
-            Welcome to MyFitnessApp!
-          </h1>
-          <Link href="/components/Training">
-            <a className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-4 px-8 rounded-full text-xl transition duration-300 ease-in-out">
-              Start Training
-            </a>
-          </Link>
+      <div className="flex flex-col justify-center items-center h-screen bg-gradient-to-r from-blue-400 to-purple-500">
+        <div className="text-center text-white mb-8">
+          <h1 className="text-5xl font-bold mb-4">Welcome to MyFitnessApp!</h1>
+          <p className="text-lg">Your personal fitness companion</p>
         </div>
+        <Link href="/components/Training">
+          <a className="bg-white text-blue-500 hover:bg-blue-600 hover:text-white font-bold py-4 px-8 rounded-full text-xl transition duration-300 ease-in-out">
+            Start Training
+          </a>
+        </Link>
       </div>
 
       {/* <div className="flex justify-center items-center m-10">
