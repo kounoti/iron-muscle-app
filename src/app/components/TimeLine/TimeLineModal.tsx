@@ -94,7 +94,7 @@ const TimeLineModal: React.FC<UserModalProps> = ({
       }`}
     >
       <div
-        className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+        className="fixed inset-0 bg-teal-500 bg-opacity-75 transition-opacity"
         aria-hidden="true"
       ></div>
       <div className="bg-white rounded-lg overflow-hidden shadow-xl transform transition-all sm:max-w-lg sm:w-full">
@@ -106,7 +106,7 @@ const TimeLineModal: React.FC<UserModalProps> = ({
         <div className="p-4">
           <label
             htmlFor="comment"
-            className="block text-sm font-medium text-gray-700"
+            className="block text-sm font-medium text-gray-700 font-semibold"
           >
             コメント
           </label>
@@ -118,7 +118,7 @@ const TimeLineModal: React.FC<UserModalProps> = ({
             placeholder="コメントを入力してください"
           ></textarea>
         </div>
-        <div className="bg-gray-200 p-4 flex justify-end">
+        <div className="bg-teal-200 p-4 flex justify-end">
           <button
             onClick={addToTimeline}
             className="mr-4 px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"

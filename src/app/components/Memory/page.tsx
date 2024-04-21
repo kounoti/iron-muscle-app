@@ -61,7 +61,7 @@ export default function Page() {
   return (
     <>
       <h1 className="text-3xl font-bold text-center mt-8 text-gray-800">
-        Muscle Memory
+        My Muscle Memory
       </h1>
       <TrainingMemory memories={memories} />
 
