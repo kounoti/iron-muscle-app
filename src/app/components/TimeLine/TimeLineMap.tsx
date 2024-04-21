@@ -36,62 +36,64 @@ const TimeLineMap = ({
 
   return (
     <div>
-      <div className="border border-gray-300 p-4 rounded-md mb-4 flex flex-col md:flex-row items-start">
-        <div className="flex items-start md:items-center">
-          <Image
-            src="/avatar.jpg"
-            alt="Avatar"
-            className="rounded-full w-10 h-10"
-          />
-          <div className="ml-4">
-            <p className="font-semibold">{userName}</p>
-            <p className="text-sm text-gray-500">
-              {new Date(timeLineMemory.created_at).toLocaleString()}
-            </p>
+      <div className="border border-gray-300 ">
+        <div className="p-4 rounded-md mb-4 flex flex-col md:flex-row items-start">
+          <div className="flex items-start md:items-center">
+            <Image
+              src="/avatar.jpg"
+              alt="Avatar"
+              className="rounded-full w-10 h-10"
+            />
+            <div className="ml-4">
+              <p className="font-semibold">{userName}</p>
+              <p className="text-sm text-gray-500">
+                {new Date(timeLineMemory.created_at).toLocaleString()}
+              </p>
+            </div>
           </div>
-        </div>
-        <div className="mx-auto items-center justify-center">
-          <table className="table-auto">
-            <tbody>
-              <tr>
-                <td className="font-semibold text-center">トレーニング日</td>
-                <td className="font-semibold text-center">:</td>
-                <td className="font-semibold text-center">
-                  {timeLineMemory.date}
-                </td>
-              </tr>
-              <tr>
-                <td className="font-semibold text-center">
-                  トレーニングメニュー
-                </td>
-                <td className="font-semibold text-center">:</td>
-                <td className="font-semibold text-center">
-                  {timeLineMemory.trainingMenu}
-                </td>
-              </tr>
-              <tr>
-                <td className="font-semibold text-center">重量</td>
-                <td className="font-semibold text-center">:</td>
-                <td className="font-semibold text-center">
-                  {timeLineMemory.weight}kg
-                </td>
-              </tr>
-              <tr>
-                <td className="font-semibold text-center">回数</td>
-                <td className="font-semibold text-center">:</td>
-                <td className="font-semibold text-center">
-                  {timeLineMemory.count}回
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <div className="mx-auto items-center justify-center">
+            <table className="table-auto">
+              <tbody>
+                <tr>
+                  <td className="font-semibold text-center">トレーニング日</td>
+                  <td className="font-semibold text-center">:</td>
+                  <td className="font-semibold text-center">
+                    {timeLineMemory.date}
+                  </td>
+                </tr>
+                <tr>
+                  <td className="font-semibold text-center">
+                    トレーニングメニュー
+                  </td>
+                  <td className="font-semibold text-center">:</td>
+                  <td className="font-semibold text-center">
+                    {timeLineMemory.trainingMenu}
+                  </td>
+                </tr>
+                <tr>
+                  <td className="font-semibold text-center">重量</td>
+                  <td className="font-semibold text-center">:</td>
+                  <td className="font-semibold text-center">
+                    {timeLineMemory.weight}kg
+                  </td>
+                </tr>
+                <tr>
+                  <td className="font-semibold text-center">回数</td>
+                  <td className="font-semibold text-center">:</td>
+                  <td className="font-semibold text-center">
+                    {timeLineMemory.count}回
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          {timeLineMemory.comment && ( // コメントが空でない場合のみ表示
+            <p className="text-sm text-gray-500 mt-2">
+              コメント: {timeLineMemory.comment}
+            </p>
+          )}
         </div>
       </div>
-      {timeLineMemory.comment && ( // コメントが空でない場合のみ表示
-        <p className="text-sm text-gray-500 mt-2">
-          コメント: {timeLineMemory.comment}
-        </p>
-      )}
     </div>
   );
 };
