@@ -5,20 +5,20 @@ export default function TopPageIn() {
   return (
     <>
       <div className="flex flex-col justify-center items-center h-screen">
-        <div className="text-center text-black mb-8 flex items-center">
-          <div className="mr-4">
+        <div className="text-center text-black mb-8">
+          {/* 画像を画面中央に配置 */}
+          <div className="relative w-40 sm:w-48 md:w-56 lg:w-64 xl:w-72 h-40 sm:h-48 md:h-56 lg:h-64 xl:h-72 mb-4">
             <Image
               src="/gym.png" // 画像のパスを指定
               alt="Iron Muscle Logo" // 画像の代替テキスト
-              className="h-24 sm:h-32 md:h-40 lg:h-48 xl:h-56" // 画像のサイズをデバイスごとに設定
+              layout="fill" // 画像を親要素にフィットさせる
+              objectFit="contain" // 画像を完全に表示する
             />
           </div>
-          <div>
-            <h1 className="text-5xl font-bold mb-4">
-              Welcome to Iron muscle App!
-            </h1>
-            <p className="text-lg">Let&apos;s work out together!</p>
-          </div>
+          <h1 className="text-5xl font-bold mb-4">
+            Welcome to Iron muscle App!
+          </h1>
+          <p className="text-lg">Let&apos;s work out together!</p>
         </div>
         <Link href="/components/Training">
           <a className="bg-teal-500 hover:bg-teal-600 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 ease-in-out">
