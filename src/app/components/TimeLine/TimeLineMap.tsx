@@ -54,7 +54,7 @@ const TimeLineMap = ({
           <table className="table-auto">
             <tbody>
               <tr>
-                <td className="font-semibold text-center">日付</td>
+                <td className="font-semibold text-center">トレーニング日</td>
                 <td>:{timeLineMemory.date}</td>
               </tr>
               <tr>
