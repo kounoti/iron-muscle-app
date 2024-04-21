@@ -98,8 +98,8 @@ const TimeLineModal: React.FC<UserModalProps> = ({
         aria-hidden="true"
       ></div>
       <div className="bg-white rounded-lg overflow-hidden shadow-xl transform transition-all sm:max-w-lg sm:w-full">
-        <div className="bg-teal-200 p-4">
-          <h2 className="text-lg font-semibold text-white">
+        <div className="bg-teal-300 p-4">
+          <h2 className="text-lg font-semibold">
             タイムラインへ投稿しますか？
           </h2>
         </div>
@@ -118,7 +118,7 @@ const TimeLineModal: React.FC<UserModalProps> = ({
             placeholder="コメントを入力してください"
           ></textarea>
         </div>
-        <div className="bg-teal-200 p-4 flex justify-end">
+        <div className="bg-teal-300 p-4 flex justify-end">
           <button
             onClick={addToTimeline}
             className="mr-4 px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
