@@ -86,12 +86,12 @@ const TimeLineMap = ({
             </tbody>
           </table>
         </div>
-        {timeLineMemory.comment && ( // コメントが空でない場合のみ表示
-          <p className="text-sm text-gray-500 mt-2">
-            コメント: {timeLineMemory.comment}
-          </p>
-        )}
       </div>
+      {timeLineMemory.comment && ( // コメントが空でない場合のみ表示
+        <p className="text-sm text-gray-500 mt-2">
+          コメント: {timeLineMemory.comment}
+        </p>
+      )}
     </div>
   );
 };
