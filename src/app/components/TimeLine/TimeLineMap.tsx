@@ -24,7 +24,7 @@ const TimeLineMap = ({
           console.error("Error fetching memories:", error.message);
           return;
         }
-        setUserName(data[0]);
+        setUserName(data);
       } catch (error: any) {
         console.error("Error fetching memories:", error.message);
       }
