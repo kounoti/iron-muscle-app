@@ -106,7 +106,13 @@ const PageBody = () => {
         timelineflag: false,
       },
     ]);
-    setIsModalOpen(true);
+    // Supabaseへのデータ追加後にモーダルを開く
+    if (!error) {
+      setIsModalOpen(true);
+    } else {
+      // エラーハンドリングを行う場合の処理を追加
+      console.error("データの追加中にエラーが発生しました:", error.message);
+    }
 
     // router.push("/components/Memory");
     // router.refresh();
