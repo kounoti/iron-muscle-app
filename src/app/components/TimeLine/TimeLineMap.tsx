@@ -89,9 +89,9 @@ const TimeLineMap = ({
           </div>
         </div>
         {timeLineMemory.comment && ( // コメントが空でない場合のみ表示
-          <div className="text-gray-500 mt-2 text-center font-semibold">
+          <p className="text-gray-500 mt-2 text-center font-semibold">
             コメント: {timeLineMemory.comment}
-          </div>
+          </p>
         )}
       </div>
     </div>
