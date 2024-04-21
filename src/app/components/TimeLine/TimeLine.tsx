@@ -34,7 +34,7 @@ export type TimeLineType = {
 };
 
 const TimeLine = ({ timeLineMemories }: TimeLineType) => {
-  // 仮のデータ
+  // 仮のデータ　使用していない
   const trainingLogs = [
     {
       user_id: "user1",

@@ -55,21 +55,29 @@ const TimeLineMap = ({
             <tbody>
               <tr>
                 <td className="font-semibold text-center">トレーニング日</td>
-                <td>:{timeLineMemory.date}</td>
+                <td className="font-semibold text-center">
+                  :{timeLineMemory.date}
+                </td>
               </tr>
               <tr>
                 <td className="font-semibold text-center">
                   トレーニングメニュー
                 </td>
-                <td>:{timeLineMemory.trainingMenu}</td>
+                <td className="font-semibold text-center">
+                  :{timeLineMemory.trainingMenu}
+                </td>
               </tr>
               <tr>
                 <td className="font-semibold text-center">重量</td>
-                <td>:{timeLineMemory.weight}</td>
+                <td className="font-semibold text-center">
+                  :{timeLineMemory.weight} kg
+                </td>
               </tr>
               <tr>
                 <td className="font-semibold text-center">回数</td>
-                <td>:{timeLineMemory.count}</td>
+                <td className="font-semibold text-center">
+                  :{timeLineMemory.count} 回
+                </td>
               </tr>
             </tbody>
           </table>
