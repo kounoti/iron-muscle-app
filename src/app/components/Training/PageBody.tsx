@@ -114,8 +114,8 @@ const PageBody = () => {
     //   console.error("データの追加中にエラーが発生しました:", error.message);
     // }
 
-    // router.push("/components/Memory");
-    // router.refresh();
+    router.push("/components/Memory");
+    router.refresh();
   };
 
   useEffect(() => {
