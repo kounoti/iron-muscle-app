@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function TopPageIn() {
   return (
     <>
-      <div className="flex flex-col justify-center items-center h-screen bg-teal-500">
+      <div className="flex flex-col justify-center items-center h-screen bg-teal-400">
         <div className="text-center text-white mb-8">
           <h1 className="text-5xl font-bold mb-4">Welcome to MyFitnessApp!</h1>
           <p className="text-lg">Your personal fitness companion</p>
