@@ -32,13 +32,6 @@ const Page: React.FC = () => {
   return (
     <>
       <UserPage account={account} />
-
-      <Link
-        href="/components/TimeLine"
-        className="bg-blue-300 hover:bg-blue-500 text-white font-bold py-10 px-10 rounded border-2 border-blue-400 sm:text-5xl text-2xl "
-      >
-        TimeLineページへ
-      </Link>
     </>
   );
 };

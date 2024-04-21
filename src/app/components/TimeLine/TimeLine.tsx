@@ -2,6 +2,7 @@ import React from "react";
 import { UUID } from "crypto";
 import Image from "next/image";
 import TimeLineMap from "./TimeLineMap";
+import Link from "next/link";
 
 export type TimeLineMemoryType = {
   // メモリの型定義
@@ -72,13 +73,20 @@ const TimeLine = ({ timeLineMemories }: TimeLineType) => {
   ];
 
   return (
-    <div className="max-w-3xl mx-auto mt-8">
-      <h1 className="text-3xl font-bold mb-4 text-center">Muscle History</h1>
-      {timeLineMemories.map((timeLineMemory: TimeLineMemoryType) => (
-        <div key={timeLineMemory.id}>
-          <TimeLineMap timeLineMemory={timeLineMemory} />
-        </div>
-      ))}
+    <div>
+      <div className="max-w-3xl mx-auto mt-8">
+        <h1 className="text-3xl font-bold mb-4 text-center">Muscle History</h1>
+        {timeLineMemories.map((timeLineMemory: TimeLineMemoryType) => (
+          <div key={timeLineMemory.id}>
+            <TimeLineMap timeLineMemory={timeLineMemory} />
+          </div>
+        ))}
+      </div>
+      <div className="flex justify-center">
+        <Link href="/components/TopPage" className="font-bold text-blue-700">
+          TOPへ戻る
+        </Link>
+      </div>
     </div>
   );
 };
