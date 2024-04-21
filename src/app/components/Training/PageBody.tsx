@@ -98,30 +98,6 @@ const PageBody = () => {
     e.preventDefault();
 
     setIsModalOpen(true);
-
-    // const { data, error } = await supabase.from("posts").insert([
-    //   {
-    //     // id: id,
-    //     musclePart: musclePart,
-    //     trainingMenu: trainingMenu,
-    //     weight: weight,
-    //     count: count,
-    //     date: date,
-    //     account: account,
-    //     bodyWeight: bodyWeight,
-    //     timelineflag: false,
-    //   },
-    // ]);
-    // // Supabaseへのデータ追加後にモーダルを開く
-    // if (!error) {
-    //   setIsModalOpen(true);
-    // } else {
-    //   // エラー発生時にエラーがわかるようにコンソール表示
-    //   console.error("データの追加中にエラーが発生しました:", error.message);
-    // }
-
-    // router.push("/components/Memory");
-    // router.refresh();
   };
 
   useEffect(() => {
