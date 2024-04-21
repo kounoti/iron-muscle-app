@@ -70,13 +70,13 @@ const TimeLineMap = ({
               <tr>
                 <td className="font-semibold text-center">重量</td>
                 <td className="font-semibold text-center">
-                  :{timeLineMemory.weight} kg
+                  :{timeLineMemory.weight}kg
                 </td>
               </tr>
               <tr>
                 <td className="font-semibold text-center">回数</td>
                 <td className="font-semibold text-center">
-                  :{timeLineMemory.count} 回
+                  :{timeLineMemory.count}回
                 </td>
               </tr>
             </tbody>
