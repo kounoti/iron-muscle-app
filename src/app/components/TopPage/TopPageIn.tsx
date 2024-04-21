@@ -13,7 +13,7 @@ export default function TopPageIn() {
               <Image
                 src="/gym.png" // 画像のパスを指定
                 alt="Iron Muscle Logo" // 画像の代替テキスト
-                // layout="fill" // 画像を親要素にフィットさせる
+                layout="fill" // 画像を親要素にフィットさせる
                 objectFit="contain" // 画像を完全に表示する
               />
             </div>
