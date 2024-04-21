@@ -1,10 +1,25 @@
-"use client";
-
 import React from "react";
+import { UUID } from "crypto";
+import Image from "next/image";
 
-import { useState, useEffect } from "react";
+export type TimeLineMemoryType = {
+  // メモリの型定義
+  id: UUID;
+  musclePart: string;
+  trainingMenu: string;
+  weight: string;
+  count: string;
+  date: string;
+  account?: string;
+  timelineflag: boolean;
+  created_at: Date;
+};
 
-export default function Page() {
+type TimeLineType = {
+  timeLineMemories: TimeLineMemoryType[];
+};
+
+const TimeLine = ({ timeLineMemories }: TimeLineType) => {
   // 仮のデータ
   const trainingLogs = [
     {
@@ -46,21 +61,21 @@ export default function Page() {
   return (
     <div className="max-w-3xl mx-auto mt-8">
       <h1 className="text-3xl font-bold mb-4 text-center">Muscle History</h1>
-      {trainingLogs.map((log, index) => (
+      {timeLineMemories.map((timeLineMemory: TimeLineMemoryType) => (
         <div
-          key={index}
+          key={timeLineMemory.id}
           className="border border-gray-300 p-4 rounded-md mb-4 flex flex-col md:flex-row items-start"
         >
           <div className="flex items-start md:items-center">
-            <image
-              src={log.user_avatar}
+            <Image
+              src="/avatar.jpg"
               alt="Avatar"
               className="rounded-full w-10 h-10"
             />
             <div className="ml-4">
-              <p className="font-semibold">{log.user_name}</p>
+              <p className="font-semibold">{timeLineMemory.account}</p>
               <p className="text-sm text-gray-500">
-                {log.date.toLocaleString()}
+                {timeLineMemory.created_at.toLocaleString()}
               </p>
             </div>
           </div>
@@ -69,21 +84,21 @@ export default function Page() {
               <tbody>
                 <tr>
                   <td className="font-semibold text-center">日付</td>
-                  <td>:{log.training_date}</td>
+                  <td>:{timeLineMemory.date}</td>
                 </tr>
                 <tr>
                   <td className="font-semibold text-center">
                     トレーニングメニュー
                   </td>
-                  <td>:{log.equipment}</td>
+                  <td>:{timeLineMemory.trainingMenu}</td>
                 </tr>
                 <tr>
                   <td className="font-semibold text-center">重量</td>
-                  <td>:{log.weight}</td>
+                  <td>:{timeLineMemory.weight}</td>
                 </tr>
                 <tr>
                   <td className="font-semibold text-center">回数</td>
-                  <td>:{log.repetitions}</td>
+                  <td>:{timeLineMemory.count}</td>
                 </tr>
               </tbody>
             </table>
@@ -92,4 +107,6 @@ export default function Page() {
       ))}
     </div>
   );
-}
+};
+
+export default TimeLine;
