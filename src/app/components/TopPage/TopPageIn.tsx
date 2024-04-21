@@ -24,7 +24,7 @@ export default function TopPageIn() {
           <p className="text-lg">Let&apos;s work out together!</p>
         </div>
         <Link href="/components/Training">
-          <a className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">
+          <a className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 ease-in-out">
             トレーニング開始
           </a>
         </Link>
