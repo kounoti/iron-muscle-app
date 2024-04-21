@@ -7,7 +7,7 @@ export default function TopPageIn() {
         {/* 背景画像 */}
         <div
           className="absolute top-0 left-0 w-full h-full bg-cover bg-center"
-          style={{ backgroundImage: "url('/toppage-muscle-training')" }}
+          style={{ backgroundImage: "url('/toppage-muscle-training.jpg')" }}
         ></div>
         <div className="relative z-10">
           <h1 className="text-5xl font-bold text-white mb-8">
