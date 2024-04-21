@@ -176,7 +176,6 @@ const PageBody = () => {
               account={account}
               bodyWeight={bodyWeight}
               timelineflag={timelineflag}
-              comment={comment}
             />
           )}
         </div>

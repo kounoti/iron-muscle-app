@@ -16,7 +16,7 @@ type UserModalProps = {
   account: string;
   bodyWeight: string;
   timelineflag: boolean;
-  comment: string;
+  comment?: string;
 };
 
 const TimeLineModal: React.FC<UserModalProps> = ({
@@ -30,9 +30,9 @@ const TimeLineModal: React.FC<UserModalProps> = ({
   account,
   bodyWeight,
   timelineflag,
-  comment,
 }) => {
   const router = useRouter();
+  const [comment, setComment] = useState<string>("");
 
   //投稿しないボタンを押下した時の処理
   const moveMuscleMemory = async (
@@ -118,6 +118,7 @@ const TimeLineModal: React.FC<UserModalProps> = ({
             name="comment"
             value={comment}
             rows={3}
+            onChange={(e) => setComment(e.target.value)}
             className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
             placeholder="コメントを入力してください"
           ></textarea>
