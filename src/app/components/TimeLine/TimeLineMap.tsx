@@ -30,7 +30,7 @@ const TimeLineMap = ({
       }
     }
     fetchData();
-  }, [timeLineMemory.account]);
+  }, [timeLineMemory]);
 
   return (
     <div>
