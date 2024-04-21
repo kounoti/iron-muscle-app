@@ -9,7 +9,7 @@ export default function TopPageIn() {
           {/* 画像を画面中央に配置 */}
           <div className="relative w-40 sm:w-48 md:w-56 lg:w-64 xl:w-72 h-40 sm:h-48 md:h-56 lg:h-64 xl:h-72 mb-4">
             {/* 修正：Imageコンポーネントの親要素にもrelativeクラスを追加 */}
-            <div className="relative w-full h-full">
+            <div className="relative flex justify-center items-center">
               <Image
                 src="/gym.png" // 画像のパスを指定
                 alt="Iron Muscle Logo" // 画像の代替テキスト
