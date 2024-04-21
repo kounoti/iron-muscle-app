@@ -66,6 +66,8 @@ const PageBody = () => {
 
   const [account, setAccount] = useState<string>("");
 
+  const [comment, setComment] = useState<string>("");
+
   const [timelineflag, setTimelineflag] = useState<boolean>(false);
 
   //ログインしたユーザーのメールアドレスをuserAccountに格納する
@@ -174,6 +176,7 @@ const PageBody = () => {
               account={account}
               bodyWeight={bodyWeight}
               timelineflag={timelineflag}
+              comment={comment}
             />
           )}
         </div>
