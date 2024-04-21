@@ -15,11 +15,12 @@ export type TimeLineMemoryType = {
   created_at: Date;
 };
 
-type TimeLineType = {
+export type TimeLineType = {
   timeLineMemories: TimeLineMemoryType[];
+  userInfo: any;
 };
 
-const TimeLine = ({ timeLineMemories }: TimeLineType) => {
+const TimeLine = ({ timeLineMemories, userInfo }: TimeLineType) => {
   // 仮のデータ
   const trainingLogs = [
     {
@@ -73,7 +74,7 @@ const TimeLine = ({ timeLineMemories }: TimeLineType) => {
               className="rounded-full w-10 h-10"
             />
             <div className="ml-4">
-              <p className="font-semibold">{timeLineMemory.account}</p>
+              <p className="font-semibold">{userInfo.user_name}</p>
               <p className="text-sm text-gray-500">
                 {timeLineMemory.created_at.toLocaleString()}
               </p>

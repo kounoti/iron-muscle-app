@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import UserModal from "./UserModal"; // UserModalを追加
 import { supabase } from "../../../utils/supabaseClient";
 
-type userInformationProps = {
+export type userInformationProps = {
   account: string;
 };
 
