@@ -19,18 +19,20 @@ const TimeLineMap = ({
           .from("userInformation")
           .select("user_name")
           .eq("user_account", timeLineMemory.account);
-        // エラー以外の時にmemoriesにdataオブジェクトを格納する。
         if (error) {
-          console.error("Error fetching memories:", error.message);
+          console.error("Error fetching user name:", error.message);
           return;
         }
-        setUserName(data);
+        if (data && data.length > 0) {
+          // 取得したデータからユーザー名をセットする
+          setUserName(data[0].user_name);
+        }
       } catch (error: any) {
-        console.error("Error fetching memories:", error.message);
+        console.error("Error fetching user name:", error.message);
       }
     }
     fetchData();
-  }, [userName, timeLineMemory.account]);
+  }, [timeLineMemory.account]); // 依存配列から userName を除外して無限ループを解消
 
   return (
     <div>
