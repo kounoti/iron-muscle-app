@@ -39,7 +39,7 @@ const PageBody = () => {
   };
 
   // 親コンポーネントのステート（重量）
-  const [weight, setWeight] = useState("1");
+  const [weight, setWeight] = useState("-");
   // 子コンポーネントからの値を受け取るコールバック関数（重量）
   const handleChildWeightChange = (newWeight: string): void => {
     setWeight(newWeight);
