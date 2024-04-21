@@ -104,7 +104,19 @@ const TimeLineModal: React.FC<UserModalProps> = ({
           </h2>
         </div>
         <div className="p-4">
-          <div>モーダルのbody</div>
+          <label
+            htmlFor="comment"
+            className="block text-sm font-medium text-gray-700"
+          >
+            コメント
+          </label>
+          <textarea
+            id="comment"
+            name="comment"
+            rows={3}
+            className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+            placeholder="コメントを入力してください"
+          ></textarea>
         </div>
         <div className="bg-gray-200 p-4 flex justify-end">
           <button
