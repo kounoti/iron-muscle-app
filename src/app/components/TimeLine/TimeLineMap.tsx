@@ -36,7 +36,7 @@ const TimeLineMap = ({
 
   return (
     <div>
-      <div className="border border-gray-300 ">
+      <div className="border border-gray-300 p-4 rounded-md mb-4 ">
         <div className="p-4 rounded-md mb-4 flex flex-col md:flex-row items-start">
           <div className="flex items-start md:items-center">
             <Image
@@ -87,12 +87,12 @@ const TimeLineMap = ({
               </tbody>
             </table>
           </div>
-          {timeLineMemory.comment && ( // コメントが空でない場合のみ表示
-            <p className="text-sm text-gray-500 mt-2">
-              コメント: {timeLineMemory.comment}
-            </p>
-          )}
         </div>
+        {timeLineMemory.comment && ( // コメントが空でない場合のみ表示
+          <div className="text-sm text-gray-500 mt-2">
+            コメント: {timeLineMemory.comment}
+          </div>
+        )}
       </div>
     </div>
   );
