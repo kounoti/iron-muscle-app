@@ -70,7 +70,7 @@ const TimeLineMap = ({
               <tr>
                 <td className="font-semibold text-center">重量</td>
                 <td className="font-semibold text-center">
-                  :{timeLineMemory.weight}kg
+                  :{timeLineMemory.weight}
                 </td>
               </tr>
               <tr>
