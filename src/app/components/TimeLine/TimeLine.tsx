@@ -15,27 +15,23 @@ export type TimeLineMemoryType = {
   created_at: Date;
 };
 
-export type UserInfoType = {
-  // メモリの型定義
-  userid: number;
-  user_height: number;
-  user_weight: number;
-  user_name: string;
-  user_account: string;
-  user_age: number;
-  user_avatar: string;
-};
+// export type UserInfoType = {
+//   // メモリの型定義
+//   userid: number;
+//   user_height: number;
+//   user_weight: number;
+//   user_name: string;
+//   user_account: string;
+//   user_age: number;
+//   user_avatar: string;
+// };
 
 export type TimeLineType = {
   timeLineMemories: TimeLineMemoryType[];
-  userInfo: UserInfoType[];
+  // userInfo: UserInfoType[];
 };
 
-export type TimeLineMemoriesType = {
-  timeLineMemories: TimeLineMemoryType[];
-};
-
-const TimeLine = ({ timeLineMemories, userInfo }: TimeLineType) => {
+const TimeLine = ({ timeLineMemories }: TimeLineType) => {
   // 仮のデータ
   const trainingLogs = [
     {
@@ -89,7 +85,7 @@ const TimeLine = ({ timeLineMemories, userInfo }: TimeLineType) => {
               className="rounded-full w-10 h-10"
             />
             <div className="ml-4">
-              <p className="font-semibold">{userInfo[0].user_name}</p>
+              <p className="font-semibold">{timeLineMemory.account}</p>
               <p className="text-sm text-gray-500">
                 {timeLineMemory.created_at.toLocaleString()}
               </p>

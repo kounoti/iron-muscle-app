@@ -5,8 +5,6 @@ import React from "react";
 import { useState, useEffect } from "react";
 import TimeLine, { TimeLineMemoryType } from "./TimeLine";
 import { supabase } from "../../../utils/supabaseClient";
-import TimeLineInfo from "./TimeLineInfo";
-import { userInfo } from "os";
 
 export default function Page() {
   const [timeLineMemories, setTimeLineMemories] = useState<
@@ -34,5 +32,5 @@ export default function Page() {
     fetchData();
   }, []);
 
-  return <TimeLineInfo timeLineMemories={timeLineMemories} />;
+  return <TimeLine timeLineMemories={timeLineMemories} />;
 }
