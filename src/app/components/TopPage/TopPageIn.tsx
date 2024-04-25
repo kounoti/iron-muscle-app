@@ -19,7 +19,7 @@ export default function TopPageIn() {
             </div>
           </div>
           <h1 className="text-5xl font-bold mb-4">
-            Welcome to Iron muscle App!
+            Welcome to Iron Muscle App!
           </h1>
           <p className="text-lg">Let&apos;s work out together!</p>
         </div>

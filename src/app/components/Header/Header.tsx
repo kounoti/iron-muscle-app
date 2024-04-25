@@ -63,7 +63,7 @@ const Header = () => {
         <div className="flex items-center">
           <h1 className="text-xl md:text-2xl flex items-center cursor-pointer">
             <GiMuscleUp className="mr-2" />
-            Iron muscle app
+            Iron Muscle App
           </h1>
         </div>
         {currentUser && (
