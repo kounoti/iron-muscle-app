@@ -35,7 +35,7 @@ export default function Authentication() {
           {
             // 追加するデータを指定
             user_age: 25,
-            user_avatar: `https://robohash.org/${user?.email}`,
+            user_avatar: `http://api.adorable.io/avatars/200/${user?.email}.png`,
             user_height: 170,
             user_weight: 60,
             user_name: "ゲスト",
