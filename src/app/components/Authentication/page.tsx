@@ -15,19 +15,19 @@ export default function Authentication() {
   const router = useRouter();
 
   const avatars = [
-    "/bear.jpg",
-    "/cat.jpg",
-    "/cow.jpg",
-    "/dog.jpg",
-    "/giraffe.jpg",
-    "/koala.jpg",
-    "/lion.jpg",
-    "/owl.jpg",
-    "/panda.jpg",
-    "/penguin.jpg",
-    "/rhinoceros.jpg",
-    "/shark.jpg",
-    "/sloth.jpg",
+    "/bear.png",
+    "/cat.png",
+    "/cow.png",
+    "/dog.png",
+    "/giraffe.png",
+    "/koala.png",
+    "/lion.png",
+    "/owl.png",
+    "/panda.png",
+    "/penguin.png",
+    "/rhinoceros.png",
+    "/shark.png",
+    "/sloth.png",
   ];
 
   const getRandomAvatar = () => {
