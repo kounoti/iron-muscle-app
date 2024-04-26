@@ -14,6 +14,28 @@ export default function Authentication() {
   const [currentUser, setCurrentUser] = useState<string | null>(null);
   const router = useRouter();
 
+  const avatars = [
+    "/bear.jpg",
+    "/cat.jpg",
+    "/cow.jpg",
+    "/dog.jpg",
+    "/giraffe.jpg",
+    "/koala.jpg",
+    "/lion.jpg",
+    "/owl.jpg",
+    "/panda.jpg",
+    "/penguin.jpg",
+    "/rhinoceros.jpg",
+    "/shark.jpg",
+    "/sloth.jpg",
+  ];
+
+  const getRandomAvatar = () => {
+    // ランダムな画像を取得する関数
+    const randomIndex = Math.floor(Math.random() * avatars.length); // ランダムなインデックスを取得
+    return avatars[randomIndex]; // ランダムな画像のURLを取得
+  };
+
   // 現在ログインしているユーザーを取得する処理
   const getCurrentUser = async () => {
     // ログインのセッションを取得する処理
@@ -35,7 +57,7 @@ export default function Authentication() {
           {
             // 追加するデータを指定
             user_age: 25,
-            user_avatar: "https://picsum.photos/200/300",
+            user_avatar: getRandomAvatar(),
             user_height: 170,
             user_weight: 60,
             user_name: "ゲスト",
@@ -53,6 +75,7 @@ export default function Authentication() {
 
   useEffect(() => {
     getCurrentUser();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // ログインが完了している場合はTopPageにリダイレクトする;
