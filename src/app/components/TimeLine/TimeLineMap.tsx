@@ -33,8 +33,9 @@ const TimeLineMap = ({
         console.error("Error fetching user name:", error.message);
       }
     }
+    console.log({ userAvatar });
     fetchData();
-  }, [timeLineMemory.account]); // 依存配列から userName を除外して無限ループを解消
+  }, [timeLineMemory.account, userAvatar]); // 依存配列から userName を除外して無限ループを解消
 
   return (
     <div>
