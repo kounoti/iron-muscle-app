@@ -42,8 +42,8 @@ const TimeLineMap = ({
         <div className="p-4 rounded-md mb-4 flex flex-col md:flex-row items-start">
           <div className="flex items-start md:items-center">
             <Image
-              //   src={userAvatar}
-              src="/dog.png"
+              src={userAvatar}
+              //   src="/dog.png"
               alt="Avatar"
               className="rounded-full w-10 h-10"
             />
