@@ -10,8 +10,8 @@ const TimeLineMap = ({
 }: {
   timeLineMemory: TimeLineMemoryType;
 }) => {
-  const [user, setUser] = useState<any>(null);
-  //   const [userName, setUserName] = useState<any>(null);
+  //   const [user, setUser] = useState<any>(null);
+  const [userName, setUserName] = useState<any>(null);
   //   const [userAvatar, setUserAvatar] = useState<any>(null);
 
   useEffect(() => {
@@ -19,14 +19,14 @@ const TimeLineMap = ({
       try {
         const { data, error } = await supabase
           .from("userInformation")
-          .select("*")
+          .select("user_name")
           .eq("user_account", timeLineMemory.account);
         if (error) {
           console.error("Error fetching user name:", error.message);
           return;
         }
         if (data && data.length > 0) {
-          setUser(data[0]);
+          setUserName(data[0].user_name);
           // 取得したデータからユーザー名をセットする
           //   setUserName(data[0].user_name);
           //   setUserAvatar(data[0].user_avatar);
@@ -51,7 +51,7 @@ const TimeLineMap = ({
               className="rounded-full w-10 h-10"
             />
             <div className="ml-4">
-              <p className="font-semibold">{user.user_name}</p>
+              <p className="font-semibold">{userName}</p>
               <p className="text-sm text-gray-500">
                 {new Date(timeLineMemory.created_at).toLocaleString()}
               </p>
