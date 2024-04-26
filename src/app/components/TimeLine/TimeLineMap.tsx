@@ -10,32 +10,34 @@ const TimeLineMap = ({
 }: {
   timeLineMemory: TimeLineMemoryType;
 }) => {
-  const [userName, setUserName] = useState<any>(null);
-  const [userAvatar, setUserAvatar] = useState<any>(null);
+  const [user, setUser] = useState<any>(null);
+  //   const [userName, setUserName] = useState<any>(null);
+  //   const [userAvatar, setUserAvatar] = useState<any>(null);
 
   useEffect(() => {
     async function fetchData(): Promise<void> {
       try {
         const { data, error } = await supabase
           .from("userInformation")
-          .select("user_name,user_avatar")
+          .select("*")
           .eq("user_account", timeLineMemory.account);
         if (error) {
           console.error("Error fetching user name:", error.message);
           return;
         }
         if (data && data.length > 0) {
+          setUser(data[0]);
           // 取得したデータからユーザー名をセットする
-          setUserName(data[0].user_name);
-          setUserAvatar(data[0].user_avatar);
+          //   setUserName(data[0].user_name);
+          //   setUserAvatar(data[0].user_avatar);
         }
       } catch (error: any) {
         console.error("Error fetching user name:", error.message);
       }
     }
-    console.log({ userAvatar });
+
     fetchData();
-  }, [timeLineMemory.account, userAvatar]); // 依存配列から userName を除外して無限ループを解消
+  }, [timeLineMemory.account]); // 依存配列から userName を除外して無限ループを解消
 
   return (
     <div>
@@ -43,13 +45,13 @@ const TimeLineMap = ({
         <div className="p-4 rounded-md mb-4 flex flex-col md:flex-row items-start">
           <div className="flex items-start md:items-center">
             <Image
-              src={userAvatar}
+              src={user.user_avatar}
               //   src="/dog.png"
               alt="Avatar"
               className="rounded-full w-10 h-10"
             />
             <div className="ml-4">
-              <p className="font-semibold">{userName}</p>
+              <p className="font-semibold">{user.user_name}</p>
               <p className="text-sm text-gray-500">
                 {new Date(timeLineMemory.created_at).toLocaleString()}
               </p>
