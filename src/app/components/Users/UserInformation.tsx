@@ -11,7 +11,7 @@ export type userInformationProps = {
 
 const UserInformation: React.FC<userInformationProps> = ({ account }) => {
   // 編集モーダルの表示状態を管理するstateを追加
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
   console.log("UserInformation内");
 

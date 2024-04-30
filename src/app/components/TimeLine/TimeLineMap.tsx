@@ -10,35 +10,58 @@ const TimeLineMap = ({
 }: {
   timeLineMemory: TimeLineMemoryType;
 }) => {
-  //   const [user, setUser] = useState<any>(null);
-  const [userName, setUserName] = useState<any>(null);
+  const [user, setUser] = useState<any>(null);
+  // const [userName, setUserName] = useState<any>(null);
   //   const [userAvatar, setUserAvatar] = useState<any>(null);
 
+  // useEffect(() => {
+  //   async function fetchData(): Promise<void> {
+  //     try {
+  //       const { data, error } = await supabase
+  //         .from("userInformation")
+  //         //   .select("user_name")
+  //         .select("user_name")
+  //         .eq("user_account", timeLineMemory.account);
+  //       if (error) {
+  //         console.error("Error fetching user name:", error.message);
+  //         return;
+  //       }
+  //       if (data && data.length > 0) {
+  //         setUserName(data[0].user_name);
+  //         // 取得したデータからユーザー名をセットする
+  //         //   setUserName(data[0].user_name);
+  //         //   setUserAvatar(data[0].user_avatar);
+  //       }
+  //     } catch (error: any) {
+  //       console.error("Error fetching user name:", error.message);
+  //     }
+  //   }
+
+  //   fetchData();
+  // }, [timeLineMemory.account]); // 依存配列から userName を除外して無限ループを解消
+
   useEffect(() => {
-    async function fetchData(): Promise<void> {
+    const fetchUserData = async () => {
       try {
         const { data, error } = await supabase
           .from("userInformation")
-          //   .select("user_name")
-          .select("user_name")
+          .select("*")
           .eq("user_account", timeLineMemory.account);
-        if (error) {
-          console.error("Error fetching user name:", error.message);
-          return;
-        }
-        if (data && data.length > 0) {
-          setUserName(data[0].user_name);
-          // 取得したデータからユーザー名をセットする
-          //   setUserName(data[0].user_name);
-          //   setUserAvatar(data[0].user_avatar);
-        }
-      } catch (error: any) {
-        console.error("Error fetching user name:", error.message);
-      }
-    }
 
-    fetchData();
-  }, [timeLineMemory.account]); // 依存配列から userName を除外して無限ループを解消
+        if (error) {
+          throw error;
+        }
+        console.log("UserPage内にのfetchUserDataに入れています");
+        console.log(data[0].user_avatar); // データ取得後にログを出力
+
+        setUser(data[0]);
+      } catch (error: any) {
+        console.error("Error fetching user data:", error.message);
+      }
+    };
+
+    fetchUserData();
+  }, [timeLineMemory.account]);
 
   return (
     <div>
@@ -52,7 +75,7 @@ const TimeLineMap = ({
               className="rounded-full w-10 h-10"
             />
             <div className="ml-4">
-              <p className="font-semibold">{userName}</p>
+              <p className="font-semibold">{user.user_name}</p>
               <p className="text-sm text-gray-500">
                 {new Date(timeLineMemory.created_at).toLocaleString()}
               </p>
