@@ -53,6 +53,7 @@ const TimeLineMap = ({
             />
             <div className="ml-4">
               <p className="font-semibold">{userName}</p>
+              <p className="font-semibold">{userAvatar}</p>
               <p className="text-sm text-gray-500">
                 {new Date(timeLineMemory.created_at).toLocaleString()}
               </p>
