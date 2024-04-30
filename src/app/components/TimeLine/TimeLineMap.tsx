@@ -11,7 +11,7 @@ const TimeLineMap = ({
   timeLineMemory: TimeLineMemoryType;
 }) => {
   // const [user, setUser] = useState<any>(null);
-  const [userName, setUserName] = useState<any>(null);
+  const [userName, setUserName] = useState<string | null>(null);
   //   const [userAvatar, setUserAvatar] = useState<any>(null);
 
   useEffect(() => {
