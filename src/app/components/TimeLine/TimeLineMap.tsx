@@ -12,15 +12,15 @@ const TimeLineMap = ({
 }) => {
   // const [user, setUser] = useState<any>(null);
   const [userName, setUserName] = useState<string | null>(null);
-  //   const [userAvatar, setUserAvatar] = useState<any>(null);
+  const [userAvatar, setUserAvatar] = useState<string | null>(null);
 
   useEffect(() => {
     async function fetchData(): Promise<void> {
       try {
         const { data, error } = await supabase
           .from("userInformation")
-          //   .select("user_name")
-          .select("user_name")
+          //   .select("user_name,user_avatar")
+          .select("user_name,user_avatar")
           .eq("user_account", timeLineMemory.account);
         if (error) {
           console.error("Error fetching user name:", error.message);
@@ -30,7 +30,7 @@ const TimeLineMap = ({
           setUserName(data[0].user_name);
           // 取得したデータからユーザー名をセットする
           //   setUserName(data[0].user_name);
-          //   setUserAvatar(data[0].user_avatar);
+          setUserAvatar(data[0].user_avatar);
         }
       } catch (error: any) {
         console.error("Error fetching user name:", error.message);
