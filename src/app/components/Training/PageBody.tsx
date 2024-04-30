@@ -110,7 +110,7 @@ const PageBody = () => {
     } else if (musclePart === "肩") {
       setTrainingMenu("サイドレイズ");
     } else if (musclePart === "腕") {
-      setTrainingMenu("アームカール");
+      setTrainingMenu("腕立て伏せ");
     } else if (musclePart === "腹筋") {
       setTrainingMenu("腹筋");
     }

@@ -30,7 +30,11 @@ const stomachTrainingMenus: string[] = [
   "アブドミナルクランチ",
 ];
 
-const armTrainingMenus: string[] = ["アームカール", "ダンベルカール"];
+const armTrainingMenus: string[] = [
+  "腕立て伏せ",
+  "アームカール",
+  "ダンベルカール",
+];
 
 export {
   chestTrainingMenus,
