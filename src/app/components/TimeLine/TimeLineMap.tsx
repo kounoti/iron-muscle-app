@@ -46,14 +46,13 @@ const TimeLineMap = ({
         <div className="p-4 rounded-md mb-4 flex flex-col md:flex-row items-start">
           <div className="flex items-start md:items-center">
             <Image
-              //   src={userName}
-              src="/dog.png"
+              src={userAvatar || "/default-avatar.png"}
               alt="Avatar"
               className="rounded-full w-10 h-10"
             />
             <div className="ml-4">
               <p className="font-semibold">{userName}</p>
-              <p className="font-semibold">{userAvatar}</p>
+              {/* <p className="font-semibold">{userAvatar}</p> */}
               <p className="text-sm text-gray-500">
                 {new Date(timeLineMemory.created_at).toLocaleString()}
               </p>
