@@ -34,7 +34,8 @@ export default function Home() {
   return (
     <>
       <Head>
-        <link rel="icon" href="//public/favicon.ico" />
+        <title>Iron Muscle App</title>
+        <link rel="icon" href="/bear.png" />
       </Head>
 
       {/* {currentUser === null ? <Authentication /> : <TopPage />} */}
