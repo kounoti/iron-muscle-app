@@ -77,10 +77,7 @@ const Header = () => {
             <Link href="/components/Users" className="hover:underline">
               ユーザー情報
             </Link>
-            <button
-              onClick={handleSignOut}
-              className="bg-red-500 text-white hover:bg-red-600 px-3 py-1 rounded-md"
-            >
+            <button onClick={handleSignOut} className="hover:underline">
               サインアウト
             </button>
             {/* <div>{currentUser}</div> */}
