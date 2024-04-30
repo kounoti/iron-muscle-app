@@ -79,7 +79,7 @@ const Header = () => {
             </Link>
             <button
               onClick={handleSignOut}
-              className="text-red-500 hover:underline"
+              className="bg-red-500 text-white hover:bg-red-600 px-3 py-1 rounded-md"
             >
               サインアウト
             </button>
