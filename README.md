@@ -42,8 +42,7 @@
 自分のプロフィール情報を確認、編集することができます</br>
 </br>
 
-![スマホサイズのトップページ](TopPage_SmartPhone.png){ width=50% }
-![スマホサイズのメニュー画面](Menu_SmartPhone.png){ width=50% }
+![スマホサイズの画面](SmartPhone_demo.png)
 Iron Muscle App はスマホ表示にも対応しています</br>
 
 ## 機能一覧
