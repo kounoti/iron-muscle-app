@@ -40,6 +40,18 @@ const TimeLineMap = ({
     fetchData();
   }, [timeLineMemory.account]); // 依存配列から userName を除外して無限ループを解消
 
+  // userNameがnullの場合、データの取得がまだ行われていないことを示す
+  if (!userName) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-20 w-20 border-t-2 border-b-2 border-gray-900"></div>
+          <div>Loading...</div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div>
       <div className="border border-gray-300 p-4 rounded-md mb-4 ">
