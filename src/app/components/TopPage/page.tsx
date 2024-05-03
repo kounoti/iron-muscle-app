@@ -4,8 +4,8 @@ import TopPageIn from "./TopPageIn";
 export default function TopPage() {
   return (
     <>
-      <div style={{ overflowY: "hidden" }}>
-        <div className="fixed h-screen w-screen -z-50">
+      <div className="relative">
+        <div className="fixed inset-0 z-0">
           <Image
             src="/TopPage_background.jpg"
             alt="トップページの背景画像"
