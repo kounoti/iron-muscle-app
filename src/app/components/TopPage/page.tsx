@@ -10,7 +10,7 @@ export default function TopPage() {
           alt="トップページの背景画像"
           // className="object-cover"
           quality={5}
-          sizes="100vw"
+          // sizes="100vw"
           fill
         />
       </div>
