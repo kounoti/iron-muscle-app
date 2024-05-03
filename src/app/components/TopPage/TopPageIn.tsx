@@ -18,10 +18,10 @@ export default function TopPageIn() {
               />
             </div>
           </div> */}
-          <h1 className="text-5xl font-bold mb-4">
+          <h1 className="text-5xl font-bold mb-4 text-white">
             Welcome to Iron Muscle App!
           </h1>
-          <p className="text-lg">Let&apos;s work out together!</p>
+          <p className="text-lg text-white">Let&apos;s work out together!</p>
         </div>
         <Link href="/components/Training">
           <a className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 ease-in-out">

@@ -8,8 +8,8 @@ export default function TopPage() {
         <Image
           src="/TopPage_background.jpg"
           alt="トップページの背景画像"
-          className="object-cover"
-          quality={100}
+          // className="object-cover"
+          quality={5}
           sizes="100vw"
           fill
         />
