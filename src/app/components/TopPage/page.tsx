@@ -6,7 +6,7 @@ export default function TopPage() {
     <>
       <div className="fixed h-screen w-screen -z-50">
         <Image
-          src="/lion.png"
+          src="/TopPage_background.jpg"
           alt="トップページの背景画像"
           className="object-cover"
           quality={100}

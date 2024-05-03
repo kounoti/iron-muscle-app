@@ -7,8 +7,8 @@ export default function TopPageIn() {
       <div className="flex flex-col justify-center items-center h-screen">
         <div className="text-center text-black mb-8">
           {/* 画像を画面中央に配置 */}
-          <div className="relative w-40 sm:w-48 md:w-56 lg:w-64 xl:w-72 h-40 sm:h-48 md:h-56 lg:h-64 xl:h-72 mb-4">
-            {/* 修正：Imageコンポーネントの親要素にもrelativeクラスを追加 */}
+          {/* <div className="relative w-40 sm:w-48 md:w-56 lg:w-64 xl:w-72 h-40 sm:h-48 md:h-56 lg:h-64 xl:h-72 mb-4">
+            修正：Imageコンポーネントの親要素にもrelativeクラスを追加
             <div className="relative w-full h-full">
               <Image
                 src="/gym.png" // 画像のパスを指定
@@ -17,7 +17,7 @@ export default function TopPageIn() {
                 objectFit="contain" // 画像を完全に表示する
               />
             </div>
-          </div>
+          </div> */}
           <h1 className="text-5xl font-bold mb-4">
             Welcome to Iron Muscle App!
           </h1>
