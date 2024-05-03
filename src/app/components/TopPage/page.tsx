@@ -9,6 +9,8 @@ export default function TopPage() {
           <Image
             src="/TopPage_background.jpg"
             alt="トップページの背景画像"
+            layout="fill"
+            objectFit="cover"
             quality={5}
           />
         </div>
