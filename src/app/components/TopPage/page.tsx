@@ -4,18 +4,16 @@ import TopPageIn from "./TopPageIn";
 export default function TopPage() {
   return (
     <>
-      <div className="fixed h-screen w-screen -z-50">
-        <Image
-          src="/TopPage_background.jpg"
-          alt="トップページの背景画像"
-          // className="object-cover"
-          quality={5}
-          // sizes="100vw"
-          // fill
-        />
+      <div style={{ overflowY: "hidden" }}>
+        <div className="fixed h-screen w-screen -z-50">
+          <Image
+            src="/TopPage_background.jpg"
+            alt="トップページの背景画像"
+            quality={5}
+          />
+        </div>
+        <TopPageIn />
       </div>
-      {/* {currentUser === null ? <Authentication /> : <TopPageIn />} */}
-      <TopPageIn />
     </>
   );
 }
