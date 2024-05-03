@@ -5,7 +5,7 @@ export default function TopPage() {
   return (
     <>
       <div className="relative">
-        <div className="fixed inset-0 z-0 -z-50">
+        <div className="fixed inset-0 -z-50">
           <Image
             src="/TopPage_background.jpg"
             alt="トップページの背景画像"
