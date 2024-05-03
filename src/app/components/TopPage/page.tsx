@@ -11,7 +11,7 @@ export default function TopPage() {
           // className="object-cover"
           quality={5}
           // sizes="100vw"
-          fill
+          // fill
         />
       </div>
       {/* {currentUser === null ? <Authentication /> : <TopPageIn />} */}
