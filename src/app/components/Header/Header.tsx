@@ -59,7 +59,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="bg-teal-500 text-gray-50 flex items-center justify-between p-3 md:p-5">
+      <header className="bg-teal-500 text-gray-50 flex items-center justify-between p-3 md:p-5 z-50">
         <div className="flex items-center">
           <h1 className="text-xl md:text-2xl flex items-center cursor-pointer">
             <GiMuscleUp className="mr-2" />
