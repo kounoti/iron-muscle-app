@@ -4,12 +4,16 @@ import TopPageIn from "./TopPageIn";
 export default function TopPage() {
   return (
     <>
-      <Image
-        src="/toppage-muscle-training.jpg" // 画像のパスを指定
-        alt="TopPageTraining" // 画像の代替テキスト
-        layout="fill" // 画像を親要素にフィットさせる
-        objectFit="contain" // 画像を完全に表示する
-      />
+      <div className="fixed h-screen w-screen -z-50">
+        <Image
+          src="/lion.png"
+          alt="トップページの背景画像"
+          className="object-cover"
+          quality={100}
+          sizes="100vw"
+          fill
+        />
+      </div>
       {/* {currentUser === null ? <Authentication /> : <TopPageIn />} */}
       <TopPageIn />
     </>
