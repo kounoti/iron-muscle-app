@@ -4,10 +4,11 @@ import Link from "next/link";
 export default function TopPageIn() {
   return (
     <>
-      <div className="flex flex-col justify-center items-center h-screen">
-        <div className="text-center text-black mb-8">
-          {/* 画像を画面中央に配置 */}
-          {/* <div className="relative w-40 sm:w-48 md:w-56 lg:w-64 xl:w-72 h-40 sm:h-48 md:h-56 lg:h-64 xl:h-72 mb-4">
+      <div style={{ overflowY: "hidden" }}>
+        <div className="flex flex-col justify-center items-center h-screen">
+          <div className="text-center text-black mb-8">
+            {/* 画像を画面中央に配置 */}
+            {/* <div className="relative w-40 sm:w-48 md:w-56 lg:w-64 xl:w-72 h-40 sm:h-48 md:h-56 lg:h-64 xl:h-72 mb-4">
             修正：Imageコンポーネントの親要素にもrelativeクラスを追加
             <div className="relative w-full h-full">
               <Image
@@ -18,16 +19,17 @@ export default function TopPageIn() {
               />
             </div>
           </div> */}
-          <h1 className="text-5xl font-bold mb-4 text-white">
-            Welcome to Iron Muscle App!
-          </h1>
-          <p className="text-lg text-white">Let&apos;s work out together!</p>
+            <h1 className="text-5xl font-bold mb-4 text-white">
+              Welcome to Iron Muscle App!
+            </h1>
+            <p className="text-lg text-white">Let&apos;s work out together!</p>
+          </div>
+          <Link href="/components/Training">
+            <a className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 ease-in-out">
+              トレーニング開始
+            </a>
+          </Link>
         </div>
-        <Link href="/components/Training">
-          <a className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 ease-in-out">
-            トレーニング開始
-          </a>
-        </Link>
       </div>
     </>
   );
