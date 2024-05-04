@@ -17,32 +17,32 @@
 ※アカウント登録していない方は Sign up(アカウントの新規登録)をお願いします</br>
 </br>
 
-![トップページ](TopPage_demo.png)
+![トップページ](./Photo_demo/TopPage_demo.png)
 トレーニング開始ボタンを押して、トレーニングの記録を開始してください</br>
 </br>
 
-![トレーニング記録追加画面](TrainingMenu_demo.png)
+![トレーニング記録追加画面](./Photo_demo/TrainingMenu_demo.png)
 トレーニング情報を選択して、トレーニングを記録するボタンを押してください</br>
 </br>
 
-![タイムライン追加選択画面](RecordTimeLine_demo.png)
+![タイムライン追加選択画面](./Photo_demo/RecordTimeLine_demo.png)
 トレーニング情報をタイムラインに追加するかを選択し、必要に応じてコメントを記載してください</br>
 </br>
 
-![Muscle History画面](TimeLine_demo.png)
+![Muscle History画面](./Photo_demo/TimeLine_demo.png)
 他の人が投稿したトレーニング情報を閲覧することができます</br>
 </br>
 
-![My Muscle Memory画面](MyMuscleMemory_demo.png)
+![My Muscle Memory画面](./Photo_demo/MyMuscleMemory_demo.png)
 自分の今までのトレーニング情報を確認することができます</br>
 </br>
 
-![Profile画面](Profile_demo.png)
-![Profile編集画面](EditProfile_demo.png)
+![Profile画面](./Photo_demo/Profile_demo.png)
+![Profile編集画面](./Photo_demo/EditProfile_demo.png)
 自分のプロフィール情報を確認、編集することができます</br>
 </br>
 
-![スマホサイズの画面](SmartPhone_demo.png)
+![スマホサイズの画面](./Photo_demo/SmartPhone_demo.png)
 Iron Muscle App はスマホ表示にも対応しています</br>
 
 ## 機能一覧
