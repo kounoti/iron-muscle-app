@@ -77,7 +77,7 @@ const Header = () => {
             onClick={handleIconClick}
           >
             <GiMuscleUp className="mr-2" />
-            筋トレアプリ
+            Iron Muscle App
           </h1>
         </div>
 
