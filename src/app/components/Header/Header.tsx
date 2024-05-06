@@ -60,12 +60,7 @@ const Header = () => {
   }, []);
 
   const handleIconClick = () => {
-    console.log(pathname);
-    if (
-      pathname === "https://ironmuscleapp.vercel.app/" ||
-      pathname === "https://ironmuscleapp.vercel.app" ||
-      pathname === "https://ironmuscleapp.vercel.app/components/Authentication"
-    ) {
+    if (currentUser === null) {
       // 画面遷移しない場合の処理を記述
       return;
     } else {
