@@ -120,7 +120,7 @@ const PageBody = () => {
     <>
       <div className="max-w-4xl mx-auto">
         <ChakraProvider>
-          <Box mx="15%">
+          <Box mx="10%">
             {/* <div>トレーニングページです</div> */}
             <SelectMuscleParts
               onChildMuscleChange={handleChildMuscleChange}
