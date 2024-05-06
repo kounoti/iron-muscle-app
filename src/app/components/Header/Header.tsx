@@ -71,7 +71,7 @@ const Header = () => {
               href={
                 pathname === "https://ironmuscleapp.vercel.app/"
                   ? "/components/TopPage"
-                  : "/"
+                  : "/components/Authentication"
               }
               passHref
             >
