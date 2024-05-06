@@ -63,25 +63,31 @@ const Header = () => {
     <>
       <header className="bg-teal-500 text-gray-50 flex items-center justify-between p-3 md:p-5 z-50">
         <div className="flex items-center">
-          <h1 className="text-xl md:text-2xl flex items-center cursor-pointer">
-            {/* 
-              Iron Muscle Appのリンク先を条件によって変更
-            */}
-            <Link
-              href={
-                pathname === "https://ironmuscleapp.vercel.app/"
-                  ? "/components/Memory"
-                  : "/components/Authentication"
-              }
-              passHref
+          {pathname === "https://ironmuscleapp.vercel.app/" ||
+          pathname ===
+            "https://ironmuscleapp.vercel.app/components/Authentication" ? (
+            // 条件が満たされない場合は通常の<a>要素を使用
+            <a
+              href="#"
+              className="text-lg md:text-xl flex items-center cursor-pointer"
+              onClick={(e) => {
+                e.preventDefault(); // リンクのデフォルトの動作を無効化
+              }}
             >
-              <a>
-                <GiMuscleUp className="mr-2 flex" />
-                Iron Muscle App
+              <GiMuscleUp className="mr-2" />
+              筋トレアプリ
+            </a>
+          ) : (
+            // 条件が満たされる場合はLinkコンポーネントを使用
+            <Link href="/components/TopPage" passHref>
+              <a className="text-lg md:text-xl flex items-center cursor-pointer">
+                <GiMuscleUp className="mr-2" />
+                筋トレアプリ
               </a>
             </Link>
-          </h1>
+          )}
         </div>
+
         {currentUser && (
           <div className="hidden md:flex items-center space-x-4">
             <Link href="/components/TimeLine" className="hover:underline">
