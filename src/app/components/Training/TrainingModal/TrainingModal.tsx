@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "../../../../utils/supabaseClient";
 import { IoCloseCircleOutline } from "react-icons/io5";
+import { IconContext } from "react-icons";
 
 type UserModalProps = {
   isOpen: boolean;
@@ -101,15 +102,13 @@ const TrainingModal: React.FC<UserModalProps> = ({
         aria-hidden="true"
       ></div>
       <div className="bg-white rounded-lg overflow-hidden shadow-xl transform transition-all sm:max-w-lg sm:w-full">
-        <div className="bg-teal-500 p-4">
-          <h2 className="text-lg text-white font-semibold text-center flex">
+        <div className="bg-teal-500 p-4 flex items-center justify-between">
+          <h2 className="text-lg text-white font-semibold text-center">
             トレーニングを続けますか？
           </h2>
-          <div className="flex justify-end p-2">
-            <button onClick={onClose}>
-              <IoCloseCircleOutline />
-            </button>
-          </div>
+          <button onClick={onClose}>
+            <IoCloseCircleOutline color="white" />
+          </button>
         </div>
 
         <div className="bg-white p-4 flex justify-end">
