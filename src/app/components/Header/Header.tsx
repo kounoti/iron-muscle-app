@@ -70,8 +70,8 @@ const Header = () => {
             <Link
               href={
                 pathname === "https://ironmuscleapp.vercel.app/"
-                  ? "/"
-                  : "/components/TopPage"
+                  ? "/components/TopPage"
+                  : "/"
               }
               passHref
             >
