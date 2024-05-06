@@ -101,8 +101,8 @@ const TrainingModal: React.FC<UserModalProps> = ({
         aria-hidden="true"
       ></div>
       <div className="bg-white rounded-lg overflow-hidden shadow-xl transform transition-all sm:max-w-lg sm:w-full">
-        <div className="bg-teal-200 p-4">
-          <h2 className="text-lg font-semibold text-center">
+        <div className="bg-teal-500 p-4">
+          <h2 className="text-lg text-white font-semibold text-center flex">
             トレーニングを続けますか？
           </h2>
           <div className="flex justify-end p-2">
