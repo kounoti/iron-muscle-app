@@ -101,8 +101,8 @@ const TimeLineModal: React.FC<UserModalProps> = ({
         aria-hidden="true"
       ></div>
       <div className="bg-white rounded-lg overflow-hidden shadow-xl transform transition-all sm:max-w-lg sm:w-full">
-        <div className="bg-teal-200 p-4">
-          <h2 className="text-lg font-semibold">
+        <div className="bg-teal-500 flex justify-center p-4">
+          <h2 className="text-lg text-white font-semibold">
             タイムラインへ投稿しますか？
           </h2>
         </div>
@@ -119,14 +119,14 @@ const TimeLineModal: React.FC<UserModalProps> = ({
             value={comment}
             rows={3}
             onChange={(e) => setComment(e.target.value)}
-            className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-500 rounded-md"
+            className="mt-1 focus:ring-indigo-500 focus:border-transparent block w-full shadow-sm sm:text-sm border-gray-500 rounded-md"
             placeholder="コメントを入力してください"
           ></textarea>
         </div>
-        <div className="bg-teal-200 p-4 flex justify-end">
+        <div className="bg-white p-4 flex justify-end">
           <button
             onClick={moveMuscleMemory}
-            className="mr-4 px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="mr-4 px-4 py-2 text-sm font-medium text-gray-700 bg-gray-200 rounded-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
           >
             閉じる
           </button>
