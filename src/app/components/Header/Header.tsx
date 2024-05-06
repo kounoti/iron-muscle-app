@@ -60,6 +60,7 @@ const Header = () => {
   }, []);
 
   const handleIconClick = () => {
+    console.log(pathname);
     if (
       pathname === "https://ironmuscleapp.vercel.app/" ||
       pathname === "https://ironmuscleapp.vercel.app" ||
