@@ -5,7 +5,7 @@ import Link from "next/link";
 import { HiMenu } from "react-icons/hi";
 import { GiMuscleUp } from "react-icons/gi";
 
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { supabase_google } from "../Authentication/SupabaseGoogle";
 
 const Header = () => {
@@ -22,6 +22,8 @@ const Header = () => {
   const [currentUser, setCurrentUser] = useState<string | null>(null);
 
   const router = useRouter();
+
+  const pathname = usePathname();
 
   // 現在ログインしているユーザーを取得する処理
   const getCurrentUser = async () => {
@@ -67,7 +69,7 @@ const Header = () => {
             */}
             <Link
               href={
-                window.location.href === "https://ironmuscleapp.vercel.app/"
+                pathname === "/components/TopPage"
                   ? "/components/Authentication"
                   : "/components/TopPage"
               }
