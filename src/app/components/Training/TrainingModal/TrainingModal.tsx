@@ -101,7 +101,7 @@ const TrainingModal: React.FC<UserModalProps> = ({
         className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
         aria-hidden="true"
       ></div>
-      <div className="bg-white rounded-lg overflow-hidden shadow-xl transform transition-all w-full">
+      <div className="bg-white rounded-lg overflow-hidden shadow-xl transform transition-all max-w-screen">
         <div className="bg-teal-500 flex justify-end h-2 p-1">
           <button onClick={onClose}>
             <IoCloseCircleOutline color="white" />
