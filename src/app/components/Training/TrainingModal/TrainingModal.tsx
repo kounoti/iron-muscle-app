@@ -116,7 +116,7 @@ const TrainingModal: React.FC<UserModalProps> = ({
         <div className="bg-white p-4 flex justify-end">
           <button
             onClick={moveMuscleMemory}
-            className="mr-4 px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="mr-4 px-4 py-2 text-sm font-medium text-gray-700 bg-gray-200 rounded-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
           >
             終了
           </button>
