@@ -44,7 +44,7 @@ export default function Page() {
           .from("posts")
           .select("*")
           .eq("account", account)
-          .order("date", { ascending: true });
+          .order("date", { ascending: false });
         // エラー以外の時にmemoriesにdataオブジェクトを格納する。
         if (error) {
           console.error("Error fetching memories:", error.message);
