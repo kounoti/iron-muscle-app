@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 
 import { RiDeleteBin6Fill } from "react-icons/ri";
+import { SlSpeech } from "react-icons/sl";
 import { useRouter } from "next/navigation";
 import { supabase } from "../../../utils/supabaseClient";
 import { UUID } from "crypto";
@@ -112,11 +113,12 @@ const TrainingMemory = ({ memories }: TrainingMemoryType) => {
                     onClick={(e) => addTimeLine(e, memory)} // 投稿ボタンがクリックされたときにトレーニング情報を渡す
                     style={{ width: "fit-content" }}
                   >
+                    <SlSpeech className="mr-1 hidden sm:table-cell" />
                     <span style={{ whiteSpace: "nowrap" }}>投稿</span>
                   </button>
                   {/* 削除ボタン */}
                   <button
-                    className="text-white bg-red-500 hover:bg-red-500 rounded-md p-1 flex items-center"
+                    className="text-white bg-red-500 hover:bg-red-600 rounded-md p-1 flex items-center"
                     onClick={() => DeleteMemory(memory.id)}
                     style={{ width: "fit-content" }}
                   >
