@@ -61,7 +61,7 @@ const UserModal: React.FC<UserModalProps> = ({
         aria-hidden="true"
       ></div>
       <div className="bg-white rounded-lg overflow-hidden shadow-xl transform transition-all sm:max-w-lg sm:w-full">
-        <div className="bg-teal-500 p-4">
+        <div className="bg-teal-500 flex justify-center p-4">
           <h2 className="text-lg text-white font-semibold">
             プロフィールを編集
           </h2>
