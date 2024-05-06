@@ -70,13 +70,13 @@ const Header = () => {
             <Link
               href={
                 pathname === "https://ironmuscleapp.vercel.app/"
-                  ? "/components/TopPage"
+                  ? "/components/Memory"
                   : "/components/Authentication"
               }
               passHref
             >
               <a>
-                <GiMuscleUp className="mr-2" />
+                <GiMuscleUp className="mr-2 flex" />
                 Iron Muscle App
               </a>
             </Link>
