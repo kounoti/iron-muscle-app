@@ -157,10 +157,6 @@ const PageBody = () => {
             />
           )}
         </div>
-        {/* <br />
-      <Link href="/" className="font-bold text-blue-700 text-15 ml-auto">
-        TOPへ戻る
-      </Link> */}
       </div>
     </>
   );

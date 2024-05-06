@@ -92,6 +92,14 @@ const TrainingMemory = ({ memories }: TrainingMemoryType) => {
                     <RiDeleteBin6Fill className="mr-1 hidden sm:table-cell" />
                     <span style={{ whiteSpace: "nowrap" }}>削除</span>
                   </button>
+                  {/* 投稿ボタン */}
+                  <button
+                    className="text-white bg-blue-500 hover:bg-blue-600 rounded-md p-1 flex items-center"
+                    // onClick={addTimeLine}
+                    style={{ width: "fit-content" }}
+                  >
+                    <span style={{ whiteSpace: "nowrap" }}>投稿</span>
+                  </button>
                 </td>
               </tr>
             ))}
