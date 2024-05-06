@@ -1,9 +1,12 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 
 import { RiDeleteBin6Fill } from "react-icons/ri";
 import { useRouter } from "next/navigation";
 import { supabase } from "../../../utils/supabaseClient";
 import { UUID } from "crypto";
+import TimeLineModal from "../TimeLine/TimeLineModal";
 
 export type MemoryType = {
   // メモリの型定義
@@ -14,6 +17,8 @@ export type MemoryType = {
   count: string;
   date: string;
   account?: string;
+  bodyWeight?: string;
+  timelineflag?: boolean;
 };
 
 // SimpleDatePickerのPropsの型定義
@@ -22,12 +27,18 @@ type TrainingMemoryType = {
 };
 
 const TrainingMemory = ({ memories }: TrainingMemoryType) => {
+  // TimeLineModalのステート
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const [TimeLineMemory, setTimeLineMemory] = useState<MemoryType | null>(null);
+
   const router = useRouter();
 
   if (!Array.isArray(memories)) {
     memories = [];
   }
 
+  // 削除ボタンを押した時の処理
   const DeleteMemory = async (id: UUID) => {
     const { data, error } = await supabase.from("posts").delete().eq("id", id);
     if (error) {
@@ -36,6 +47,18 @@ const TrainingMemory = ({ memories }: TrainingMemoryType) => {
     }
     router.push("/components/Memory");
     router.refresh();
+  };
+
+  // 投稿ボタンを押した時の処理
+  const addTimeLine = async (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    memory: MemoryType
+  ) => {
+    e.preventDefault();
+
+    setTimeLineMemory({ ...memory });
+
+    setIsModalOpen(true);
   };
 
   return (
@@ -83,6 +106,14 @@ const TrainingMemory = ({ memories }: TrainingMemoryType) => {
                   {memory.count}回
                 </td>
                 <td className="text-center border">
+                  {/* 投稿ボタン */}
+                  <button
+                    className="text-white bg-blue-500 hover:bg-blue-600 rounded-md p-1 flex items-center"
+                    onClick={(e) => addTimeLine(e, memory)} // 投稿ボタンがクリックされたときにトレーニング情報を渡す
+                    style={{ width: "fit-content" }}
+                  >
+                    <span style={{ whiteSpace: "nowrap" }}>投稿</span>
+                  </button>
                   {/* 削除ボタン */}
                   <button
                     className="text-white bg-red-500 hover:bg-red-500 rounded-md p-1 flex items-center"
@@ -92,20 +123,26 @@ const TrainingMemory = ({ memories }: TrainingMemoryType) => {
                     <RiDeleteBin6Fill className="mr-1 hidden sm:table-cell" />
                     <span style={{ whiteSpace: "nowrap" }}>削除</span>
                   </button>
-                  {/* 投稿ボタン */}
-                  <button
-                    className="text-white bg-blue-500 hover:bg-blue-600 rounded-md p-1 flex items-center"
-                    // onClick={addTimeLine}
-                    style={{ width: "fit-content" }}
-                  >
-                    <span style={{ whiteSpace: "nowrap" }}>投稿</span>
-                  </button>
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
+      {isModalOpen && (
+        <TimeLineModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          musclePart={TimeLineMemory?.musclePart}
+          trainingMenu={TimeLineMemory?.trainingMenu}
+          weight={TimeLineMemory?.weight}
+          count={TimeLineMemory?.count}
+          date={TimeLineMemory?.date}
+          account={TimeLineMemory?.account}
+          bodyWeight={TimeLineMemory?.bodyWeight}
+          timelineflag={TimeLineMemory?.timelineflag}
+        />
+      )}
     </div>
   );
 };

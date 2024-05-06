@@ -8,14 +8,14 @@ import { supabase } from "../../../utils/supabaseClient";
 type UserModalProps = {
   isOpen: boolean;
   onClose: () => void;
-  musclePart: string;
-  trainingMenu: string;
-  weight: string;
-  count: string;
-  date: string;
-  account: string;
-  bodyWeight: string;
-  timelineflag: boolean;
+  musclePart?: string;
+  trainingMenu?: string;
+  weight?: string;
+  count?: string;
+  date?: string;
+  account?: string;
+  bodyWeight?: string;
+  timelineflag?: boolean;
   comment?: string;
 };
 
