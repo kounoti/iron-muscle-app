@@ -102,14 +102,17 @@ const TrainingModal: React.FC<UserModalProps> = ({
       ></div>
       <div className="bg-white rounded-lg overflow-hidden shadow-xl transform transition-all sm:max-w-lg sm:w-full">
         <div className="bg-teal-200 p-4">
-          <h2 className="text-lg font-semibold">トレーニングを続けますか？</h2>
+          <h2 className="text-lg font-semibold text-center">
+            トレーニングを続けますか？
+          </h2>
+          <div className="flex justify-end p-2">
+            <button onClick={onClose}>
+              <IoCloseCircleOutline />
+            </button>
+          </div>
         </div>
-        <div className="flex justify-end p-2">
-          <button onClick={onClose}>
-            <IoCloseCircleOutline />
-          </button>
-        </div>
-        <div className="bg-teal-200 p-4 flex justify-end">
+
+        <div className="bg-white p-4 flex justify-end">
           <button
             onClick={moveMuscleMemory}
             className="mr-4 px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-500"
