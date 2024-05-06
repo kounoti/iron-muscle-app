@@ -109,7 +109,7 @@ const TrainingMemory = ({ memories }: TrainingMemoryType) => {
                 <td className="text-center border">
                   {/* 投稿ボタン */}
                   <button
-                    className="text-white bg-blue-500 hover:bg-blue-600 rounded-md p-1 flex items-center"
+                    className="text-white bg-blue-500 hover:bg-blue-600 rounded-md p-1 flex items-center my-1"
                     onClick={(e) => addTimeLine(e, memory)} // 投稿ボタンがクリックされたときにトレーニング情報を渡す
                     style={{ width: "fit-content" }}
                   >
@@ -118,7 +118,7 @@ const TrainingMemory = ({ memories }: TrainingMemoryType) => {
                   </button>
                   {/* 削除ボタン */}
                   <button
-                    className="text-white bg-red-500 hover:bg-red-600 rounded-md p-1 flex items-center"
+                    className="text-white bg-red-500 hover:bg-red-600 rounded-md p-1 flex items-center my-1"
                     onClick={() => DeleteMemory(memory.id)}
                     style={{ width: "fit-content" }}
                   >

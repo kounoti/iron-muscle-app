@@ -13,6 +13,7 @@ import { BodyWeight } from "./BodyWeight/BodyWeight";
 import { supabase } from "../../../utils/supabaseClient";
 import { supabase_google } from "../Authentication/SupabaseGoogle";
 import TimeLineModal from "../TimeLine/TimeLineModal";
+import TrainingModal from "./TrainingModal/TrainingModal";
 
 const PageBody = () => {
   // TimeLineModalのステート
@@ -143,7 +144,7 @@ const PageBody = () => {
             トレーニングを記録する
           </button>
           {isModalOpen && (
-            <TimeLineModal
+            <TrainingModal
               isOpen={isModalOpen}
               onClose={() => setIsModalOpen(false)}
               musclePart={musclePart}
