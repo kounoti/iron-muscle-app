@@ -62,8 +62,22 @@ const Header = () => {
       <header className="bg-teal-500 text-gray-50 flex items-center justify-between p-3 md:p-5 z-50">
         <div className="flex items-center">
           <h1 className="text-xl md:text-2xl flex items-center cursor-pointer">
-            <GiMuscleUp className="mr-2" />
-            Iron Muscle App
+            {/* 
+              Iron Muscle Appのリンク先を条件によって変更
+            */}
+            <Link
+              href={
+                window.location.href === "https://ironmuscleapp.vercel.app/"
+                  ? "/components/Authentication"
+                  : "/components/TopPage"
+              }
+              passHref
+            >
+              <a>
+                <GiMuscleUp className="mr-2" />
+                Iron Muscle App
+              </a>
+            </Link>
           </h1>
         </div>
         {currentUser && (
