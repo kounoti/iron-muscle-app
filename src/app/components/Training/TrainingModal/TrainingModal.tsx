@@ -107,8 +107,8 @@ const TrainingModal: React.FC<UserModalProps> = ({
             <IoCloseCircleOutline color="white" />
           </button>
         </div>
-        <div className="bg-teal-500 p-4 flex items-center text-center justify-between">
-          <h2 className="text-lg text-white font-semibold ">
+        <div className="bg-teal-500 flex justify-center p-4">
+          <h2 className="text-lg text-white font-semibold">
             トレーニングを続けますか？
           </h2>
         </div>
