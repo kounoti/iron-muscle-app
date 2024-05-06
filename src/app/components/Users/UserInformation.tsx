@@ -54,7 +54,7 @@ const UserInformation: React.FC<userInformationProps> = ({ account }) => {
 
   return (
     <div className="flex justify-center items-center mt-8">
-      <div className="max-w-md w-full bg-white shadow-md rounded-md p-6">
+      <div className="max-w-md w-full bg-white shadow-md border-gray-300 rounded-md p-6">
         <div className="flex items-center">
           <Image
             width="500"

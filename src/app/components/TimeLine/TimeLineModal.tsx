@@ -39,27 +39,27 @@ const TimeLineModal: React.FC<UserModalProps> = ({
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     e.preventDefault();
-
-    const { data, error } = await supabase.from("posts").insert([
-      {
-        musclePart: musclePart,
-        trainingMenu: trainingMenu,
-        weight: weight,
-        count: count,
-        date: date,
-        account: account,
-        bodyWeight: bodyWeight,
-        timelineflag: false,
-      },
-    ]);
-    if (!error) {
-      onClose();
-      router.push("/components/Memory");
-      router.refresh();
-    } else {
-      // エラー発生時にエラーがわかるようにコンソール表示
-      console.error("データの追加中にエラーが発生しました:", error.message);
-    }
+    onClose();
+    // const { data, error } = await supabase.from("posts").insert([
+    //   {
+    //     musclePart: musclePart,
+    //     trainingMenu: trainingMenu,
+    //     weight: weight,
+    //     count: count,
+    //     date: date,
+    //     account: account,
+    //     bodyWeight: bodyWeight,
+    //     timelineflag: false,
+    //   },
+    // ]);
+    // if (!error) {
+    //   onClose();
+    //   router.push("/components/Memory");
+    //   router.refresh();
+    // } else {
+    //   // エラー発生時にエラーがわかるようにコンソール表示
+    //   console.error("データの追加中にエラーが発生しました:", error.message);
+    // }
   };
 
   const addToTimeline = async (
@@ -128,7 +128,7 @@ const TimeLineModal: React.FC<UserModalProps> = ({
             onClick={moveMuscleMemory}
             className="mr-4 px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-500"
           >
-            投稿しない
+            閉じる
           </button>
           <button
             onClick={addToTimeline}

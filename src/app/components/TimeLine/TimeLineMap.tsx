@@ -54,7 +54,7 @@ const TimeLineMap = ({
 
   return (
     <div>
-      <div className="border border-gray-300 p-4 rounded-md mb-4 ">
+      <div className="border border-gray-300 shadow-md p-4 rounded-md mb-4 ">
         <div className="p-4 rounded-md mb-4 flex flex-col md:flex-row items-start">
           <div className="flex items-start md:items-center">
             <Image
