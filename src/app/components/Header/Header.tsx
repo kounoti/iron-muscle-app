@@ -59,33 +59,30 @@ const Header = () => {
     getCurrentUser();
   }, []);
 
+  const handleIconClick = () => {
+    if (
+      pathname === "https://ironmuscleapp.vercel.app/" ||
+      pathname === "https://ironmuscleapp.vercel.app" ||
+      pathname === "https://ironmuscleapp.vercel.app/components/Authentication"
+    ) {
+      // 画面遷移しない場合の処理を記述
+      return;
+    } else {
+      router.push("/components/TopPage");
+    }
+  };
+
   return (
     <>
       <header className="bg-teal-500 text-gray-50 flex items-center justify-between p-3 md:p-5 z-50">
         <div className="flex items-center">
-          {pathname === "https://ironmuscleapp.vercel.app/" ||
-          pathname ===
-            "https://ironmuscleapp.vercel.app/components/Authentication" ? (
-            // 条件が満たされない場合は通常の<a>要素を使用
-            <a
-              href="#"
-              className="text-lg md:text-xl flex items-center cursor-pointer"
-              onClick={(e) => {
-                e.preventDefault(); // リンクのデフォルトの動作を無効化
-              }}
-            >
-              <GiMuscleUp className="mr-2" />
-              筋トレアプリ
-            </a>
-          ) : (
-            // 条件が満たされる場合はLinkコンポーネントを使用
-            <Link href="/components/TopPage" passHref>
-              <a className="text-lg md:text-xl flex items-center cursor-pointer">
-                <GiMuscleUp className="mr-2" />
-                筋トレアプリ
-              </a>
-            </Link>
-          )}
+          <h1
+            className="text-lg md:text-xl flex items-center cursor-pointer"
+            onClick={handleIconClick}
+          >
+            <GiMuscleUp className="mr-2" />
+            筋トレアプリ
+          </h1>
         </div>
 
         {currentUser && (
