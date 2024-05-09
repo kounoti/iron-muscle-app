@@ -9,16 +9,13 @@ export default function Page() {
 
   const Gemini = () => {
     const postData = async () => {
-      const response = await fetch(
-        "https://ironmuscleapp.vercel.app/api/gemini-api",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ prompt_post: message }), //promptに入力する文字を入れる
-        }
-      );
+      const response = await fetch("/api/gemini-api", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ prompt_post: message }), //promptに入力する文字を入れる
+      });
       const data = await response.json();
       //   const htmlResponse = marked(data.message); // マークダウン形式の文字列をHTMLに変換
       //   setGeminiResponse(htmlResponse); // HTML形式の回答をセット
