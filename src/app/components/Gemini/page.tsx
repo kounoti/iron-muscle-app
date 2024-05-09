@@ -10,7 +10,7 @@ export default function Page() {
   const Gemini = () => {
     const postData = async () => {
       const response = await fetch(
-        "https://ironmuscleapp.vercel.app//api/gemini-api",
+        "https://ironmuscleapp.vercel.app/api/gemini-api",
         {
           method: "POST",
           headers: {
