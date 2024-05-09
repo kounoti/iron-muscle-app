@@ -44,14 +44,16 @@ export default function Page() {
   return (
     <div className="min-h-screen bg-gray-200">
       <div className="py-12 max-w-md mx-auto">
-        <h1 className="text-3xl font-semibold text-center mb-8">AI trainer</h1>
+        <h1 className="text-3xl font-semibold text-center mb-8">
+          AI Muscle Trainer
+        </h1>
         <form onSubmit={handleSubmit} className="space-y-4">
           <textarea
             value={message}
             onChange={handleMessageChange}
             className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:ring-blue-300"
             rows={5}
-            placeholder="例：ラットプルダウンの正しい使い方を教えてください"
+            placeholder="例：胸筋の効果的な鍛え方について教えてください"
             required
           ></textarea>
           <button

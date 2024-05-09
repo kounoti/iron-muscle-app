@@ -89,6 +89,9 @@ const Header = () => {
             <Link href="/components/Memory" className="hover:underline">
               今までの記録
             </Link>
+            <Link href="/components/Gemini" className="hover:underline">
+              AI Muscle Trainer
+            </Link>
             <Link href="/components/Users" className="hover:underline">
               ユーザー情報
             </Link>
@@ -149,6 +152,16 @@ const Header = () => {
                     onClick={closeDrawer}
                   >
                     ユーザ情報
+                  </button>
+                </div>
+              </Link>
+              <Link href="/components/Gemini" passHref>
+                <div className="w-full p-2 border-b border-gray-500">
+                  <button
+                    className="w-full p-4 bg-teal-100 font-bold"
+                    onClick={closeDrawer}
+                  >
+                    AI Muscle Trainer
                   </button>
                 </div>
               </Link>
