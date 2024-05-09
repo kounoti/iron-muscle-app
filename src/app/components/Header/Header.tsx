@@ -89,11 +89,12 @@ const Header = () => {
             <Link href="/components/Memory" className="hover:underline">
               今までの記録
             </Link>
-            <Link href="/components/Gemini" className="hover:underline">
-              AI Muscle Trainer
-            </Link>
+
             <Link href="/components/Users" className="hover:underline">
               ユーザー情報
+            </Link>
+            <Link href="/components/Gemini" className="hover:underline">
+              AI Muscle Trainer
             </Link>
             <button onClick={handleSignOut} className="hover:underline">
               サインアウト
