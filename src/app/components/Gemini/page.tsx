@@ -10,7 +10,7 @@ export default function Page() {
   const Gemini = () => {
     const postData = async () => {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_VERCEL_URL}/api/gemini-api`,
+        `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/gemini-api`,
         {
           method: "POST",
           headers: {
