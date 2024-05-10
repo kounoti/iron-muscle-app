@@ -84,22 +84,34 @@ const Header = () => {
 
         {currentUser && (
           <div className="hidden md:flex items-center space-x-4">
-            <Link href="/components/TimeLine" className="hover:underline">
+            <Link
+              href="/components/TimeLine"
+              className="hover:underline transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-md"
+            >
               タイムライン
             </Link>
-            <Link href="/components/Memory" className="hover:underline">
+            <Link
+              href="/components/Memory"
+              className="hover:underline transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-md"
+            >
               今までの記録
             </Link>
 
-            <Link href="/components/Users" className="hover:underline">
+            <Link
+              href="/components/Users"
+              className="hover:underline transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-md"
+            >
               ユーザー情報
             </Link>
-            <Link href="/components/Gemini" className="hover:underline">
+            <Link
+              href="/components/Gemini"
+              className="hover:underline transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-md"
+            >
               AI Muscle Trainer
             </Link>
             <button
               onClick={handleSignOut}
-              className="hover:underline flex items-center bg-white text-teal-500 rounded-md p-1 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-md"
+              className="hover:underline flex items-center bg-white text-teal-500 rounded-md p-1 "
             >
               <FaSignOutAlt className="mr-1" /> Sign Out
             </button>
