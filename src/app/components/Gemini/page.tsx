@@ -66,14 +66,14 @@ export default function Page() {
             <button
               type="button"
               onClick={() => Gemini()}
-              className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300 mb-2 sm:mx-2"
+              className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300 mb-2 mx-4"
             >
               送信
             </button>
             <button
               type="button"
               onClick={handleClearText}
-              className="bg-gray-300 text-gray-700 py-2 px-4 rounded-md hover:bg-gray-400 transition duration-300 sm:mx-2"
+              className="bg-gray-300 text-gray-700 py-2 px-4 rounded-md hover:bg-gray-400 transition duration-300 mx-4"
             >
               テキストをクリアする
             </button>
