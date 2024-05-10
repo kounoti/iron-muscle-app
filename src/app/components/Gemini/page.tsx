@@ -60,18 +60,18 @@ export default function Page() {
             placeholder="例：胸筋の効果的な鍛え方について教えてください"
             required
           ></textarea>
-          <div className="flex items-center justify-between">
+          <div className="flex justify-between">
             <button
               type="button"
               onClick={() => Gemini()}
-              className="flex-grow-1 mr-2 bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300"
+              className="flex-grow bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300 mr-2"
             >
               送信
             </button>
             <button
               type="button"
               onClick={handleClearText}
-              className="flex-none bg-gray-300 text-gray-700 py-2 px-4 rounded-md hover:bg-gray-400 transition duration-300"
+              className="flex-grow bg-gray-300 text-gray-700 py-2 px-4 rounded-md hover:bg-gray-400 transition duration-300 ml-2"
             >
               テキストをクリアする
             </button>
