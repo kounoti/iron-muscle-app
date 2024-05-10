@@ -46,25 +46,27 @@ export default function Page() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-200">
+    <div className="min-h-screen bg-white">
       <div className="py-12 max-w-md mx-auto">
         <h1 className="text-3xl font-semibold text-center mb-8">
           AI Muscle Trainer
         </h1>
         <form onSubmit={handleSubmit} className="space-y-4">
-          <textarea
-            value={message}
-            onChange={handleMessageChange}
-            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:ring-blue-300"
-            rows={5}
-            placeholder="例：胸筋の効果的な鍛え方について教えてください"
-            required
-          ></textarea>
+          <div className="border border-gray-300 rounded-md overflow-hidden">
+            <textarea
+              value={message}
+              onChange={handleMessageChange}
+              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:ring-blue-300"
+              rows={5}
+              placeholder="例：胸筋の効果的な鍛え方について教えてください"
+              required
+            ></textarea>
+          </div>
           <div className="flex justify-between">
             <button
               type="button"
               onClick={() => Gemini()}
-              className="flex-grow flex bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300 mr-2"
+              className="flex-grow bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300"
             >
               送信
             </button>
