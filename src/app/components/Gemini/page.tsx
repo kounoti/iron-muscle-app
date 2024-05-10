@@ -64,7 +64,7 @@ export default function Page() {
             <button
               type="button"
               onClick={() => Gemini()}
-              className="flex-grow bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300 mr-2"
+              className="flex-grow flex bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300 mr-2"
             >
               送信
             </button>
