@@ -99,7 +99,7 @@ const Header = () => {
             </Link>
             <button
               onClick={handleSignOut}
-              className="hover:underline flex items-center bg-white text-teal-500 rounded-md p-2 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-md"
+              className="hover:underline flex items-center bg-white text-teal-500 rounded-md p-1 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-md"
             >
               <FaSignOutAlt className="mr-1" /> Sign Out
             </button>
