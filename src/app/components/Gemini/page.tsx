@@ -41,6 +41,10 @@ export default function Page() {
     // setMessage("");
   };
 
+  const handleClearText = () => {
+    setMessage("");
+  };
+
   return (
     <div className="min-h-screen bg-gray-200">
       <div className="py-12 max-w-md mx-auto">
@@ -56,13 +60,22 @@ export default function Page() {
             placeholder="例：胸筋の効果的な鍛え方について教えてください"
             required
           ></textarea>
-          <button
-            type="button"
-            onClick={() => Gemini()}
-            className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300"
-          >
-            送信
-          </button>
+          <div className="flex items-center justify-between">
+            <button
+              type="button"
+              onClick={() => Gemini()}
+              className="flex-grow-1 mr-2 bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300"
+            >
+              送信
+            </button>
+            <button
+              type="button"
+              onClick={handleClearText}
+              className="flex-none bg-gray-300 text-gray-700 py-2 px-4 rounded-md hover:bg-gray-400 transition duration-300"
+            >
+              テキストをクリアする
+            </button>
+          </div>
         </form>
       </div>
       <div className="py-12 max-w-md mx-auto">
