@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { HiMenu } from "react-icons/hi";
 import { GiMuscleUp } from "react-icons/gi";
+import { FaSignOutAlt } from "react-icons/fa";
 
 import { usePathname, useRouter } from "next/navigation";
 import { supabase_google } from "../Authentication/SupabaseGoogle";
@@ -96,8 +97,11 @@ const Header = () => {
             <Link href="/components/Gemini" className="hover:underline">
               AI Muscle Trainer
             </Link>
-            <button onClick={handleSignOut} className="hover:underline">
-              サインアウト
+            <button
+              onClick={handleSignOut}
+              className="hover:underline flex items-center"
+            >
+              <FaSignOutAlt className="mr-1" /> Sign Out {/* 変更 */}
             </button>
             {/* <div>{currentUser}</div> */}
           </div>
