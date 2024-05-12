@@ -32,32 +32,43 @@
 ※アカウント登録していない方は Sign up(アカウントの新規登録)をお願いします</br>
 </br>
 
-![トップページ](./Photo_demo/TopPage_demo.png)
+![トップページ](./Photo_demo/TopPage_demo2.png)
 トレーニング開始ボタンを押して、トレーニングの記録を開始してください</br>
 </br>
 
-![トレーニング記録追加画面](./Photo_demo/TrainingMenu_demo.png)
+![トレーニング記録追加画面](./Photo_demo/TrainingMenu_demo2.png)
 トレーニング情報を選択して、トレーニングを記録するボタンを押してください</br>
 </br>
 
-![タイムライン追加選択画面](./Photo_demo/RecordTimeLine_demo.png)
-トレーニング情報をタイムラインに追加するかを選択し、必要に応じてコメントを記載してください</br>
+![トレーニング記録追加後の選択画面](./Photo_demo/NextTraining_demo2.png)
+トレーニングを記録するボタンを押下後、トレーニングをこのまま続けるか、トレーニング終了するかを選択してください</br>
 </br>
 
-![Muscle History画面](./Photo_demo/TimeLine_demo.png)
+![My Muscle Memory画面](./Photo_demo/MyMuscleMemory_demo2.png)
+自分の今までのトレーニング情報(My Muscle Memory)を確認することができます</br>
+</br>
+
+![タイムライン追加選択画面](./Photo_demo/RecordTimeLine_demo2.png)
+トレーニング情報(My Muscle Memory)ページの投稿ボタンを押すと、トレーニング情報をタイムラインへ投稿することができます。</br>
+必要に応じてコメントも記載してください</br>
+</br>
+
+![Muscle History画面](./Photo_demo/TimeLine_demo2.png)
 他の人が投稿したトレーニング情報を閲覧することができます</br>
 </br>
 
-![My Muscle Memory画面](./Photo_demo/MyMuscleMemory_demo.png)
-自分の今までのトレーニング情報を確認することができます</br>
-</br>
-
-![Profile画面](./Photo_demo/Profile_demo.png)
-![Profile編集画面](./Photo_demo/EditProfile_demo.png)
+![Profile画面](./Photo_demo/Profile_demo2.png)
+![Profile編集画面](./Photo_demo/EditProfile_demo2.png)
 自分のプロフィール情報を確認、編集することができます</br>
 </br>
 
-![スマホサイズの画面](./Photo_demo/SmartPhone_demo.png)
+![AI Muscle Trainer画面](./Photo_demo/AITrainer_demo2.png)
+![AI Muscle Trainer Answer画面](./Photo_demo/AITrainerAnswer_demo2.png)
+AI Muscle Trainer に筋トレ、トレーニングについてのことを聞くことができます</br>
+例を参考に質問してください</br>
+</br>
+
+![スマホサイズの画面](./Photo_demo/SmartPhone_demo2.png)
 Iron Muscle App はスマホ表示にも対応しています</br>
 
 ## 機能一覧
