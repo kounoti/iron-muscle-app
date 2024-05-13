@@ -2,7 +2,9 @@
 
 ## 概要
 
-"Iron Muscle App"は、筋トレのトレーニング情報を記録、共有できる Web アプリケーションです
+"Iron Muscle App"は、筋トレ愛好家のためのウェブアプリケーションです。</br>
+トレーニング情報を手軽に記録し、他のユーザーと共有できます。</br>
+さらに、AI トレーナー機能も搭載しており、トレーニングに関する質問に答えてくれます。</br>
 
 ## 技術的なアピールポイント
 
@@ -25,7 +27,7 @@
   TypeScript を活用して、迅速な開発とコードの保守性、拡張性を高める。
 
 - **AI Muscle Trainer の導入**  
-  トレーニングや健康、筋肉に関する質問を行うことができ、AI が回答し、ユーザーに役立つ情報を提供します。
+  AI Muscle Trainer は、トレーニングや適切な鍛え方に関する質問に答える機能です。ユーザーが質問すると、AI が適切な回答を提供します。
 
 ## デモ画面
 
@@ -67,7 +69,7 @@
 
 ![AI Muscle Trainer画面](./Photo_demo/AITrainer_demo2.png)
 ![AI Muscle Trainer Answer画面](./Photo_demo/AITrainerAnswer_demo2.png)
-AI Muscle Trainer にトレーニングについてのことを質問することができます</br>
+AI Muscle Trainer では、トレーニングや健康に関する質問に AI が答えます。</br>
 例を参考に質問してください</br>
 </br>
 
@@ -80,6 +82,7 @@ Iron Muscle App はスマホ表示にも対応しています</br>
 - トレーニング情報の記録
 - トレーニング履歴の閲覧
 - タイムライン機能
+- AI 回答機能
 
 ## 開発の背景
 
