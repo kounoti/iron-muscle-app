@@ -1,4 +1,4 @@
-# Iron Muscle App(筋トレ記録アプリ)
+# Iron Muscle App
 
 ## 概要
 
