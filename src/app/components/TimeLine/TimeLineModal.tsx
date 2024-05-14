@@ -119,7 +119,7 @@ const TimeLineModal: React.FC<UserModalProps> = ({
             value={comment}
             rows={3}
             onChange={(e) => setComment(e.target.value)}
-            className="mt-1 focus:ring-indigo-500 focus:border-transparent block w-full shadow-sm sm:text-sm border-gray-500 rounded-md"
+            className="mt-1 px-3 py-2 focus:ring-indigo-500 focus:border-transparent block w-full shadow-sm sm:text-sm border-gray-500 rounded-md"
             placeholder="コメントを入力してください"
           ></textarea>
         </div>
