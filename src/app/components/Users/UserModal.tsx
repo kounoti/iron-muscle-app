@@ -6,7 +6,7 @@ import { supabase } from "../../../utils/supabaseClient";
 import { supabase_google } from "../Authentication/SupabaseGoogle";
 import { userType } from "./UserPage";
 import { useRouter } from "next/navigation";
-import { ConvertToNum } from "./ConverToNum";
+import { ConvertToNum } from "./ConvertToNum";
 
 type UserModalProps = {
   isOpen: boolean;

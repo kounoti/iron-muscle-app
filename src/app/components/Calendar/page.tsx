@@ -3,10 +3,11 @@
 import React from "react";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid"; // a plugin!
-import interactionPlugin from "@fullcalendar/interaction";
+import interactionPlugin, { DateClickArg } from "@fullcalendar/interaction";
+import { DayHeaderContentArg, EventContentArg } from "@fullcalendar/core";
 
 export default function Page() {
-  function renderEventContent(eventInfo) {
+  function renderEventContent(eventInfo: EventContentArg) {
     return (
       <>
         <b>{eventInfo.timeText}</b>
@@ -15,7 +16,7 @@ export default function Page() {
     );
   }
 
-  const handleDateClick = (arg) => {
+  const handleDateClick = (arg: DateClickArg) => {
     alert(arg.dateStr);
     console.log(arg);
   };

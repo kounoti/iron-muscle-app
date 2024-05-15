@@ -117,7 +117,7 @@
     "src/app/components/Users/UserModal.tsx",
     "src/app/components/MuscleCalendar/page.jsx",
     "src/app/components/TimeLine/page.tsx",
-    "src/app/components/Calendar/page.jsx"
+    "src/app/components/Calendar/page.tsx"
   ],
   "exclude": ["node_modules"]
 }
