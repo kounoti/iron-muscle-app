@@ -6,6 +6,7 @@ import { supabase } from "../../../utils/supabaseClient";
 import { supabase_google } from "../Authentication/SupabaseGoogle";
 import { userType } from "./UserPage";
 import { useRouter } from "next/navigation";
+import { ConvertToNum } from "./ConverToNum";
 
 type UserModalProps = {
   isOpen: boolean;
@@ -93,7 +94,7 @@ const UserModal: React.FC<UserModalProps> = ({
               type="text"
               id="age"
               value={age}
-              onChange={(e) => setAge(Number(e.target.value))}
+              onChange={(e) => setAge(ConvertToNum(e.target.value))}
               className="w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
             />
           </div>
@@ -108,7 +109,7 @@ const UserModal: React.FC<UserModalProps> = ({
               type="text"
               id="height"
               value={height}
-              onChange={(e) => setHeight(Number(e.target.value))}
+              onChange={(e) => setHeight(ConvertToNum(e.target.value))}
               className="w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
             />
           </div>
@@ -123,7 +124,7 @@ const UserModal: React.FC<UserModalProps> = ({
               type="text"
               id="weight"
               value={weight}
-              onChange={(e) => setWeight(Number(e.target.value))}
+              onChange={(e) => setWeight(ConvertToNum(e.target.value))}
               className="w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
             />
           </div>
