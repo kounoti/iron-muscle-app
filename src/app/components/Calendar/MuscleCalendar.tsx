@@ -35,6 +35,7 @@ const MuscleCalendar: React.FC<MuscleCalendarProps> = ({ account }) => {
       // トレーニングがある日付をセット
       const dates = trainingData.map((training: MemoryType) => training.date);
       setTrainingDates(dates);
+      console.log(dates);
     };
 
     fetchTrainings();
