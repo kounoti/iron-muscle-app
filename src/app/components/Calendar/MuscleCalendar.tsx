@@ -62,7 +62,7 @@ const MuscleCalendar: React.FC<MuscleCalendarProps> = ({ account }) => {
   };
 
   return (
-    <div className="mx-auto p-4 max-w-screen-lg">
+    <div className="mx-auto p-4 w-full">
       <FullCalendar
         plugins={[dayGridPlugin, interactionPlugin]}
         initialView="dayGridMonth"
