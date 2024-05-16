@@ -58,11 +58,17 @@ const MuscleCalendar: React.FC<MuscleCalendarProps> = ({ account }) => {
     const date = new Date(arg.date);
     date.setDate(date.getDate() + 1);
     const dateString = date.toISOString().split("T")[0];
-    return trainingDates.includes(dateString) ? "bg-green-200" : "";
+    const numberOfTrainings = trainingDates.filter((date) =>
+      trainingDates.includes(dateString)
+    ).length;
+    const intensity = Math.min(numberOfTrainings * 30, 255); // トレーニング数に基づいて色の濃さを計算
+    const backgroundColor = `rgba(0, 255, 0, ${intensity})`; // RGBで緑色の透明度を指定
+
+    return numberOfTrainings > 0 ? backgroundColor : "";
   };
 
   return (
-    <div className="mx-auto p-4 w-full">
+    <div className="mx-auto p-4 max-w-screen-lg">
       <FullCalendar
         plugins={[dayGridPlugin, interactionPlugin]}
         initialView="dayGridMonth"
