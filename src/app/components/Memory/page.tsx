@@ -5,6 +5,7 @@ import TrainingMemory, { MemoryType } from "./TrainingMemory";
 import { supabase } from "../../../utils/supabaseClient";
 import { supabase_google } from "../Authentication/SupabaseGoogle";
 import Link from "next/link";
+import MuscleCalendar from "../Calendar/MuscleCalendar";
 
 // import MemoryGraph from "./MemoryGraph";
 
@@ -76,6 +77,7 @@ export default function Page() {
         My Muscle Memory
       </h1>
       <TrainingMemory memories={memories} />
+      <MuscleCalendar account={account} />
 
       <div className="flex justify-center">
         <Link href="/components/TopPage" className="font-bold text-blue-700">
