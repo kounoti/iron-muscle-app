@@ -79,7 +79,7 @@ const MuscleCalendar: React.FC<MuscleCalendarProps> = ({ account }) => {
           date: training.date,
         }))}
         dateClick={handleDateClick}
-        dayCellContent={dayCellClassNames} // クラス名の適用
+        dayCellClassNames={dayCellClassNames} // クラス名の適用
       />
       {isModalOpen && selectedDate && (
         <CalendarModal
