@@ -61,7 +61,7 @@ const MuscleCalendar: React.FC<MuscleCalendarProps> = ({ account }) => {
 
   // 日付に応じてクラスを追加する関数
   const dayCellClassNames = (arg: any) => {
-    const dateString = arg.date.toISOString().split("T")[0];
+    const dateString = arg.date.toLocaleDateString();
     return trainingDates.includes(dateString) ? "bg-green-200" : "";
   };
 
