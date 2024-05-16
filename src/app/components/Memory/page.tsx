@@ -13,6 +13,7 @@ import MuscleCalendar from "../Calendar/MuscleCalendar";
 
 export default function Page() {
   const [account, setAccount] = useState<string | null>(null);
+  const [showTrainingMemory, setShowTrainingMemory] = useState<boolean>(true);
 
   //ログインしたユーザーのメールアドレスをuserAccountに格納する
   const getUserAccount = async () => {
@@ -71,13 +72,30 @@ export default function Page() {
     );
   }
 
+  const toggleDisplay = () => {
+    setShowTrainingMemory((prev) => !prev);
+  };
+
   return (
     <>
       <h1 className="text-3xl font-bold text-center mt-8 text-gray-800">
         My Muscle Memory
       </h1>
-      <TrainingMemory memories={memories} />
-      <MuscleCalendar account={account} />
+      {/* 表示切り替えボタン */}
+      <div className="flex justify-center">
+        <button
+          onClick={toggleDisplay}
+          className="font-bold text-blue-700 focus:outline-none"
+        >
+          {showTrainingMemory ? "Show Calendar" : "Show Training Memory"}
+        </button>
+      </div>
+
+      {showTrainingMemory ? (
+        <TrainingMemory memories={memories} />
+      ) : (
+        <MuscleCalendar account={account} />
+      )}
 
       <div className="flex justify-center">
         <Link href="/components/TopPage" className="font-bold text-blue-700">
