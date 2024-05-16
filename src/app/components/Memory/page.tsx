@@ -85,7 +85,7 @@ export default function Page() {
       <div className="flex justify-center">
         <button
           onClick={toggleDisplay}
-          className="font-bold text-blue-700 focus:outline-none my-2"
+          className="py-2 px-4 bg-blue-500 text-white font-bold rounded focus:outline-none my-2 transition duration-300 ease-in-out hover:bg-blue-600"
         >
           {showTrainingMemory
             ? "カレンダー表示に切り替え"
