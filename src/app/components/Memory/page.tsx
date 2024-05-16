@@ -85,16 +85,18 @@ export default function Page() {
       <div className="flex justify-center">
         <button
           onClick={toggleDisplay}
-          className="font-bold text-blue-700 focus:outline-none"
+          className="font-bold text-blue-700 focus:outline-none my-2"
         >
-          {showTrainingMemory ? "Show Calendar" : "Show Training Memory"}
+          {showTrainingMemory
+            ? "カレンダー表示に切り替え"
+            : "テーブル表示に切り替え"}
         </button>
       </div>
 
       {showTrainingMemory ? (
-        <TrainingMemory memories={memories} />
-      ) : (
         <MuscleCalendar account={account} />
+      ) : (
+        <TrainingMemory memories={memories} />
       )}
 
       <div className="flex justify-center">
@@ -102,7 +104,6 @@ export default function Page() {
           TOPへ戻る
         </Link>
       </div>
-      {/* <BodyWeightChart account={account} /> */}
     </>
   );
 }
