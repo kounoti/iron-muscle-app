@@ -82,7 +82,7 @@ export default function Page() {
         My Muscle Memory
       </h1>
       {/* 表示切り替えボタン */}
-      <div className="flex justify-center">
+      <div className="flex justify-center my-4">
         <button
           onClick={toggleDisplay}
           className="py-2 px-4 bg-blue-500 text-white font-bold rounded focus:outline-none my-2 transition duration-300 ease-in-out hover:bg-blue-600"
