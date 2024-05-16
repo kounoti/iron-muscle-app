@@ -69,6 +69,7 @@ const MuscleCalendar: React.FC<MuscleCalendarProps> = ({ account }) => {
         weekends={true}
         dateClick={handleDateClick}
         dayCellClassNames={dayCellClassNames}
+        locale="JP"
       />
       {isModalOpen && selectedDate && (
         <CalendarModal

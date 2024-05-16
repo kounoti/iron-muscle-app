@@ -88,8 +88,8 @@ export default function Page() {
           className="py-2 px-4 bg-blue-500 text-white font-bold rounded focus:outline-none my-2 transition duration-300 ease-in-out hover:bg-blue-600"
         >
           {showTrainingMemory
-            ? "カレンダー表示に切り替え"
-            : "テーブル表示に切り替え"}
+            ? "テーブル表示に切り替え"
+            : "カレンダー表示に切り替え"}
         </button>
       </div>
 
