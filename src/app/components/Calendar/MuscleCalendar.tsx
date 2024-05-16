@@ -74,10 +74,10 @@ const MuscleCalendar: React.FC<MuscleCalendarProps> = ({ account }) => {
         plugins={[dayGridPlugin, interactionPlugin]}
         initialView="dayGridMonth"
         weekends={true}
-        events={trainings.map((training) => ({
-          title: training.trainingMenu,
-          date: training.date,
-        }))}
+        // events={trainings.map((training) => ({
+        //   title: training.trainingMenu,
+        //   date: training.date,
+        // }))}
         dateClick={handleDateClick}
         dayCellClassNames={dayCellClassNames} // クラス名の適用
       />
