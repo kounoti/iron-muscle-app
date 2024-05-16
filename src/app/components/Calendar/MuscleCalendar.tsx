@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useState, useEffect } from "react";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
@@ -19,7 +17,6 @@ const MuscleCalendar: React.FC<MuscleCalendarProps> = ({ account }) => {
   const [trainingDates, setTrainingDates] = useState<string[]>([]);
 
   useEffect(() => {
-    // 初回ロード時にトレーニング情報を全て取得
     const fetchTrainings = async () => {
       const { data: trainingData, error } = await supabase
         .from("posts")
@@ -32,10 +29,8 @@ const MuscleCalendar: React.FC<MuscleCalendarProps> = ({ account }) => {
       }
 
       setTrainings(trainingData);
-      // トレーニングがある日付をセット
       const dates = trainingData.map((training: MemoryType) => training.date);
       setTrainingDates(dates);
-      console.log(dates);
     };
 
     fetchTrainings();
@@ -59,27 +54,21 @@ const MuscleCalendar: React.FC<MuscleCalendarProps> = ({ account }) => {
     setIsModalOpen(true);
   };
 
-  // 日付に応じてクラスを追加する関数
   const dayCellClassNames = (arg: any) => {
-    // 修正：日付を1日後にずらす
     const date = new Date(arg.date);
-    date.setDate(date.getDate() + 1); // 日付を1日後に設定
+    date.setDate(date.getDate() + 1);
     const dateString = date.toISOString().split("T")[0];
     return trainingDates.includes(dateString) ? "bg-green-200" : "";
   };
 
   return (
-    <>
+    <div className="mx-auto p-4 max-w-screen-lg">
       <FullCalendar
         plugins={[dayGridPlugin, interactionPlugin]}
         initialView="dayGridMonth"
         weekends={true}
-        // events={trainings.map((training) => ({
-        //   title: training.trainingMenu,
-        //   date: training.date,
-        // }))}
         dateClick={handleDateClick}
-        dayCellClassNames={dayCellClassNames} // クラス名の適用
+        dayCellClassNames={dayCellClassNames}
       />
       {isModalOpen && selectedDate && (
         <CalendarModal
@@ -89,7 +78,7 @@ const MuscleCalendar: React.FC<MuscleCalendarProps> = ({ account }) => {
           trainings={trainings}
         />
       )}
-    </>
+    </div>
   );
 };
 
