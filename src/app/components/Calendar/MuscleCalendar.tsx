@@ -58,13 +58,25 @@ const MuscleCalendar: React.FC<MuscleCalendarProps> = ({ account }) => {
     const date = new Date(arg.date);
     date.setDate(date.getDate() + 1);
     const dateString = date.toISOString().split("T")[0];
-    const numberOfTrainings = trainingDates.filter((date) =>
-      trainingDates.includes(dateString)
+    const numberOfTrainings = trainingDates.filter(
+      (date) => date === dateString
     ).length;
-    const intensity = Math.min(numberOfTrainings * 30, 255); // トレーニング数に基づいて色の濃さを計算
-    const backgroundColor = `rgba(0, 255, 0, ${intensity})`; // RGBで緑色の透明度を指定
-
-    return numberOfTrainings > 0 ? backgroundColor : "";
+    if (numberOfTrainings === 0) {
+      return "";
+    } else if (numberOfTrainings === 1) {
+      return "bg-green-100";
+    } else if (numberOfTrainings === 2) {
+      return "bg-green-200";
+    } else if (numberOfTrainings === 3) {
+      return "bg-green-300";
+    } else if (numberOfTrainings === 4) {
+      return "bg-green-400";
+    } else if (numberOfTrainings === 5) {
+      return "bg-green-500";
+    } else {
+      return "bg-green-600";
+    }
+    // return trainingDates.includes(dateString) ? "bg-green-200" : "";
   };
 
   return (
