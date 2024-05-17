@@ -51,7 +51,7 @@ const CalendarModal: React.FC<CalendarModalProps> = ({
 
   return (
     <div className="fixed inset-0 bg-gray-600 bg-opacity-50 flex justify-center items-center z-50">
-      <div className="my-10 bg-white rounded-lg p-8 max-h-screen overflow-y-auto">
+      <div className="my-10 bg-white rounded-lg p-8 overflow-y-auto">
         <h2 className="text-xl font-bold mb-4">トレーニング情報 - {date}</h2>
         <table className="w-full bg-white border border-collapse border-gray-300 max-h-[80vh] shadow-md rounded-md">
           <thead className="bg-teal-400 text-white">
