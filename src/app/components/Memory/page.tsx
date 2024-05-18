@@ -72,8 +72,8 @@ export default function Page() {
     );
   }
 
-  const toggleDisplay = () => {
-    setShowTrainingMemory((prev) => !prev);
+  const toggleDisplay = (showMemory: boolean) => {
+    setShowTrainingMemory(showMemory);
   };
 
   return (
@@ -112,7 +112,7 @@ export default function Page() {
             }`}
             htmlFor="tableView"
           >
-            テーブル表示に切り替え
+            テーブル表示
           </label>
 
           <input
@@ -132,7 +132,7 @@ export default function Page() {
             }`}
             htmlFor="calendarView"
           >
-            カレンダー表示に切り替え
+            カレンダー表示
           </label>
         </div>
       </div>
