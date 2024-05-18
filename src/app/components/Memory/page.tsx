@@ -81,7 +81,6 @@ export default function Page() {
       <h1 className="text-3xl font-bold text-center mt-8 text-gray-800">
         My Muscle Memory
       </h1>
-
       {/* 表示切り替えボタン
       <div className="flex justify-center my-4">
         <button
@@ -93,44 +92,55 @@ export default function Page() {
             : "カレンダー表示に切り替え"}
         </button>
       </div> */}
-
-      {/* // テーブル表示とカレンダー表示を切り替える部分にBootstrapのトグルボタンを組み込む */}
+      {/* 表示切り替えボタン */}
       <div className="flex justify-center my-4">
-        <div className="btn-group btn-group-toggle" data-toggle="buttons">
+        <div className="btn-group" role="group">
+          <input
+            type="radio"
+            className="btn-check"
+            name="options"
+            id="tableView"
+            autoComplete="off"
+            checked={!showTrainingMemory}
+            onChange={toggleDisplay}
+          />
           <label
-            className={`btn btn-primary ${showTrainingMemory ? "active" : ""}`}
+            className={`px-4 py-2 border ${
+              !showTrainingMemory
+                ? "bg-blue-500 text-white"
+                : "bg-white text-black"
+            } cursor-pointer`}
+            htmlFor="tableView"
           >
-            <input
-              type="radio"
-              name="options"
-              id="option1"
-              autoComplete="off"
-              checked={showTrainingMemory}
-              onChange={toggleDisplay}
-            />
             テーブル表示に切り替え
           </label>
+
+          <input
+            type="radio"
+            className="btn-check"
+            name="options"
+            id="calendarView"
+            autoComplete="off"
+            checked={showTrainingMemory}
+            onChange={toggleDisplay}
+          />
           <label
-            className={`btn btn-primary ${!showTrainingMemory ? "active" : ""}`}
+            className={`px-4 py-2 border ${
+              showTrainingMemory
+                ? "bg-blue-500 text-white"
+                : "bg-white text-black"
+            } cursor-pointer`}
+            htmlFor="calendarView"
           >
-            <input
-              type="radio"
-              name="options"
-              id="option2"
-              autoComplete="off"
-              checked={!showTrainingMemory}
-              onChange={toggleDisplay}
-            />
             カレンダー表示に切り替え
           </label>
         </div>
-      </div>
+      </div>{" "}
       {showTrainingMemory ? (
         <MuscleCalendar account={account} />
       ) : (
         <TrainingMemory memories={memories} />
       )}
-
       <div className="flex justify-center">
         <Link href="/components/TopPage" className="font-bold text-blue-700">
           TOPへ戻る
