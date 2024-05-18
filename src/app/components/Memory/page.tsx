@@ -94,7 +94,7 @@ export default function Page() {
       </div> */}
       {/* 表示切り替えボタン */}
       <div className="flex justify-center my-4">
-        <div className="btn-group" role="group">
+        <div className="btn-group flex" role="group">
           <input
             type="radio"
             className="hidden"
@@ -102,14 +102,14 @@ export default function Page() {
             id="tableView"
             autoComplete="off"
             checked={!showTrainingMemory}
-            onChange={toggleDisplay}
+            onChange={() => toggleDisplay(false)}
           />
           <label
-            className={`px-4 py-2 border ${
+            className={`px-4 py-2 border cursor-pointer transform transition ${
               !showTrainingMemory
-                ? "bg-blue-500 text-white"
-                : "bg-white text-black"
-            } cursor-pointer`}
+                ? "bg-blue-500 text-white shadow-md hover:shadow-lg"
+                : "bg-gray-300 text-gray-600 -translate-y-1 active:translate-y-0"
+            }`}
             htmlFor="tableView"
           >
             テーブル表示に切り替え
@@ -122,20 +122,20 @@ export default function Page() {
             id="calendarView"
             autoComplete="off"
             checked={showTrainingMemory}
-            onChange={toggleDisplay}
+            onChange={() => toggleDisplay(true)}
           />
           <label
-            className={`px-4 py-2 border ${
+            className={`px-4 py-2 border cursor-pointer transform transition ${
               showTrainingMemory
-                ? "bg-blue-500 text-white"
-                : "bg-white text-black"
-            } cursor-pointer`}
+                ? "bg-blue-500 text-white shadow-md hover:shadow-lg"
+                : "bg-gray-300 text-gray-600 -translate-y-1 active:translate-y-0"
+            }`}
             htmlFor="calendarView"
           >
             カレンダー表示に切り替え
           </label>
         </div>
-      </div>{" "}
+      </div>
       {showTrainingMemory ? (
         <MuscleCalendar account={account} />
       ) : (
