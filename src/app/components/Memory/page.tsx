@@ -81,7 +81,8 @@ export default function Page() {
       <h1 className="text-3xl font-bold text-center mt-8 text-gray-800">
         My Muscle Memory
       </h1>
-      {/* 表示切り替えボタン */}
+
+      {/* 表示切り替えボタン
       <div className="flex justify-center my-4">
         <button
           onClick={toggleDisplay}
@@ -91,8 +92,39 @@ export default function Page() {
             ? "テーブル表示に切り替え"
             : "カレンダー表示に切り替え"}
         </button>
-      </div>
+      </div> */}
 
+      {/* // テーブル表示とカレンダー表示を切り替える部分にBootstrapのトグルボタンを組み込む */}
+      <div className="flex justify-center my-4">
+        <div className="btn-group btn-group-toggle" data-toggle="buttons">
+          <label
+            className={`btn btn-primary ${showTrainingMemory ? "active" : ""}`}
+          >
+            <input
+              type="radio"
+              name="options"
+              id="option1"
+              autoComplete="off"
+              checked={showTrainingMemory}
+              onChange={toggleDisplay}
+            />
+            テーブル表示に切り替え
+          </label>
+          <label
+            className={`btn btn-primary ${!showTrainingMemory ? "active" : ""}`}
+          >
+            <input
+              type="radio"
+              name="options"
+              id="option2"
+              autoComplete="off"
+              checked={!showTrainingMemory}
+              onChange={toggleDisplay}
+            />
+            カレンダー表示に切り替え
+          </label>
+        </div>
+      </div>
       {showTrainingMemory ? (
         <MuscleCalendar account={account} />
       ) : (
