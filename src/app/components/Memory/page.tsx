@@ -99,26 +99,6 @@ export default function Page() {
             type="radio"
             className="hidden"
             name="options"
-            id="tableView"
-            autoComplete="off"
-            checked={!showTrainingMemory}
-            onChange={() => toggleDisplay(false)}
-          />
-          <label
-            className={`px-4 py-2 border cursor-pointer transform transition ${
-              !showTrainingMemory
-                ? "bg-blue-500 text-white shadow-md hover:shadow-lg"
-                : "bg-gray-300 text-gray-600 -translate-y-1 active:translate-y-0"
-            }`}
-            htmlFor="tableView"
-          >
-            テーブル表示
-          </label>
-
-          <input
-            type="radio"
-            className="hidden"
-            name="options"
             id="calendarView"
             autoComplete="off"
             checked={showTrainingMemory}
@@ -128,11 +108,30 @@ export default function Page() {
             className={`px-4 py-2 border cursor-pointer transform transition ${
               showTrainingMemory
                 ? "bg-blue-500 text-white shadow-md hover:shadow-lg"
-                : "bg-gray-300 text-gray-600 -translate-y-1 active:translate-y-0"
+                : "bg-gray-300 text-gray-600"
             }`}
             htmlFor="calendarView"
           >
             カレンダー表示
+          </label>
+          <input
+            type="radio"
+            className="hidden"
+            name="options"
+            id="tableView"
+            autoComplete="off"
+            checked={!showTrainingMemory}
+            onChange={() => toggleDisplay(false)}
+          />
+          <label
+            className={`px-4 py-2 border cursor-pointer transform transition ${
+              !showTrainingMemory
+                ? "bg-blue-500 text-white shadow-md hover:shadow-lg"
+                : "bg-gray-300 text-gray-600"
+            }`}
+            htmlFor="tableView"
+          >
+            テーブル表示
           </label>
         </div>
       </div>
