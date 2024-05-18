@@ -97,7 +97,7 @@ export default function Page() {
         <div className="btn-group" role="group">
           <input
             type="radio"
-            className="btn-check"
+            className="hidden"
             name="options"
             id="tableView"
             autoComplete="off"
@@ -117,7 +117,7 @@ export default function Page() {
 
           <input
             type="radio"
-            className="btn-check"
+            className="hidden"
             name="options"
             id="calendarView"
             autoComplete="off"
