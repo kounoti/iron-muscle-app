@@ -75,7 +75,7 @@ export default function Authentication() {
       <div className="flex flex-col justify-center py-12">
         <div className="sm:mx-auto sm:w-full sm:max-w-md">
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-            ログインフォーム
+            ログイン認証画面
           </h2>
         </div>
 
@@ -92,9 +92,9 @@ export default function Authentication() {
                     password_label: "パスワード",
                     email_input_placeholder: "メールアドレスを入力",
                     password_input_placeholder: "パスワードを入力",
-                    button_label: "サインイン",
+                    button_label: "ログイン",
                     loading_button_label: "読み込み中...",
-                    social_provider_text: "{{provider}}でサインイン",
+                    social_provider_text: "{{provider}}でログイン",
                     link_text: "アカウントをお持ちでない場合はこちら",
                   },
                   sign_up: {
