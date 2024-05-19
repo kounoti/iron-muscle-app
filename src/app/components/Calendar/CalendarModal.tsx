@@ -117,7 +117,7 @@ const CalendarModal: React.FC<CalendarModalProps> = ({
         </div>
       </div>
 
-      {isModalOpen && (
+      {isTimeLineModalOpen && (
         <TimeLineModal
           isOpen={isTimeLineModalOpen}
           onClose={() => setIsTimeLineModalOpen(false)}
