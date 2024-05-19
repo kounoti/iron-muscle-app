@@ -135,6 +135,7 @@ const CalendarModal: React.FC<CalendarModalProps> = ({
         account={timeLineMemory?.account}
         bodyWeight={timeLineMemory?.bodyWeight}
         timelineflag={timeLineMemory?.timelineflag}
+        id={timeLineMemory?.id}
       />
     </div>
   );

@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 
 import { useRouter } from "next/navigation";
 import { supabase } from "../../../utils/supabaseClient";
+import { UUID } from "crypto";
 
 type UserModalProps = {
   isOpen: boolean;
@@ -17,6 +18,7 @@ type UserModalProps = {
   bodyWeight?: string;
   timelineflag?: boolean;
   comment?: string;
+  id?: UUID;
 };
 
 const TimeLineModal: React.FC<UserModalProps> = ({
@@ -30,6 +32,7 @@ const TimeLineModal: React.FC<UserModalProps> = ({
   account,
   bodyWeight,
   timelineflag,
+  id,
 }) => {
   const router = useRouter();
   const [comment, setComment] = useState<string>("");
@@ -42,26 +45,6 @@ const TimeLineModal: React.FC<UserModalProps> = ({
     onClose();
     router.push("/components/Memory");
     router.refresh();
-    // const { data, error } = await supabase.from("posts").insert([
-    //   {
-    //     musclePart: musclePart,
-    //     trainingMenu: trainingMenu,
-    //     weight: weight,
-    //     count: count,
-    //     date: date,
-    //     account: account,
-    //     bodyWeight: bodyWeight,
-    //     timelineflag: false,
-    //   },
-    // ]);
-    // if (!error) {
-    //   onClose();
-    //   router.push("/components/Memory");
-    //   router.refresh();
-    // } else {
-    //   // エラー発生時にエラーがわかるようにコンソール表示
-    //   console.error("データの追加中にエラーが発生しました:", error.message);
-    // }
   };
 
   const addToTimeline = async (
@@ -69,19 +52,14 @@ const TimeLineModal: React.FC<UserModalProps> = ({
   ) => {
     e.preventDefault();
 
-    const { data, error } = await supabase.from("posts").insert([
-      {
-        musclePart: musclePart,
-        trainingMenu: trainingMenu,
-        weight: weight,
-        count: count,
-        date: date,
-        account: account,
-        bodyWeight: bodyWeight,
+    const { data, error } = await supabase
+      .from("posts")
+      .update({
         timelineflag: true,
         comment: comment,
-      },
-    ]);
+      })
+      .eq("id", id);
+
     if (!error) {
       onClose();
       router.push("/components/TimeLine");

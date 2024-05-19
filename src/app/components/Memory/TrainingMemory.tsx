@@ -143,6 +143,7 @@ const TrainingMemory = ({ memories }: TrainingMemoryType) => {
           account={TimeLineMemory?.account}
           bodyWeight={TimeLineMemory?.bodyWeight}
           timelineflag={TimeLineMemory?.timelineflag}
+          id={TimeLineMemory?.id}
         />
       )}
     </div>
