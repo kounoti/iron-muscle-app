@@ -40,6 +40,8 @@ const TimeLineModal: React.FC<UserModalProps> = ({
   ) => {
     e.preventDefault();
     onClose();
+    router.push("/components/Memory");
+    router.refresh();
     // const { data, error } = await supabase.from("posts").insert([
     //   {
     //     musclePart: musclePart,
