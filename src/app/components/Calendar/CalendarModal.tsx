@@ -24,7 +24,7 @@ const CalendarModal: React.FC<CalendarModalProps> = ({
 }) => {
   const [TimeLineMemory, setTimeLineMemory] = useState<MemoryType | null>(null);
   const router = useRouter();
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(isOpen);
   const [isTimeLineModalOpen, setIsTimeLineModalOpen] = useState(false);
 
   // 削除ボタンを押した時の処理
@@ -44,7 +44,7 @@ const CalendarModal: React.FC<CalendarModalProps> = ({
     training: MemoryType
   ) => {
     e.preventDefault();
-    onClose;
+    setIsModalOpen(false);
 
     setTimeLineMemory({ ...training });
 
@@ -53,7 +53,11 @@ const CalendarModal: React.FC<CalendarModalProps> = ({
 
   return (
     <div>
-      <div className="fixed inset-0 bg-gray-600 bg-opacity-50 flex justify-center items-center z-50">
+      <div
+        className={
+          'fixed inset-0 bg-gray-600 bg-opacity-50 flex justify-center items-center z-50 ${isModalOpen ? "" : "hidden"}'
+        }
+      >
         <div className="bg-white rounded-lg p-8 w-full max-w-lg max-h-[80vh] overflow-y-auto">
           {/* モーダルコンテナに最大高さを80vh（画面の80%）に設定 */}
           <h2 className="text-xl font-bold mb-4">トレーニング情報 - {date}</h2>
