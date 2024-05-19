@@ -5,24 +5,31 @@ import ReactMarkdown from "react-markdown";
 
 export default function Page() {
   const [geminiResponse, setGeminiResponse] = useState<any>("");
+  const [loading, setLoading] = useState<boolean>(false);
   const prompt = "広背筋の効率的な鍛え方について教えてください";
 
   const Gemini = () => {
     const postData = async () => {
-      const response = await fetch(
-        "https://ironmuscleapp.vercel.app/api/gemini-api",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ prompt_post: message }), //promptに入力する文字を入れる
-        }
-      );
-      const data = await response.json();
-      //   const htmlResponse = marked(data.message); // マークダウン形式の文字列をHTMLに変換
-      //   setGeminiResponse(htmlResponse); // HTML形式の回答をセット
-      setGeminiResponse(data.message);
+      setLoading(true); // ローディングを開始
+      try {
+        const response = await fetch(
+          "https://ironmuscleapp.vercel.app/api/gemini-api",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ prompt_post: message }), // promptに入力する文字を入れる
+          }
+        );
+        const data = await response.json();
+        setGeminiResponse(data.message);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+        setGeminiResponse("エラーが発生しました。");
+      } finally {
+        setLoading(false); // ローディングを終了
+      }
     };
     postData();
   };
@@ -83,8 +90,16 @@ export default function Page() {
       <div className="py-12 max-w-md mx-auto">
         <div className="bg-gray-100 p-4 rounded-md">
           <p className="font-semibold mb-2">回答:</p>
-          {/* <div dangerouslySetInnerHTML={{ __html: geminiResponse }}></div> */}
-          <ReactMarkdown>{geminiResponse}</ReactMarkdown>
+          {loading ? (
+            <div className="flex justify-center items-center h-32">
+              <div className="text-center">
+                <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-gray-900"></div>
+                <div>Loading...</div>
+              </div>
+            </div>
+          ) : (
+            <ReactMarkdown>{geminiResponse}</ReactMarkdown>
+          )}
         </div>
       </div>
     </div>
