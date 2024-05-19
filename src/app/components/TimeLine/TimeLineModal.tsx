@@ -92,7 +92,7 @@ const TimeLineModal: React.FC<UserModalProps> = ({
 
   return (
     <div
-      className={`fixed inset-0 flex items-center justify-center ${
+      className={`z-50 fixed inset-0 flex items-center justify-center ${
         isOpen ? "" : "hidden"
       }`}
     >
