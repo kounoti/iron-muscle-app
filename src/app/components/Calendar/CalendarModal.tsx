@@ -24,7 +24,7 @@ const CalendarModal: React.FC<CalendarModalProps> = ({
 }) => {
   const [timeLineMemory, setTimeLineMemory] = useState<MemoryType | null>(null);
   const router = useRouter();
-  const [isModalOpen, setIsModalOpen] = useState(isOpen);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [isTimeLineModalOpen, setIsTimeLineModalOpen] = useState(false);
 
   useEffect(() => {
