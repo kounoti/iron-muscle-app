@@ -93,11 +93,13 @@ export default function Page() {
         </button>
       </div> */}
       {/* 表示切り替えボタン */}
-      <div className="flex justify-center mt-6">
+      <div className="flex justify-center my-4">
         <div className="btn-group flex" role="group">
           <input
             type="radio"
             className="hidden"
+            name="options"
+            id="calendarView"
             autoComplete="off"
             checked={showTrainingMemory}
             onChange={() => toggleDisplay(true)}
