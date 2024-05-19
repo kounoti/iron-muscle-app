@@ -38,8 +38,7 @@ const CalendarModal: React.FC<CalendarModalProps> = ({
       console.error("Error deleting memory:", error.message);
       return;
     }
-    router.push("/components/Memory");
-    router.refresh();
+    setIsModalOpen(false);
   };
 
   // 投稿ボタンを押した時の処理
