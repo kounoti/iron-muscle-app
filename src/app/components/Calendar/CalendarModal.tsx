@@ -44,6 +44,7 @@ const CalendarModal: React.FC<CalendarModalProps> = ({
     training: MemoryType
   ) => {
     e.preventDefault();
+    onClose;
 
     setTimeLineMemory({ ...training });
 
