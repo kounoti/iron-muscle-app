@@ -94,34 +94,40 @@ export default function Page() {
       </div> */}
       {/* 表示切り替えボタン */}
       <div className="flex justify-center mt-6">
-        <div className="flex">
+        <div className="btn-group flex" role="group">
           <input
             type="radio"
             className="hidden"
+            autoComplete="off"
             checked={showTrainingMemory}
             onChange={() => toggleDisplay(true)}
           />
           <label
-            className={`px-4 py-2 border cursor-pointer transition ${
+            className={`px-4 py-2 border cursor-pointer transform transition ${
               showTrainingMemory
                 ? "bg-blue-500 text-white shadow-md hover:shadow-lg"
                 : "bg-gray-300 text-gray-600"
             }`}
+            htmlFor="calendarView"
           >
             カレンダー表示
           </label>
           <input
             type="radio"
             className="hidden"
+            name="options"
+            id="tableView"
+            autoComplete="off"
             checked={!showTrainingMemory}
             onChange={() => toggleDisplay(false)}
           />
           <label
-            className={`px-4 py-2 border cursor-pointer transition ${
+            className={`px-4 py-2 border cursor-pointer transform transition ${
               !showTrainingMemory
                 ? "bg-blue-500 text-white shadow-md hover:shadow-lg"
                 : "bg-gray-300 text-gray-600"
             }`}
+            htmlFor="tableView"
           >
             テーブル表示
           </label>
