@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { MemoryType } from "../Memory/TrainingMemory";
 import { SlSpeech } from "react-icons/sl";
 import { RiDeleteBin6Fill } from "react-icons/ri";
@@ -22,13 +22,17 @@ const CalendarModal: React.FC<CalendarModalProps> = ({
   date,
   trainings,
 }) => {
-  const [TimeLineMemory, setTimeLineMemory] = useState<MemoryType | null>(null);
+  const [timeLineMemory, setTimeLineMemory] = useState<MemoryType | null>(null);
   const router = useRouter();
   const [isModalOpen, setIsModalOpen] = useState(isOpen);
   const [isTimeLineModalOpen, setIsTimeLineModalOpen] = useState(false);
 
+  useEffect(() => {
+    setIsModalOpen(isOpen);
+  }, [isOpen]);
+
   // 削除ボタンを押した時の処理
-  const DeleteMemory = async (id: UUID) => {
+  const deleteMemory = async (id: UUID) => {
     const { data, error } = await supabase.from("posts").delete().eq("id", id);
     if (error) {
       console.error("Error deleting memory:", error.message);
@@ -39,24 +43,22 @@ const CalendarModal: React.FC<CalendarModalProps> = ({
   };
 
   // 投稿ボタンを押した時の処理
-  const addTimeLine = async (
+  const addTimeLine = (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
     training: MemoryType
   ) => {
     e.preventDefault();
-    setIsModalOpen(false);
-
-    setTimeLineMemory({ ...training });
-
-    setIsTimeLineModalOpen(true);
+    setIsModalOpen(false); // カレンダーモーダルを非表示にする
+    setTimeLineMemory(training);
+    setTimeout(() => setIsTimeLineModalOpen(true), 300); // タイムラインモーダルを表示する
   };
 
   return (
     <div>
       <div
-        className={
-          'fixed inset-0 bg-gray-600 bg-opacity-50 flex justify-center items-center z-50 ${isModalOpen ? "" : "hidden"}'
-        }
+        className={`fixed inset-0 bg-gray-600 bg-opacity-50 flex justify-center items-center z-50 ${
+          isModalOpen ? "" : "hidden"
+        }`}
       >
         <div className="bg-white rounded-lg p-8 w-full max-w-lg max-h-[80vh] overflow-y-auto">
           {/* モーダルコンテナに最大高さを80vh（画面の80%）に設定 */}
@@ -101,7 +103,7 @@ const CalendarModal: React.FC<CalendarModalProps> = ({
                       {/* 削除ボタン */}
                       <button
                         className="text-white bg-red-300 hover:bg-red-400 rounded-md p-1 flex items-center"
-                        onClick={() => DeleteMemory(training.id)}
+                        onClick={() => deleteMemory(training.id)}
                         style={{ width: "fit-content" }}
                       >
                         <RiDeleteBin6Fill className="mr-1 hidden sm:table-cell" />
@@ -122,20 +124,19 @@ const CalendarModal: React.FC<CalendarModalProps> = ({
         </div>
       </div>
 
-      {isTimeLineModalOpen && !isModalOpen && (
-        <TimeLineModal
-          isOpen={isTimeLineModalOpen}
-          onClose={() => setIsTimeLineModalOpen(false)}
-          musclePart={TimeLineMemory?.musclePart}
-          trainingMenu={TimeLineMemory?.trainingMenu}
-          weight={TimeLineMemory?.weight}
-          count={TimeLineMemory?.count}
-          date={TimeLineMemory?.date}
-          account={TimeLineMemory?.account}
-          bodyWeight={TimeLineMemory?.bodyWeight}
-          timelineflag={TimeLineMemory?.timelineflag}
-        />
-      )}
+      {/* タイムラインモーダルの表示 */}
+      <TimeLineModal
+        isOpen={isTimeLineModalOpen}
+        onClose={() => setIsTimeLineModalOpen(false)}
+        musclePart={timeLineMemory?.musclePart}
+        trainingMenu={timeLineMemory?.trainingMenu}
+        weight={timeLineMemory?.weight}
+        count={timeLineMemory?.count}
+        date={timeLineMemory?.date}
+        account={timeLineMemory?.account}
+        bodyWeight={timeLineMemory?.bodyWeight}
+        timelineflag={timeLineMemory?.timelineflag}
+      />
     </div>
   );
 };
