@@ -85,6 +85,12 @@ const Header = () => {
         {currentUser && (
           <div className="hidden md:flex items-center space-x-4">
             <Link
+              href="/components/Training"
+              className="hover:underline transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-md"
+            >
+              トレーニングを記録
+            </Link>
+            <Link
               href="/components/TimeLine"
               className="hover:underline transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-md"
             >
@@ -139,6 +145,16 @@ const Header = () => {
                     onClick={closeDrawer}
                   >
                     TOP
+                  </button>
+                </div>
+              </Link>
+              <Link href="/components/Training" passHref>
+                <div className="w-full p-2 border-b border-gray-500">
+                  <button
+                    className="w-full p-4 bg-teal-100 font-bold"
+                    onClick={closeDrawer}
+                  >
+                    トレーニングを記録
                   </button>
                 </div>
               </Link>
