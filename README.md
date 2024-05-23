@@ -21,7 +21,9 @@
 トレーニング情報を選択して、トレーニングを記録するボタンを押すことでトレーニング情報を記録することができます</br>
 </br>
 
+[テーブル表示]
 ![My Muscle Memory(テーブル表示)画面](./Photo_demo/MyMuscleMemory_table_demo.png)
+[カレンダー表示]
 ![My Muscle Memory(カレンダー表示)画面](./Photo_demo/MyMuscleMemory_calendar_demo.png)
 自分の今までのトレーニング情報(My Muscle Memory)を確認することができます</br>
 カレンダー表示とテーブル表示に対応しており、カレンダー表示ではトレーニング項目に応じて日付マスの色が変わるようになり、</br>
