@@ -44,7 +44,7 @@
 </br>
 
 ![AI Muscle Trainer画面](./Photo_demo/AITrainer_demo3.png)
-![AI Muscle Trainer Answer画面](./Photo_demo/AITrainerAnswer_demo2.png)
+![AI Muscle Trainer Answer画面](./Photo_demo/AITrainerAnswer_demo3.png)
 AI Muscle Trainer では、トレーニングや健康に関する質問に AI が答えます。</br>
 例を参考に質問してください</br>
 </br>

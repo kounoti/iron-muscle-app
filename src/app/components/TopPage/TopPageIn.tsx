@@ -19,7 +19,7 @@ export default function TopPageIn() {
               />
             </div>
           </div> */}
-            <h1 className="text-5xl font-bold mb-4 text-white">
+            <h1 className="text-5xl sm:text-4xl font-bold mb-4 text-white break-normal whitespace-pre-wrap">
               Welcome to Iron Muscle App!
             </h1>
             <p className="text-lg text-white">Let&apos;s work out together!</p>
