@@ -19,7 +19,6 @@ const TimeLineMap = ({
       try {
         const { data, error } = await supabase
           .from("userInformation")
-          //   .select("user_name,user_avatar")
           .select("user_name,user_avatar")
           .eq("user_account", timeLineMemory.account);
         if (error) {

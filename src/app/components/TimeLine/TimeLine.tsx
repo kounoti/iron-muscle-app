@@ -1,6 +1,5 @@
 import React from "react";
 import { UUID } from "crypto";
-import Image from "next/image";
 import TimeLineMap from "./TimeLineMap";
 import Link from "next/link";
 

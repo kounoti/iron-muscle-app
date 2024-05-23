@@ -21,10 +21,6 @@
 トレーニング情報を選択して、トレーニングを記録するボタンを押してください</br>
 </br>
 
-<!-- ![トレーニング記録追加後の選択画面](./Photo_demo/NextTraining_demo2.png)
-トレーニングを記録するボタンを押下後、トレーニングをこのまま続けるか、トレーニング終了するかを選択します</br>
-</br> -->
-
 ![My Muscle Memory画面](./Photo_demo/MyMuscleMemory_demo2.png)
 自分の今までのトレーニング情報(My Muscle Memory)を確認することができます</br>
 </br>
@@ -49,8 +45,8 @@ AI Muscle Trainer では、トレーニングや健康に関する質問に AI �
 例を参考に質問してください</br>
 </br>
 
-![スマホサイズの画面](./Photo_demo/SmartPhone_demo2.png)
-Iron Muscle App はスマホ表示にも対応しています</br>
+![スマホサイズの画面](./Photo_demo/SmartPhone_demo3.png)
+トレーニングの合間に簡単にトレーニング記録を入力できるように、Iron Muscle App はスマホ表示にも対応しています</br>
 
 ## 技術的なアピールポイント
 

@@ -43,9 +43,7 @@ export default function Page() {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // ここでメッセージの送信処理を行う
     console.log("送信されたメッセージ:", message);
-    // setMessage("");
   };
 
   const handleClearText = () => {

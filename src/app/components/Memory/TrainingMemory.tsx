@@ -28,7 +28,7 @@ type TrainingMemoryType = {
 };
 
 const TrainingMemory = ({ memories }: TrainingMemoryType) => {
-  // TimeLineModalのステート
+  // TimeLineModal表示のステート
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const [TimeLineMemory, setTimeLineMemory] = useState<MemoryType | null>(null);
@@ -83,9 +83,7 @@ const TrainingMemory = ({ memories }: TrainingMemoryType) => {
               <th className="p-2 sm:px-4 md:px-6 lg:px-8 xl:px-10 text-center border">
                 回数
               </th>
-              <th className="text-center border" style={{ width: "1%" }}>
-                {/* 削除ボタンの列の幅を調整 */}
-              </th>
+              <th className="text-center border" style={{ width: "1%" }}></th>
             </tr>
           </thead>
           <tbody>

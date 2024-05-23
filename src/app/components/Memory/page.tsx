@@ -81,18 +81,7 @@ export default function Page() {
       <h1 className="text-3xl font-bold text-center mt-8 text-gray-800">
         My Muscle Memory
       </h1>
-      {/* 表示切り替えボタン
-      <div className="flex justify-center my-4">
-        <button
-          onClick={toggleDisplay}
-          className="py-2 px-4 bg-blue-500 text-white font-bold rounded focus:outline-none my-2 transition duration-300 ease-in-out hover:bg-blue-600"
-        >
-          {showTrainingMemory
-            ? "テーブル表示に切り替え"
-            : "カレンダー表示に切り替え"}
-        </button>
-      </div> */}
-      {/* 表示切り替えボタン */}
+
       <div className="flex justify-center my-4">
         <div className="btn-group flex" role="group">
           <input
