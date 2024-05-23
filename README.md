@@ -18,16 +18,19 @@
 </br>
 
 ![トレーニング記録追加画面](./Photo_demo/TrainingMenu_demo3.png)
-トレーニング情報を選択して、トレーニングを記録するボタンを押してください</br>
+トレーニング情報を選択して、トレーニングを記録するボタンを押すことでトレーニング情報を記録することができます</br>
 </br>
 
-![My Muscle Memory画面](./Photo_demo/MyMuscleMemory_demo2.png)
+![My Muscle Memory(テーブル表示)画面](./Photo_demo/MyMuscleMemory_table_demo.png)
+![My Muscle Memory(カレンダー表示)画面](./Photo_demo/MyMuscleMemory_calendar_demo.png)
 自分の今までのトレーニング情報(My Muscle Memory)を確認することができます</br>
+カレンダー表示とテーブル表示に対応しており、カレンダー表示ではトレーニング項目に応じて日付マスの色が変わるようになり、</br>
+視覚的にどれだけトレーニングを行なったか確認することができます。</br>
 </br>
 
 ![タイムライン追加選択画面](./Photo_demo/RecordTimeLine_demo2.png)
 トレーニング情報(My Muscle Memory)ページの投稿ボタンを押すと、トレーニング情報をタイムラインへ投稿することができます</br>
-必要に応じてコメントも記載してください</br>
+コメントを記載することも可能です</br>
 </br>
 
 ![Muscle History画面](./Photo_demo/TimeLine_demo3.png)
@@ -42,7 +45,7 @@
 ![AI Muscle Trainer画面](./Photo_demo/AITrainer_demo3.png)
 ![AI Muscle Trainer Answer画面](./Photo_demo/AITrainerAnswer_demo3.png)
 AI Muscle Trainer では、トレーニングや健康に関する質問に AI が答えます。</br>
-例を参考に質問してください</br>
+例を参考に質問してみてください</br>
 </br>
 
 ![スマホサイズの画面](./Photo_demo/SmartPhone_demo3.png)
