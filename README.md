@@ -7,17 +7,17 @@
 
 ## デモ画面
 
-![ログイン画面](./Photo_demo/login_demo.png)
+![ログイン画面](./Photo_demo/login_demo2.png)
 登録したメールアドレス、パスワードにてログインします</br>
 より簡単にログインできるように Google 認証機能も実装しています</br>
 ※アカウント登録していない方は Sign up(アカウントの新規登録)をお願いします</br>
 </br>
 
-![トップページ](./Photo_demo/TopPage_demo2.png)
+![トップページ](./Photo_demo/TopPage_demo3.png)
 トレーニング開始ボタンを押して、トレーニングの記録を開始してください</br>
 </br>
 
-![トレーニング記録追加画面](./Photo_demo/TrainingMenu_demo2.png)
+![トレーニング記録追加画面](./Photo_demo/TrainingMenu_demo3.png)
 トレーニング情報を選択して、トレーニングを記録するボタンを押してください</br>
 </br>
 
@@ -34,16 +34,16 @@
 必要に応じてコメントも記載してください</br>
 </br>
 
-![Muscle History画面](./Photo_demo/TimeLine_demo2.png)
+![Muscle History画面](./Photo_demo/TimeLine_demo3.png)
 タイムライン画面では他の人が投稿したトレーニング情報を閲覧することができます</br>
 </br>
 
-![Profile画面](./Photo_demo/Profile_demo2.png)
-![Profile編集画面](./Photo_demo/EditProfile_demo2.png)
+![Profile画面](./Photo_demo/Profile_demo3.png)
+![Profile編集画面](./Photo_demo/EditProfile_demo3.png)
 自分のプロフィール情報を確認、編集することができます</br>
 </br>
 
-![AI Muscle Trainer画面](./Photo_demo/AITrainer_demo2.png)
+![AI Muscle Trainer画面](./Photo_demo/AITrainer_demo3.png)
 ![AI Muscle Trainer Answer画面](./Photo_demo/AITrainerAnswer_demo2.png)
 AI Muscle Trainer では、トレーニングや健康に関する質問に AI が答えます。</br>
 例を参考に質問してください</br>
