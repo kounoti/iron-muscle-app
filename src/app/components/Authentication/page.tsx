@@ -95,7 +95,7 @@ export default function Authentication() {
                     button_label: "ログイン",
                     loading_button_label: "読み込み中...",
                     social_provider_text: "{{provider}}でログイン",
-                    link_text: "アカウントをお持ちでない場合はこちら",
+                    link_text: "アカウントをお持ちの場合はこちら",
                   },
                   sign_up: {
                     email_label: "メールアドレス",
@@ -105,7 +105,7 @@ export default function Authentication() {
                     button_label: "サインアップ",
                     loading_button_label: "読み込み中...",
                     social_provider_text: "{{provider}}でサインアップ",
-                    link_text: "アカウントをお持ちの場合はこちら",
+                    link_text: "アカウントをお持ちでない場合はこちら",
                   },
                   forgotten_password: {
                     email_label: "メールアドレス",
