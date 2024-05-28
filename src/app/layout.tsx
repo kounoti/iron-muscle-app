@@ -18,9 +18,6 @@ export default function RootLayout({
       <body>
         <Header />
         <main className="mb-6">{children}</main>
-        {/* Headerと被らないようにpadding(mt-12とmd:12)を設けた
-        Footerと被らないようにpadding(mb-6)を設けた */}
-
         <Footer />
       </body>
     </html>
