@@ -7,10 +7,6 @@ import { supabase_google } from "../Authentication/SupabaseGoogle";
 import Link from "next/link";
 import MuscleCalendar from "../Calendar/MuscleCalendar";
 
-// import MemoryGraph from "./MemoryGraph";
-
-// import BodyWeightChart from "./BodyWeightChart";
-
 export default function Page() {
   const [account, setAccount] = useState<string | null>(null);
   const [showTrainingMemory, setShowTrainingMemory] = useState<boolean>(true);
