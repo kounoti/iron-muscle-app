@@ -1,7 +1,3 @@
-// "use client";
-
-// import { useEffect, useState } from "react";
-
 import Authentication from "./components/Authentication/page";
 import "./globals.css";
 import { supabase_google } from "./components/Authentication/SupabaseGoogle";
