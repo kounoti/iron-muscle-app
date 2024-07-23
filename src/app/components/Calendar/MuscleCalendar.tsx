@@ -42,7 +42,8 @@ const MuscleCalendar: React.FC<MuscleCalendarProps> = ({ account }) => {
       .from("posts")
       .select("*")
       .eq("date", clickedDate)
-      .eq("account", account);
+      .eq("account", account)
+      .order("created_at", { ascending: true });
 
     if (error) {
       console.error("Error fetching training data:", error.message);
